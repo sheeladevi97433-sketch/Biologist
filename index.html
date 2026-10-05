@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Biologist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{margin:0;font-family:Arial;background:#f2f8f6;color:#183b32}
+.header{background:linear-gradient(135deg,#075e54,#0b8f7a);color:white;padding:25px 20px;border-radius:0 0 25px 25px}
+.logo{font-size:28px;font-weight:bold}
+.container{padding:18px}
+.page{display:none}
+.card{background:white;margin:12px 0;padding:18px;border-radius:18px;box-shadow:0 4px 12px #d5dfdc}
+.click{cursor:pointer}
+.tag{display:inline-block;background:#e5f7f2;color:#08705f;padding:6px 10px;border-radius:10px;font-size:12px}
+.topic{background:#f1faf7;padding:12px;margin:10px 0;border-radius:12px}
+button{border:0;padding:11px 16px;border-radius:10px;background:#075e54;color:white;font-size:15px;margin-top:8px}
+.back{background:#555}
+.note{line-height:1.7;background:white;padding:20px;border-radius:18px}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<div class="logo">🧬 BIOLOGIST</div>
+<p>NEET + Veterinary Study Hub</p>
+</div>
+
+<div id="home" class="container">
+
+<h2>📚 Subjects</h2>
+
+<div class="card click" onclick="openPage('biology')">
+<h2>🧬 Biology</h2>
+<p>Class 11 • NEET + Veterinary</p>
+<span class="tag">22 Chapters</span>
+</div>
+
+<div class="card click" onclick="openPage('physics')">
+<h2>⚡ Physics</h2>
+<p>Class 11 • NEET + Veterinary</p>
+</div>
+
+<div class="card click" onclick="openPage('chemistry')">
+<h2>🧪 Chemistry</h2>
+<p>Class 11 • NEET + Veterinary</p>
+</div>
+
+<div class="card click" onclick="openPage('veterinary')">
+<h2>🐾 Veterinary</h2>
+<p>Entrance Exam Preparation</p>
+</div>
+
+</div>
+
+<div id="biology" class="container page">
+<h2>🧬 Biology</h2>
+<div id="biologyList"></div>
+<button class="back" onclick="goHome()">🏠 Home</button>
+</div>
+
+<div id="physics" class="container page">
+<h2>⚡ Physics</h2>
+<div id="physicsList"></div>
+<button class="back" onclick="goHome()">🏠 Home</button>
+</div>
+
+<div id="chemistry" class="container page">
+<h2>🧪 Chemistry</h2>
+<div id="chemistryList"></div>
+<button class="back" onclick="goHome()">🏠 Home</button>
+</div>
+
+<div id="veterinary" class="container page">
+<h2>🐾 Veterinary</h2>
+<div id="veterinaryList"></div>
+<button class="back" onclick="goHome()">🏠 Home</button>
+</div>
+
+<div id="notes" class="container page">
+
+<h2 id="noteTitle">📖 Notes</h2>
+
+<div class="note">
+<div id="noteContent"></div>
+</div>
+
+<button class="back" onclick="goBack()">⬅️ Back</button>
+
+</div>
+
+<script>
+
+const subjects={
+
+biology:[
+"The Living World",
+"Biological Classification",
+"Plant Kingdom",
+"Animal Kingdom",
+"Morphology of Flowering Plants",
+"Anatomy of Flowering Plants",
+"Structural Organisation in Animals",
+"Cell: The Unit of Life",
+"Biomolecules",
+"Cell Cycle and Cell Division",
+"Transport in Plants",
+"Mineral Nutrition",
+"Photosynthesis in Plants",
+"Respiration in Plants",
+"Plant Growth and Development",
+"Digestion and Absorption",
+"Breathing and Exchange of Gases",
+"Body Fluids and Circulation",
+"Excretory Products and Their Elimination",
+"Locomotion and Movement",
+"Neural Control and Coordination",
+"Chemical Coordination and Integration"
+],
+
+physics:[
+"Units and Measurements",
+"Motion in a Straight Line",
+"Motion in a Plane",
+"Laws of Motion",
+"Work, Energy and Power",
+"System of Particles and Rotational Motion",
+"Gravitation",
+"Mechanical Properties of Solids",
+"Mechanical Properties of Fluids",
+"Thermal Properties of Matter",
+"Thermodynamics",
+"Kinetic Theory",
+"Oscillations",
+"Waves"
+],
+
+chemistry:[
+"Some Basic Concepts of Chemistry",
+"Structure of Atom",
+"Classification of Elements and Periodicity",
+"Chemical Bonding and Molecular Structure",
+"Thermodynamics",
+"Equilibrium",
+"Redox Reactions",
+"Organic Chemistry – Basic Principles",
+"Hydrocarbons",
+"Solutions",
+"States of Matter",
+"Chemical Kinetics",
+"Environmental Chemistry"
+],
+
+veterinary:[
+"Animal Science",
+"Veterinary Biology",
+"Animal Scientific Names",
+"Veterinary Important Questions",
+"Veterinary Model Papers"
+]
+
+};
+
+const notes={
+
+"The Living World":`
+<h3>🌱 The Living World</h3>
+
+<p><b>Living World:</b> जीव-जगत में सभी जीवित organisms का अध्ययन किया जाता है।</p>
+
+<h3>⭐ Important Points</h3>
+
+<p>• Living organisms show growth.</p>
+<p>• Living organisms reproduce.</p>
+<p>• Living organisms show metabolism.</p>
+<p>• Living organisms respond to stimuli.</p>
+
+<h3>🧬 NEET Point</h3>
+<p>Metabolism is an important characteristic of living organisms.</p>
+
+<h3>🐾 Veterinary Point</h3>
+<p>Animals are living organisms and show nutrition, respiration, growth, reproduction and response.</p>
+`,
+
+"Units and Measurements":`
+<h3>⚡ Units and Measurements</h3>
+
+<p><b>Physical Quantity:</b> ऐसी quantity जिसे measure किया जा सके।</p>
+
+<h3>⭐ SI Base Units</h3>
+
+<p>• Length — metre (m)</p>
+<p>• Mass — kilogram (kg)</p>
+<p>• Time — second (s)</p>
+<p>• Electric current — ampere (A)</p>
+<p>• Temperature — kelvin (K)</p>
+
+<h3>🧠 NEET Point</h3>
+<p>Measurement numerical value और unit से express किया जाता है।</p>
+`,
+
+"Some Basic Concepts of Chemistry":`
+<h3>🧪 Some Basic Concepts of Chemistry</h3>
+
+<p><b>Matter:</b> Anything which has mass and occupies space.</p>
+
+<h3>⭐ Important Points</h3>
+
+<p>• Atomic mass</p>
+<p>• Molecular mass</p>
+<p>• Mole concept</p>
+<p>• Molar mass</p>
+<p>• Avogadro number</p>
+
+<h3>🧠 NEET Point</h3>
+<p>One mole contains approximately 6.022 × 10²³ particles.</p>
+`
+
+};
+
+notes["Animal Science"]=`
+<h3>🐄 Animal Science</h3>
+
+<p>Animal Science में animals की structure, functions, nutrition और management का basic study किया जाता है।</p>
+
+<h3>⭐ Important Topics</h3>
+<p>• Animal classification</p>
+<p>• Animal nutrition</p>
+<p>• Animal body systems</p>
+<p>• Domestic animals</p>
+`;
+
+notes["Veterinary Biology"]=`
+<h3>🧬 Veterinary Biology</h3>
+
+<p>Veterinary Biology में animals से संबंधित biological concepts का अध्ययन किया जाता है।</p>
+
+<h3>⭐ Important Topics</h3>
+<p>• Animal tissues</p>
+<p>• Animal organs</p>
+<p>• Body systems</p>
+<p>• Animal diseases — basic concepts</p>
+`;
+
+notes["Animal Scientific Names"]=`
+<h3>🔬 Animal Scientific Names</h3>
+
+<p>Scientific name दो शब्दों से बना होता है — Genus + Species.</p>
+
+<p>🐄 Cow — <i>Bos indicus</i></p>
+<p>🐃 Buffalo — <i>Bubalus bubalis</i></p>
+<p>🐐 Goat — <i>Capra hircus</i></p>
+<p>🐑 Sheep — <i>Ovis aries</i></p>
+<p>🐕 Dog — <i>Canis familiaris</i></p>
+<p>🐈 Cat — <i>Felis catus</i></p>
+`;
+
+notes["Veterinary Important Questions"]=`
+<h3>📝 Veterinary Important Questions</h3>
+
+<p>इस section में Veterinary entrance के important questions बाद में जोड़े जाएंगे।</p>
+`;
+
+notes["Veterinary Model Papers"]=`
+<h3>📄 Veterinary Model Papers</h3>
+
+<p>यहाँ Veterinary entrance के model papers और practice material बाद में जोड़ा जाएगा।</p>
+`;
+
+function createChapters(){
+
+for(let subject in subjects){
+
+let box=document.getElementById(subject+"List");
+
+subjects[subject].forEach(function(name,index){
+
+box.innerHTML+=`
+
+<div class="card">
+
+<span class="tag">
+Chapter ${String(index+1).padStart(2,"0")}
+</span>
+
+<h2>${name}</h2>
+
+<div class="topic">
+📚 NEET + Veterinary Notes
+</div>
+
+<button onclick="openNotes('${name}')">
+📖 Open Notes
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+}
+
+createChapters();
+
+let previousPage="home";
+
+function openPage(page){
+
+document.querySelectorAll(".page").forEach(function(p){
+p.style.display="none";
+});
+
+document.getElementById("home").style.display="none";
+
+document.getElementById(page).style.display="block";
+
+previousPage=page;
+
+window.scrollTo(0,0);
+}
+
+function openNotes(name){
+
+document.querySelectorAll(".page").forEach(function(p){
+p.style.display="none";
+});
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("notes").style.display="block";
+
+document.getElementById("noteTitle").innerHTML="📖 "+name;
+
+if(notes[name]){
+
+document.getElementById("noteContent").innerHTML=notes[name];
+
+}else{
+
+document.getElementById("noteContent").innerHTML=`
+
+<h3>📚 Notes Coming Soon</h3>
+
+<p>इस chapter के detailed Hindi + English NEET + Veterinary notes जल्द यहाँ जोड़े जाएंगे।</p>
+
+`;
+
+}
+
+window.scrollTo(0,0);
+}
+
+function goBack(){
+
+document.getElementById("notes").style.display="none";
+
+document.getElementById(previousPage).style.display="block";
+
+window.scrollTo(0,0);
+}
+
+function goHome(){
+
+document.querySelectorAll(".page").forEach(function(p){
+p.style.display="none";
+});
+
+document.getElementById("home").style.display="block";
+
+window.scrollTo(0,0);
+}
+
+</script>
+
+</body>
+  </html>
