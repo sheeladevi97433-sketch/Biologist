@@ -1,100 +1,228 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Biologist</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{margin:0;font-family:Arial;background:#f2f8f6;color:#183b32}
-.header{background:linear-gradient(135deg,#075e54,#0b8f7a);color:white;padding:25px 20px;border-radius:0 0 25px 25px}
-.logo{font-size:28px;font-weight:bold}
-.container{padding:18px}
-.page{display:none}
-.card{background:white;margin:12px 0;padding:18px;border-radius:18px;box-shadow:0 4px 12px #d5dfdc}
-.click{cursor:pointer}
-.tag{display:inline-block;background:#e5f7f2;color:#08705f;padding:6px 10px;border-radius:10px;font-size:12px}
-.topic{background:#f1faf7;padding:12px;margin:10px 0;border-radius:12px}
-button{border:0;padding:11px 16px;border-radius:10px;background:#075e54;color:white;font-size:15px;margin-top:8px}
-.back{background:#555}
-.note{line-height:1.7;background:white;padding:20px;border-radius:18px}
+body{
+margin:0;
+font-family:Arial;
+background:#eefaf7;
+color:#123;
+}
+
+header{
+background:#087f5b;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.box{padding:15px}
+
+.card{
+background:white;
+margin:12px 0;
+padding:18px;
+border-radius:15px;
+box-shadow:0 3px 10px #bbb;
+}
+
+button{
+background:#087f5b;
+color:white;
+border:0;
+padding:10px 15px;
+border-radius:8px;
+margin-top:8px;
+}
+
+.back{background:#444}
+.hide{display:none}
+
+.classbtn{
+font-size:18px;
+width:100%;
+padding:16px;
+margin:8px 0;
+}
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<div class="logo">🧬 BIOLOGIST</div>
+<header>
+<h1>🧬 Biologist</h1>
 <p>NEET + Veterinary Study Hub</p>
+</header>
+
+
+<!-- HOME -->
+
+<div id="home" class="box">
+
+<h2>📚 Select Class</h2>
+
+<div class="card classbtn" onclick="show('class11')">
+📘 Class 11
 </div>
 
-<div id="home" class="container">
-
-<h2>📚 Subjects</h2>
-
-<div class="card click" onclick="openPage('biology')">
-<h2>🧬 Biology</h2>
-<p>Class 11 • NEET + Veterinary</p>
-<span class="tag">22 Chapters</span>
-</div>
-
-<div class="card click" onclick="openPage('physics')">
-<h2>⚡ Physics</h2>
-<p>Class 11 • NEET + Veterinary</p>
-</div>
-
-<div class="card click" onclick="openPage('chemistry')">
-<h2>🧪 Chemistry</h2>
-<p>Class 11 • NEET + Veterinary</p>
-</div>
-
-<div class="card click" onclick="openPage('veterinary')">
-<h2>🐾 Veterinary</h2>
-<p>Entrance Exam Preparation</p>
+<div class="card classbtn" onclick="show('class12')">
+📗 Class 12
 </div>
 
 </div>
 
-<div id="biology" class="container page">
-<h2>🧬 Biology</h2>
-<div id="biologyList"></div>
-<button class="back" onclick="goHome()">🏠 Home</button>
+
+<!-- CLASS 11 -->
+
+<div id="class11" class="box hide">
+
+<button class="back" onclick="home()">← Home</button>
+
+<h2>📘 Class 11</h2>
+
+<div class="card" onclick="show('bio11')">
+🧬 Biology
 </div>
 
-<div id="physics" class="container page">
-<h2>⚡ Physics</h2>
-<div id="physicsList"></div>
-<button class="back" onclick="goHome()">🏠 Home</button>
+<div class="card" onclick="show('phy11')">
+⚡ Physics
 </div>
 
-<div id="chemistry" class="container page">
-<h2>🧪 Chemistry</h2>
-<div id="chemistryList"></div>
-<button class="back" onclick="goHome()">🏠 Home</button>
+<div class="card" onclick="show('chem11')">
+🧪 Chemistry
 </div>
 
-<div id="veterinary" class="container page">
-<h2>🐾 Veterinary</h2>
-<div id="veterinaryList"></div>
-<button class="back" onclick="goHome()">🏠 Home</button>
+<div class="card" onclick="show('vet11')">
+🐾 Veterinary
 </div>
 
-<div id="notes" class="container page">
-
-<h2 id="noteTitle">📖 Notes</h2>
-
-<div class="note">
-<div id="noteContent"></div>
 </div>
 
-<button class="back" onclick="goBack()">⬅️ Back</button>
+
+<!-- CLASS 12 -->
+
+<div id="class12" class="box hide">
+
+<button class="back" onclick="home()">← Home</button>
+
+<h2>📗 Class 12</h2>
+
+<div class="card" onclick="show('bio12')">
+🧬 Biology
+</div>
+
+<div class="card" onclick="show('phy12')">
+⚡ Physics
+</div>
+
+<div class="card" onclick="show('chem12')">
+🧪 Chemistry
+</div>
+
+<div class="card" onclick="show('vet12')">
+🐾 Veterinary
+</div>
 
 </div>
+
+
+<!-- CLASS 11 BIOLOGY -->
+
+<div id="bio11" class="box hide">
+<button class="back" onclick="show('class11')">← Back</button>
+<h2>🧬 Class 11 Biology</h2>
+<div id="bio11List"></div>
+</div>
+
+
+<!-- CLASS 11 PHYSICS -->
+
+<div id="phy11" class="box hide">
+<button class="back" onclick="show('class11')">← Back</button>
+<h2>⚡ Class 11 Physics</h2>
+<div id="phy11List"></div>
+</div>
+
+
+<!-- CLASS 11 CHEMISTRY -->
+
+<div id="chem11" class="box hide">
+<button class="back" onclick="show('class11')">← Back</button>
+<h2>🧪 Class 11 Chemistry</h2>
+<div id="chem11List"></div>
+</div>
+
+
+<!-- CLASS 11 VETERINARY -->
+
+<div id="vet11" class="box hide">
+<button class="back" onclick="show('class11')">← Back</button>
+<h2>🐾 Class 11 Veterinary</h2>
+<div id="vet11List"></div>
+</div>
+
+
+<!-- CLASS 12 BIOLOGY -->
+
+<div id="bio12" class="box hide">
+<button class="back" onclick="show('class12')">← Back</button>
+<h2>🧬 Class 12 Biology</h2>
+<div id="bio12List"></div>
+</div>
+
+
+<!-- CLASS 12 PHYSICS -->
+
+<div id="phy12" class="box hide">
+<button class="back" onclick="show('class12')">← Back</button>
+<h2>⚡ Class 12 Physics</h2>
+<div id="phy12List"></div>
+</div>
+
+
+<!-- CLASS 12 CHEMISTRY -->
+
+<div id="chem12" class="box hide">
+<button class="back" onclick="show('class12')">← Back</button>
+<h2>🧪 Class 12 Chemistry</h2>
+<div id="chem12List"></div>
+</div>
+
+
+<!-- CLASS 12 VETERINARY -->
+
+<div id="vet12" class="box hide">
+<button class="back" onclick="show('class12')">← Back</button>
+<h2>🐾 Class 12 Veterinary</h2>
+<div id="vet12List"></div>
+</div>
+
+
+<!-- NOTES -->
+
+<div id="notes" class="box hide">
+
+<button class="back" onclick="goBack()">← Back</button>
+
+<h2 id="nt"></h2>
+
+<div class="card">
+📚 Notes Coming Soon
+</div>
+
+</div>
+
 
 <script>
 
-const subjects={
+/* =========================
+   CLASS 11 BIOLOGY
+========================= */
 
-biology:[
+const bio11=[
 "The Living World",
 "Biological Classification",
 "Plant Kingdom",
@@ -117,9 +245,14 @@ biology:[
 "Locomotion and Movement",
 "Neural Control and Coordination",
 "Chemical Coordination and Integration"
-],
+];
 
-physics:[
+
+/* =========================
+   CLASS 11 PHYSICS
+========================= */
+
+const phy11=[
 "Units and Measurements",
 "Motion in a Straight Line",
 "Motion in a Plane",
@@ -134,247 +267,198 @@ physics:[
 "Kinetic Theory",
 "Oscillations",
 "Waves"
-],
+];
 
-chemistry:[
+
+/* =========================
+   CLASS 11 CHEMISTRY
+========================= */
+
+const chem11=[
 "Some Basic Concepts of Chemistry",
 "Structure of Atom",
-"Classification of Elements and Periodicity",
+"Classification of Elements and Periodicity in Properties",
 "Chemical Bonding and Molecular Structure",
 "Thermodynamics",
 "Equilibrium",
 "Redox Reactions",
-"Organic Chemistry – Basic Principles",
-"Hydrocarbons",
-"Solutions",
-"States of Matter",
-"Chemical Kinetics",
-"Environmental Chemistry"
-],
+"Organic Chemistry – Basic Principles and Techniques",
+"Hydrocarbons"
+];
 
-veterinary:[
+
+/* =========================
+   CLASS 11 VETERINARY
+========================= */
+
+const vet11=[
 "Animal Science",
 "Veterinary Biology",
 "Animal Scientific Names",
-"Veterinary Important Questions",
+"Veterinary Important Topics",
 "Veterinary Model Papers"
-]
+];
 
-};
 
-const notes={
+/* =========================
+   CLASS 12 BIOLOGY
+========================= */
 
-"The Living World":`
-<h3>🌱 The Living World</h3>
+const bio12=[
+"Sexual Reproduction in Flowering Plants",
+"Human Reproduction",
+"Reproductive Health",
+"Principles of Inheritance and Variation",
+"Molecular Basis of Inheritance",
+"Evolution",
+"Human Health and Disease",
+"Strategies for Enhancement in Food Production",
+"Microbes in Human Welfare",
+"Biotechnology: Principles and Processes",
+"Biotechnology and Its Applications",
+"Organisms and Populations",
+"Ecosystem",
+"Biodiversity and Conservation"
+];
 
-<p><b>Living World:</b> जीव-जगत में सभी जीवित organisms का अध्ययन किया जाता है।</p>
 
-<h3>⭐ Important Points</h3>
+/* =========================
+   CLASS 12 PHYSICS
+========================= */
 
-<p>• Living organisms show growth.</p>
-<p>• Living organisms reproduce.</p>
-<p>• Living organisms show metabolism.</p>
-<p>• Living organisms respond to stimuli.</p>
+const phy12=[
+"Electric Charges and Fields",
+"Electrostatic Potential and Capacitance",
+"Current Electricity",
+"Moving Charges and Magnetism",
+"Magnetism and Matter",
+"Electromagnetic Induction",
+"Alternating Current",
+"Electromagnetic Waves",
+"Ray Optics and Optical Instruments",
+"Wave Optics",
+"Dual Nature of Radiation and Matter",
+"Atoms",
+"Nuclei",
+"Semiconductor Electronics"
+];
 
-<h3>🧬 NEET Point</h3>
-<p>Metabolism is an important characteristic of living organisms.</p>
 
-<h3>🐾 Veterinary Point</h3>
-<p>Animals are living organisms and show nutrition, respiration, growth, reproduction and response.</p>
-`,
+/* =========================
+   CLASS 12 CHEMISTRY
+========================= */
 
-"Units and Measurements":`
-<h3>⚡ Units and Measurements</h3>
+const chem12=[
+"Solutions",
+"Electrochemistry",
+"Chemical Kinetics",
+"Surface Chemistry",
+"General Principles and Processes of Isolation of Elements",
+"p-Block Elements",
+"d- and f-Block Elements",
+"Coordination Compounds",
+"Haloalkanes and Haloarenes",
+"Alcohols, Phenols and Ethers",
+"Aldehydes, Ketones and Carboxylic Acids",
+"Amines",
+"Biomolecules",
+"Polymers",
+"Chemistry in Everyday Life"
+];
 
-<p><b>Physical Quantity:</b> ऐसी quantity जिसे measure किया जा सके।</p>
 
-<h3>⭐ SI Base Units</h3>
+/* =========================
+   CLASS 12 VETERINARY
+========================= */
 
-<p>• Length — metre (m)</p>
-<p>• Mass — kilogram (kg)</p>
-<p>• Time — second (s)</p>
-<p>• Electric current — ampere (A)</p>
-<p>• Temperature — kelvin (K)</p>
+const vet12=[
+"Veterinary Biology",
+"Animal Anatomy Basics",
+"Animal Physiology Basics",
+"Animal Nutrition",
+"Animal Scientific Names",
+"Veterinary Important Topics",
+"Veterinary Model Papers"
+];
 
-<h3>🧠 NEET Point</h3>
-<p>Measurement numerical value और unit से express किया जाता है।</p>
-`,
 
-"Some Basic Concepts of Chemistry":`
-<h3>🧪 Some Basic Concepts of Chemistry</h3>
+/* =========================
+   LIST FUNCTION
+========================= */
 
-<p><b>Matter:</b> Anything which has mass and occupies space.</p>
+function list(id,data){
 
-<h3>⭐ Important Points</h3>
+document.getElementById(id).innerHTML=data.map(x=>
 
-<p>• Atomic mass</p>
-<p>• Molecular mass</p>
-<p>• Mole concept</p>
-<p>• Molar mass</p>
-<p>• Avogadro number</p>
+`<div class="card">
 
-<h3>🧠 NEET Point</h3>
-<p>One mole contains approximately 6.022 × 10²³ particles.</p>
-`
+<b>${x}</b>
 
-};
+<br>
 
-notes["Animal Science"]=`
-<h3>🐄 Animal Science</h3>
-
-<p>Animal Science में animals की structure, functions, nutrition और management का basic study किया जाता है।</p>
-
-<h3>⭐ Important Topics</h3>
-<p>• Animal classification</p>
-<p>• Animal nutrition</p>
-<p>• Animal body systems</p>
-<p>• Domestic animals</p>
-`;
-
-notes["Veterinary Biology"]=`
-<h3>🧬 Veterinary Biology</h3>
-
-<p>Veterinary Biology में animals से संबंधित biological concepts का अध्ययन किया जाता है।</p>
-
-<h3>⭐ Important Topics</h3>
-<p>• Animal tissues</p>
-<p>• Animal organs</p>
-<p>• Body systems</p>
-<p>• Animal diseases — basic concepts</p>
-`;
-
-notes["Animal Scientific Names"]=`
-<h3>🔬 Animal Scientific Names</h3>
-
-<p>Scientific name दो शब्दों से बना होता है — Genus + Species.</p>
-
-<p>🐄 Cow — <i>Bos indicus</i></p>
-<p>🐃 Buffalo — <i>Bubalus bubalis</i></p>
-<p>🐐 Goat — <i>Capra hircus</i></p>
-<p>🐑 Sheep — <i>Ovis aries</i></p>
-<p>🐕 Dog — <i>Canis familiaris</i></p>
-<p>🐈 Cat — <i>Felis catus</i></p>
-`;
-
-notes["Veterinary Important Questions"]=`
-<h3>📝 Veterinary Important Questions</h3>
-
-<p>इस section में Veterinary entrance के important questions बाद में जोड़े जाएंगे।</p>
-`;
-
-notes["Veterinary Model Papers"]=`
-<h3>📄 Veterinary Model Papers</h3>
-
-<p>यहाँ Veterinary entrance के model papers और practice material बाद में जोड़ा जाएगा।</p>
-`;
-
-function createChapters(){
-
-for(let subject in subjects){
-
-let box=document.getElementById(subject+"List");
-
-subjects[subject].forEach(function(name,index){
-
-box.innerHTML+=`
-
-<div class="card">
-
-<span class="tag">
-Chapter ${String(index+1).padStart(2,"0")}
-</span>
-
-<h2>${name}</h2>
-
-<div class="topic">
-📚 NEET + Veterinary Notes
-</div>
-
-<button onclick="openNotes('${name}')">
+<button onclick="notes('${x}')">
 📖 Open Notes
 </button>
 
-</div>
+</div>`
 
-`;
-
-});
+).join("");
 
 }
 
-}
 
-createChapters();
+/* LOAD ALL CHAPTERS */
 
-let previousPage="home";
+list("bio11List",bio11);
+list("phy11List",phy11);
+list("chem11List",chem11);
+list("vet11List",vet11);
 
-function openPage(page){
+list("bio12List",bio12);
+list("phy12List",phy12);
+list("chem12List",chem12);
+list("vet12List",vet12);
 
-document.querySelectorAll(".page").forEach(function(p){
-p.style.display="none";
-});
 
-document.getElementById("home").style.display="none";
+/* =========================
+   PAGE CONTROL
+========================= */
 
-document.getElementById(page).style.display="block";
+function show(id){
 
-previousPage=page;
+document.querySelectorAll(".box")
+.forEach(x=>x.classList.add("hide"));
 
-window.scrollTo(0,0);
-}
-
-function openNotes(name){
-
-document.querySelectorAll(".page").forEach(function(p){
-p.style.display="none";
-});
-
-document.getElementById("home").style.display="none";
-
-document.getElementById("notes").style.display="block";
-
-document.getElementById("noteTitle").innerHTML="📖 "+name;
-
-if(notes[name]){
-
-document.getElementById("noteContent").innerHTML=notes[name];
-
-}else{
-
-document.getElementById("noteContent").innerHTML=`
-
-<h3>📚 Notes Coming Soon</h3>
-
-<p>इस chapter के detailed Hindi + English NEET + Veterinary notes जल्द यहाँ जोड़े जाएंगे।</p>
-
-`;
+document.getElementById(id)
+.classList.remove("hide");
 
 }
 
-window.scrollTo(0,0);
+
+function home(){
+show("home");
 }
+
+
+/* NOTES */
+
+function notes(name){
+
+show("notes");
+
+document.getElementById("nt")
+.innerText=name;
+
+}
+
+
+/* BACK FROM NOTES */
 
 function goBack(){
-
-document.getElementById("notes").style.display="none";
-
-document.getElementById(previousPage).style.display="block";
-
-window.scrollTo(0,0);
-}
-
-function goHome(){
-
-document.querySelectorAll(".page").forEach(function(p){
-p.style.display="none";
-});
-
-document.getElementById("home").style.display="block";
-
-window.scrollTo(0,0);
+history.back();
 }
 
 </script>
 
 </body>
-  </
+  </html>
