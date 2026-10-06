@@ -1,336 +1,269 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Biologist</title>
+<title>🧬 Biologist - NEET + Veterinary</title>
 
 <style>
+*{
+  box-sizing:border-box;
+}
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#eefaf7;
-color:#123;
-line-height:1.6;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#eefaf7;
+  color:#123;
+  line-height:1.6;
 }
 
 header{
-background:#087f5b;
-color:white;
-padding:20px;
-text-align:center;
+  background:#087f5b;
+  color:white;
+  padding:22px 15px;
+  text-align:center;
 }
 
 header h1{
-margin:0;
+  margin:0;
+  font-size:30px;
+}
+
+header p{
+  margin:5px 0 0;
 }
 
 .box{
-padding:15px;
+  padding:15px;
+  max-width:900px;
+  margin:auto;
 }
 
 .card{
-background:white;
-margin:12px 0;
-padding:18px;
-border-radius:15px;
-box-shadow:0 3px 10px #bbb;
+  background:white;
+  margin:12px 0;
+  padding:18px;
+  border-radius:15px;
+  box-shadow:0 3px 10px #bbb;
 }
 
+.card h2,
 .card h3{
-color:#087f5b;
+  color:#087f5b;
 }
 
 button{
-background:#087f5b;
-color:white;
-border:0;
-padding:10px 15px;
-border-radius:8px;
-margin-top:8px;
-font-size:15px;
+  background:#087f5b;
+  color:white;
+  border:0;
+  padding:11px 16px;
+  border-radius:8px;
+  margin-top:8px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.9;
 }
 
 .back{
-background:#444;
-}
-
-.hide{
-display:none;
+  background:#444;
 }
 
 .classbtn{
-font-size:18px;
-width:100%;
-padding:16px;
-margin:8px 0;
+  font-size:19px;
+  width:100%;
+  padding:17px;
+  margin:8px 0;
+}
+
+.subjectbtn{
+  width:100%;
+  font-size:17px;
+  text-align:left;
+  padding:14px;
+}
+
+.chapterbtn{
+  width:100%;
+  text-align:left;
+  background:#f1f8f6;
+  color:#123;
+  border:1px solid #c9e5dc;
+}
+
+.chapterbtn:hover{
+  background:#dff3ec;
+}
+
+.hide{
+  display:none;
 }
 
 .highlight{
-background:#e8f8f5;
-border-left:5px solid #087f5b;
-padding:12px;
-margin:12px 0;
-border-radius:8px;
+  background:#e8f8f5;
+  border-left:5px solid #087f5b;
+  padding:12px;
+  margin:12px 0;
+  border-radius:8px;
 }
 
 .example{
-background:#fff8e1;
-padding:12px;
-border-radius:8px;
-margin-top:10px;
+  background:#fff8e1;
+  padding:12px;
+  border-radius:8px;
+  margin-top:10px;
 }
 
 .hierarchy{
-background:#eef6ff;
-padding:15px;
-border-radius:10px;
-text-align:center;
-font-weight:bold;
-color:#174ea6;
-overflow-x:auto;
+  background:#eef6ff;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:bold;
+  color:#174ea6;
+  overflow-x:auto;
 }
 
 ul{
-padding-left:25px;
+  padding-left:25px;
 }
 
-</style>
+.note-title{
+  color:#087f5b;
+  font-size:25px;
+}
 
+.small{
+  color:#666;
+  font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
-
 <header>
-
-<h1>🧬 Biologist</h1>
-
-<p>NEET + Veterinary Study Hub</p>
-
+  <h1>🧬 Biologist</h1>
+  <p>NEET + Veterinary Study Hub</p>
 </header>
 
 
 <!-- HOME -->
-
 <div id="home" class="box">
 
-<h2>📚 Select Class</h2>
+  <div class="card">
+    <h2>📚 Welcome to Biologist</h2>
+    <p>Class 11 और Class 12 के notes एक ही जगह पढ़ें।</p>
+  </div>
 
-<div class="card classbtn" onclick="show('class11')">
-📘 Class 11
-</div>
+  <button class="classbtn" onclick="show('class11')">
+    📘 Class 11
+  </button>
 
-<div class="card classbtn" onclick="show('class12')">
-📗 Class 12
-</div>
+  <button class="classbtn" onclick="show('class12')">
+    📗 Class 12
+  </button>
 
 </div>
 
 
 <!-- CLASS 11 -->
-
 <div id="class11" class="box hide">
 
-<button class="back" onclick="show('home')">
-← Home
-</button>
+  <button class="back" onclick="show('home')">⬅ Back</button>
 
-<h2>📘 Class 11</h2>
+  <div class="card">
+    <h2>📘 Class 11</h2>
 
-<div class="card" onclick="show('bio11')">
-🧬 Biology
-</div>
+    <button class="subjectbtn" onclick="showSubject('bio11')">
+      🧬 Biology
+    </button>
 
-<div class="card" onclick="show('phy11')">
-⚡ Physics
-</div>
+    <button class="subjectbtn" onclick="showSubject('phy11')">
+      ⚡ Physics
+    </button>
 
-<div class="card" onclick="show('chem11')">
-🧪 Chemistry
-</div>
+    <button class="subjectbtn" onclick="showSubject('chem11')">
+      🧪 Chemistry
+    </button>
 
-<div class="card" onclick="show('vet11')">
-🐾 Veterinary
-</div>
+    <button class="subjectbtn" onclick="showSubject('vet11')">
+      🐄 Veterinary
+    </button>
+  </div>
 
 </div>
 
 
 <!-- CLASS 12 -->
-
 <div id="class12" class="box hide">
 
-<button class="back" onclick="show('home')">
-← Home
-</button>
+  <button class="back" onclick="show('home')">⬅ Back</button>
 
-<h2>📗 Class 12</h2>
+  <div class="card">
+    <h2>📗 Class 12</h2>
 
-<div class="card" onclick="show('bio12')">
-🧬 Biology
-</div>
+    <button class="subjectbtn" onclick="showSubject('bio12')">
+      🧬 Biology
+    </button>
 
-<div class="card" onclick="show('phy12')">
-⚡ Physics
-</div>
+    <button class="subjectbtn" onclick="showSubject('phy12')">
+      ⚡ Physics
+    </button>
 
-<div class="card" onclick="show('chem12')">
-🧪 Chemistry
-</div>
+    <button class="subjectbtn" onclick="showSubject('chem12')">
+      🧪 Chemistry
+    </button>
 
-<div class="card" onclick="show('vet12')">
-🐾 Veterinary
-</div>
-
-</div>
-
-
-<!-- CLASS 11 BIOLOGY -->
-
-<div id="bio11" class="box hide">
-
-<button class="back" onclick="show('class11')">
-← Back
-</button>
-
-<h2>🧬 Class 11 Biology</h2>
-
-<div id="bio11List"></div>
+    <button class="subjectbtn" onclick="showSubject('vet12')">
+      🐄 Veterinary
+    </button>
+  </div>
 
 </div>
 
 
-<!-- CLASS 11 PHYSICS -->
+<!-- CHAPTER LISTS -->
 
-<div id="phy11" class="box hide">
+<div id="bio11" class="box hide"></div>
+<div id="phy11" class="box hide"></div>
+<div id="chem11" class="box hide"></div>
+<div id="vet11" class="box hide"></div>
 
-<button class="back" onclick="show('class11')">
-← Back
-</button>
-
-<h2>⚡ Class 11 Physics</h2>
-
-<div id="phy11List"></div>
-
-</div>
-
-
-<!-- CLASS 11 CHEMISTRY -->
-
-<div id="chem11" class="box hide">
-
-<button class="back" onclick="show('class11')">
-← Back
-</button>
-
-<h2>🧪 Class 11 Chemistry</h2>
-
-<div id="chem11List"></div>
-
-</div>
-
-
-<!-- CLASS 11 VETERINARY -->
-
-<div id="vet11" class="box hide">
-
-<button class="back" onclick="show('class11')">
-← Back
-</button>
-
-<h2>🐾 Class 11 Veterinary</h2>
-
-<div id="vet11List"></div>
-
-</div>
-
-
-<!-- CLASS 12 BIOLOGY -->
-
-<div id="bio12" class="box hide">
-
-<button class="back" onclick="show('class12')">
-← Back
-</button>
-
-<h2>🧬 Class 12 Biology</h2>
-
-<div id="bio12List"></div>
-
-</div>
-
-
-<!-- CLASS 12 PHYSICS -->
-
-<div id="phy12" class="box hide">
-
-<button class="back" onclick="show('class12')">
-← Back
-</button>
-
-<h2>⚡ Class 12 Physics</h2>
-
-<div id="phy12List"></div>
-
-</div>
-
-
-<!-- CLASS 12 CHEMISTRY -->
-
-<div id="chem12" class="box hide">
-
-<button class="back" onclick="show('class12')">
-← Back
-</button>
-
-<h2>🧪 Class 12 Chemistry</h2>
-
-<div id="chem12List"></div>
-
-</div>
-
-
-<!-- CLASS 12 VETERINARY -->
-
-<div id="vet12" class="box hide">
-
-<button class="back" onclick="show('class12')">
-← Back
-</button>
-
-<h2>🐾 Class 12 Veterinary</h2>
-
-<div id="vet12List"></div>
-
-</div>
+<div id="bio12" class="box hide"></div>
+<div id="phy12" class="box hide"></div>
+<div id="chem12" class="box hide"></div>
+<div id="vet12" class="box hide"></div>
 
 
 <!-- NOTES -->
-
 <div id="notes" class="box hide">
 
-<button class="back" onclick="backToChapterList()">
-← Back
-</button>
+  <button class="back" onclick="backToChapterList()">
+    ⬅ Back to Chapters
+  </button>
 
-<h2 id="nt"></h2>
-
-<div id="noteContent"></div>
+  <div class="card">
+    <h2 id="nt" class="note-title"></h2>
+    <div id="noteContent"></div>
+  </div>
 
 </div>
 
 
 <script>
 
-
 /* =========================
-CLASS 11 BIOLOGY
+   CHAPTER DATA
 ========================= */
 
-const bio11=[
+const data = {
 
+bio11:[
 "The Living World",
 "Biological Classification",
 "Plant Kingdom",
@@ -353,16 +286,9 @@ const bio11=[
 "Locomotion and Movement",
 "Neural Control and Coordination",
 "Chemical Coordination and Integration"
+],
 
-];
-
-
-/* =========================
-CLASS 11 PHYSICS
-========================= */
-
-const phy11=[
-
+phy11:[
 "Units and Measurements",
 "Motion in a Straight Line",
 "Motion in a Plane",
@@ -377,16 +303,9 @@ const phy11=[
 "Kinetic Theory",
 "Oscillations",
 "Waves"
+],
 
-];
-
-
-/* =========================
-CLASS 11 CHEMISTRY
-========================= */
-
-const chem11=[
-
+chem11:[
 "Some Basic Concepts of Chemistry",
 "Structure of Atom",
 "Classification of Elements and Periodicity in Properties",
@@ -396,31 +315,17 @@ const chem11=[
 "Redox Reactions",
 "Organic Chemistry – Basic Principles and Techniques",
 "Hydrocarbons"
+],
 
-];
-
-
-/* =========================
-CLASS 11 VETERINARY
-========================= */
-
-const vet11=[
-
+vet11:[
 "Animal Science",
 "Veterinary Biology",
 "Animal Scientific Names",
 "Veterinary Important Topics",
 "Veterinary Model Papers"
+],
 
-];
-
-
-/* =========================
-CLASS 12 BIOLOGY
-========================= */
-
-const bio12=[
-
+bio12:[
 "Sexual Reproduction in Flowering Plants",
 "Human Reproduction",
 "Reproductive Health",
@@ -435,16 +340,9 @@ const bio12=[
 "Organisms and Populations",
 "Ecosystem",
 "Biodiversity and Conservation"
+],
 
-];
-
-
-/* =========================
-CLASS 12 PHYSICS
-========================= */
-
-const phy12=[
-
+phy12:[
 "Electric Charges and Fields",
 "Electrostatic Potential and Capacitance",
 "Current Electricity",
@@ -459,16 +357,9 @@ const phy12=[
 "Atoms",
 "Nuclei",
 "Semiconductor Electronics"
+],
 
-];
-
-
-/* =========================
-CLASS 12 CHEMISTRY
-========================= */
-
-const chem12=[
-
+chem12:[
 "Solutions",
 "Electrochemistry",
 "Chemical Kinetics",
@@ -484,16 +375,9 @@ const chem12=[
 "Biomolecules",
 "Polymers",
 "Chemistry in Everyday Life"
+],
 
-];
-
-
-/* =========================
-CLASS 12 VETERINARY
-========================= */
-
-const vet12=[
-
+vet12:[
 "Veterinary Biology",
 "Animal Anatomy Basics",
 "Animal Physiology Basics",
@@ -501,83 +385,107 @@ const vet12=[
 "Animal Scientific Names",
 "Veterinary Important Topics",
 "Veterinary Model Papers"
+]
 
-];
+};
 
 
 /* =========================
-NOTES DATA
+   NOTES
+========================= */
+
+const notesData = {};
+
+
+/* =========================
+   THE LIVING WORLD
 ========================= */
 
 notesData["The Living World"] = `
-<div class="card">
-<h2>🌿 The Living World — जीव जगत</h2>
+
+<h2>🌿 The Living World</h2>
 
 <div class="highlight">
 <b>Class 11 Biology | NEET + Veterinary</b><br>
-इस chapter में जीवों की विशेषताएँ, जैव विविधता, वर्गीकरण, Taxonomy, Systematics,
-Taxonomic Hierarchy, Binomial Nomenclature और Taxonomic Aids का अध्ययन किया जाता है।
+इस chapter में जीवित संसार, जीवों की विशेषताएँ, Biodiversity,
+Taxonomy, Systematics, Taxonomic Hierarchy, Binomial Nomenclature
+और Taxonomic Aids का अध्ययन किया जाता है।
 </div>
 
-<h3>1. Biology क्या है?</h3>
-<p><b>Biology</b> शब्द दो शब्दों से बना है:</p>
+
+<h3>1. Biology</h3>
+
+<p>
+Biology जीवों तथा उनके जीवन का वैज्ञानिक अध्ययन है।
+</p>
+
 <ul>
-<li><b>Bios</b> = जीवन (Life)</li>
-<li><b>Logos</b> = अध्ययन (Study)</li>
+<li><b>Bio / Bios</b> = Life</li>
+<li><b>Logos</b> = Study</li>
 </ul>
-<p>अर्थात् Biology जीवों तथा उनके जीवन का वैज्ञानिक अध्ययन है।</p>
+
 
 <h3>2. Biology की प्रमुख शाखाएँ</h3>
+
 <ul>
 <li><b>Botany</b> — पौधों का अध्ययन</li>
 <li><b>Zoology</b> — जन्तुओं का अध्ययन</li>
 <li><b>Microbiology</b> — सूक्ष्मजीवों का अध्ययन</li>
-<li><b>Morphology</b> — जीव की बाहरी संरचना का अध्ययन</li>
-<li><b>Anatomy</b> — आंतरिक संरचना का अध्ययन</li>
-<li><b>Histology</b> — ऊतकों का अध्ययन</li>
+<li><b>Morphology</b> — बाहरी संरचना</li>
+<li><b>Anatomy</b> — आंतरिक संरचना</li>
 <li><b>Cytology</b> — कोशिका का अध्ययन</li>
-<li><b>Physiology</b> — शरीर की क्रियाओं का अध्ययन</li>
+<li><b>Histology</b> — ऊतकों का अध्ययन</li>
+<li><b>Physiology</b> — शारीरिक क्रियाओं का अध्ययन</li>
 <li><b>Genetics</b> — आनुवंशिकता का अध्ययन</li>
-<li><b>Ecology</b> — जीव और पर्यावरण के संबंधों का अध्ययन</li>
-<li><b>Taxonomy</b> — जीवों की पहचान, नामकरण और वर्गीकरण का विज्ञान</li>
+<li><b>Ecology</b> — जीव और पर्यावरण के संबंध</li>
+<li><b>Taxonomy</b> — पहचान, नामकरण और वर्गीकरण</li>
 </ul>
 
-<h3>3. जीवित (Living) की प्रमुख विशेषताएँ</h3>
 
-<div class="example">
-<b>मुख्य विशेषताएँ:</b><br>
-Growth + Reproduction + Metabolism + Cellular Organisation +
-Response to Stimuli + Consciousness
+<h3>3. What is Living?</h3>
+
+<p>
+जीवित जीवों में कुछ विशेष लक्षण पाए जाते हैं जो उन्हें निर्जीव वस्तुओं से अलग करते हैं।
+</p>
+
+<div class="highlight">
+<b>मुख्य Life Characteristics:</b><br>
+Growth + Reproduction + Metabolism +
+Cellular Organisation + Consciousness
 </div>
 
+
 <h3>4. Growth — वृद्धि</h3>
+
 <p>
-जीवों में आकार तथा द्रव्यमान में वृद्धि को Growth कहते हैं।
-बहुकोशिकीय जीवों में वृद्धि मुख्यतः कोशिकाओं की संख्या और आकार बढ़ने से होती है।
+जीवों के आकार तथा द्रव्यमान में वृद्धि को Growth कहते हैं।
 </p>
 
-<p><b>महत्त्वपूर्ण:</b> निर्जीव वस्तुओं में भी बाहरी पदार्थों के जमा होने से आकार बढ़ सकता है,
-लेकिन इसे जैविक Growth नहीं माना जाता।
+<p>
+बहुकोशिकीय जीवों में वृद्धि कोशिकाओं की संख्या और आकार में वृद्धि के कारण होती है।
 </p>
+
 
 <h3>5. Reproduction — प्रजनन</h3>
+
 <p>
-जीवों द्वारा अपने समान नई संतति उत्पन्न करने की प्रक्रिया को Reproduction कहते हैं।
+जीवों द्वारा अपने समान नई संतति उत्पन्न करने की प्रक्रिया Reproduction कहलाती है।
 </p>
 
 <ul>
-<li><b>Asexual Reproduction</b> — एक जनक से नई संतति</li>
-<li><b>Sexual Reproduction</b> — सामान्यतः दो जनकों से संबंधित प्रक्रिया</li>
+<li><b>Asexual Reproduction</b></li>
+<li><b>Sexual Reproduction</b></li>
 </ul>
 
-<p><b>Note:</b> सभी जीवों के लिए Reproduction अनिवार्य जीवन-लक्षण नहीं है।
-कुछ जीव जैसे worker bees तथा कुछ बाँझ जीव प्रजनन नहीं करते, फिर भी वे जीवित होते हैं।
-</p>
+<div class="example">
+<b>Important:</b> Reproduction individual organism के लिए अनिवार्य नहीं है।
+</div>
+
 
 <h3>6. Metabolism — उपापचय</h3>
+
 <p>
-जीव के शरीर में होने वाली सभी रासायनिक क्रियाओं के कुल योग को
-<b>Metabolism</b> कहते हैं।
+जीव के शरीर में होने वाली सभी रासायनिक क्रियाओं के कुल योग को Metabolism कहते हैं।
 </p>
 
 <ul>
@@ -585,35 +493,28 @@ Response to Stimuli + Consciousness
 <li><b>Catabolism</b> — अपघटनात्मक क्रियाएँ</li>
 </ul>
 
-<div class="highlight">
-<b>NEET Point:</b> Metabolic reactions living organisms की महत्वपूर्ण विशेषता हैं।
-</div>
 
-<h3>7. Cellular Organisation — कोशिकीय संगठन</h3>
+<h3>7. Cellular Organisation</h3>
+
 <p>
-सभी जीव कोशिकाओं से बने होते हैं। कोशिका जीवन की मूलभूत संरचनात्मक और क्रियात्मक इकाई है।
+कोशिका जीवन की मूलभूत संरचनात्मक और क्रियात्मक इकाई है।
 </p>
 
 <ul>
-<li>Unicellular — एक कोशिका वाले जीव</li>
-<li>Multicellular — अनेक कोशिकाओं वाले जीव</li>
+<li><b>Unicellular</b> — एक कोशिका वाले जीव</li>
+<li><b>Multicellular</b> — अनेक कोशिकाओं वाले जीव</li>
 </ul>
 
+
 <h3>8. Consciousness — चेतना</h3>
-<p>
-अपने वातावरण में होने वाले परिवर्तनों को महसूस करना तथा उनके प्रति प्रतिक्रिया देना
-जीवों की महत्वपूर्ण विशेषता है।
-</p>
 
 <p>
-उदाहरण: पौधे प्रकाश, गुरुत्वाकर्षण, जल आदि के प्रति प्रतिक्रिया करते हैं।
+जीव अपने वातावरण में होने वाले परिवर्तनों को महसूस कर सकते हैं
+और उनके प्रति प्रतिक्रिया दे सकते हैं।
 </p>
+
 
 <h3>9. Response to Stimuli</h3>
-<p>
-बाहरी या आंतरिक उत्तेजना के प्रति जीव द्वारा प्रतिक्रिया देना
-<b>Response to Stimuli</b> कहलाता है।
-</p>
 
 <ul>
 <li>Light</li>
@@ -623,455 +524,393 @@ Response to Stimuli + Consciousness
 <li>Touch</li>
 </ul>
 
+
 <h3>10. Biodiversity — जैव विविधता</h3>
+
 <p>
-पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के जीवों की विविधता को
-<b>Biodiversity</b> कहते हैं।
+पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के जीवों की विविधता को Biodiversity कहते हैं।
 </p>
 
-<div class="highlight">
-जीवों की संख्या बहुत अधिक होने के कारण उन्हें पहचानने और व्यवस्थित करने के लिए
-Classification की आवश्यकता होती है।
-</div>
 
-<h3>11. Classification — वर्गीकरण</h3>
+<h3>11. Classification</h3>
+
 <p>
-समानताओं और असमानताओं के आधार पर जीवों को विभिन्न समूहों में व्यवस्थित करने की प्रक्रिया
-<b>Classification</b> कहलाती है।
+समानताओं और असमानताओं के आधार पर जीवों को अलग-अलग समूहों में व्यवस्थित करना
+Classification कहलाता है।
 </p>
 
-<h3>12. Taxonomy — वर्गिकी</h3>
+
+<h3>12. Taxonomy</h3>
+
 <p>
-जीवों की <b>Identification, Nomenclature और Classification</b> के अध्ययन को
-Taxonomy कहते हैं।
+जीवों की <b>Identification, Nomenclature और Classification</b>
+के अध्ययन को Taxonomy कहते हैं।
 </p>
 
 <ul>
-<li><b>Identification</b> — जीव की पहचान</li>
-<li><b>Nomenclature</b> — वैज्ञानिक नाम देना</li>
-<li><b>Classification</b> — जीवों को समूहों में रखना</li>
+<li><b>Identification</b> — पहचान</li>
+<li><b>Nomenclature</b> — नामकरण</li>
+<li><b>Classification</b> — वर्गीकरण</li>
 </ul>
 
-<h3>13. Systematics — क्रमविज्ञान</h3>
+
+<h3>13. Systematics</h3>
+
 <p>
-Systematics में जीवों की विविधता तथा उनके विकासात्मक संबंधों का अध्ययन किया जाता है।
+Systematics में जीवों की विविधता तथा उनके संबंधों का अध्ययन किया जाता है।
 </p>
 
+
 <h3>14. Taxonomic Hierarchy</h3>
+
 <p>
-जीवों को छोटे से बड़े समूहों में व्यवस्थित करने की क्रमबद्ध व्यवस्था को
-<b>Taxonomic Hierarchy</b> कहते हैं।
+जीवों को विभिन्न taxonomic categories में क्रमबद्ध रूप से व्यवस्थित करने को
+Taxonomic Hierarchy कहते हैं।
 </p>
 
 <div class="hierarchy">
-Species → Genus → Family → Order → Class → Phylum/Division → Kingdom
+Kingdom
+↓
+Phylum / Division
+↓
+Class
+↓
+Order
+↓
+Family
+↓
+Genus
+↓
+Species
 </div>
 
-<h3>15. Species — जाति</h3>
+
+<h3>15. Species</h3>
+
 <p>
-Taxonomic hierarchy की मूलभूत इकाई <b>Species</b> है।
-एक species के जीव सामान्यतः समान विशेषताओं वाले होते हैं और प्राकृतिक परिस्थितियों में
-आपस में प्रजनन कर सकते हैं।
+Species taxonomic hierarchy की मूलभूत इकाई है।
 </p>
 
 <div class="example">
-<b>Example:</b> Homo sapiens — मानव की species
+<b>Example:</b> Homo sapiens
 </div>
 
-<h3>16. Genus — वंश</h3>
+
+<h3>16. Genus</h3>
+
 <p>
-समान विशेषताओं वाली निकट संबंधी species को एक साथ रखकर Genus बनाया जाता है।
+समान विशेषताओं वाली संबंधित species को एक genus में रखा जाता है।
 </p>
 
-<h3>17. Family — कुल</h3>
+
+<h3>17. Family</h3>
+
 <p>
-समान विशेषताओं वाले संबंधित genera को एक साथ रखने से Family बनती है।
+संबंधित genera को एक साथ रखने पर Family बनती है।
 </p>
 
-<h3>18. Order — गण</h3>
+
+<h3>18. Order</h3>
+
 <p>
-समान या संबंधित families को एक साथ रखने पर Order बनता है।
+संबंधित families को एक साथ रखने पर Order बनता है।
 </p>
 
-<h3>19. Class — वर्ग</h3>
+
+<h3>19. Class</h3>
+
 <p>
 संबंधित orders को एक साथ रखने पर Class बनती है।
 </p>
 
-<h3>20. Phylum /
 
-<div class="card">
-
-<h3>📖 जीव जगत (The Living World)</h3>
-
-<h3>1. जीव विज्ञान (Biology)</h3>
+<h3>20. Phylum / Division</h3>
 
 <p>
-<b>Biology</b> शब्द दो ग्रीक शब्दों से मिलकर बना है:
-</p>
-
-<ul>
-
-<li>
-<b>Bios</b> = Life (जीवन)
-</li>
-
-<li>
-<b>Logos</b> = Study (अध्ययन)
-</li>
-
-</ul>
-
-<div class="highlight">
-
-जीवों के जीवन का अध्ययन करने वाले विज्ञान को
-<b>जीव विज्ञान (Biology)</b> कहते हैं।
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>2. जीव विज्ञान की प्रमुख शाखाएँ</h3>
-
-<h4>① प्राणी विज्ञान (Zoology)</h4>
-
-<p>
-
-जीव विज्ञान की वह शाखा जिसमें
-<b>जंतुओं/प्राणियों का अध्ययन</b> किया जाता है,
-उसे <b>Zoology</b> कहते हैं।
-
+Animal classification में Phylum तथा plant classification में Division
+शब्द का प्रयोग किया जाता है।
 </p>
 
 
-<h4>② वनस्पति विज्ञान (Botany)</h4>
+<h3>21. Kingdom</h3>
 
 <p>
-
-जीव विज्ञान की वह शाखा जिसमें
-<b>पादपों (Plants)</b> का अध्ययन किया जाता है,
-उसे <b>Botany</b> कहते हैं।
-
+यह taxonomic hierarchy की एक बड़ी category है जिसमें संबंधित phyla/divisions
+को रखा जाता है।
 </p>
 
-</div>
 
-
-<div class="card">
-
-<h3>3. Biology की प्रमुख शाखाएँ</h3>
-
-<ul>
-
-<li>
-<b>Morphology</b> → बाह्य आकार एवं संरचना का अध्ययन
-</li>
-
-<li>
-<b>Anatomy</b> → आंतरिक संरचना का अध्ययन
-</li>
-
-<li>
-<b>Cytology</b> → कोशिका का अध्ययन
-</li>
-
-<li>
-<b>Histology</b> → ऊतकों का अध्ययन
-</li>
-
-<li>
-<b>Physiology</b> → जीवों के कार्यों का अध्ययन
-</li>
-
-<li>
-<b>Genetics</b> → आनुवंशिकता का अध्ययन
-</li>
-
-<li>
-<b>Ecology</b> → जीव एवं पर्यावरण के संबंध का अध्ययन
-</li>
-
-<li>
-<b>Taxonomy</b> → जीवों का वर्गीकरण एवं नामकरण
-</li>
-
-<li>
-<b>Embryology</b> → भ्रूण के विकास का अध्ययन
-</li>
-
-<li>
-<b>Evolution</b> → जीवों के क्रमिक विकास का अध्ययन
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>4. जीवों की प्रमुख विशेषताएँ</h3>
-
-<ul>
-
-<li>
-<b>Growth</b> → वृद्धि
-</li>
-
-<li>
-<b>Reproduction</b> → प्रजनन
-</li>
-
-<li>
-<b>Metabolism</b> → उपापचय
-</li>
-
-<li>
-<b>Cellular Organisation</b> → कोशिकीय संगठन
-</li>
-
-<li>
-<b>Response to Stimuli</b> → उद्दीपन के प्रति प्रतिक्रिया
-</li>
-
-<li>
-<b>Consciousness</b> → चेतना
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>5. वर्गिकी (Taxonomy)</h3>
-
-<div class="highlight">
-
-जीवों की <b>पहचान, नामकरण तथा वर्गीकरण</b>
-से संबंधित विज्ञान को
-<b>Taxonomy (वर्गिकी)</b> कहते हैं।
-
-</div>
-
-<h4>Taxonomic Hierarchy</h4>
-
-<div class="hierarchy">
-
-Kingdom → Phylum/Division → Class → Order → Family → Genus → Species
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>6. वैज्ञानिक नामकरण (Scientific Nomenclature)</h3>
+<h3>22. Binomial Nomenclature</h3>
 
 <p>
-
-जीवों को वैज्ञानिक नाम देने की प्रक्रिया को
-<b>Scientific Nomenclature</b> कहते हैं।
-
+जिस वैज्ञानिक नामकरण पद्धति में किसी जीव का नाम दो शब्दों में लिखा जाता है,
+उसे Binomial Nomenclature कहते हैं।
 </p>
-
-<h4>द्विनाम पद्धति (Binomial Nomenclature)</h4>
-
-<p>
-
-इसमें प्रत्येक जीव का वैज्ञानिक नाम दो शब्दों से बना होता है:
-
-</p>
-
-<ul>
-
-<li>
-<b>Genus</b> → वंश
-</li>
-
-<li>
-<b>Species</b> → जाति
-</li>
-
-</ul>
 
 <div class="example">
+<b>Homo sapiens</b><br>
+Homo = Genus<br>
+sapiens = Specific epithet
+</div>
 
-<b>Example: Homo sapiens</b>
+
+<h3>23. Scientific Name लिखने के नियम</h3>
+
+<ul>
+<li>वैज्ञानिक नाम दो शब्दों का होता है।</li>
+<li>पहला शब्द Genus होता है।</li>
+<li>दूसरा शब्द Specific epithet होता है।</li>
+<li>Genus का पहला अक्षर Capital होता है।</li>
+<li>Specific epithet छोटे अक्षर से लिखा जाता है।</li>
+<li>Printed form में नाम Italic लिखा जाता है।</li>
+<li>Handwritten form में दोनों शब्दों को अलग-अलग underline किया जाता है।</li>
+</ul>
+
+
+<h3>24. Carolus Linnaeus</h3>
+
+<p>
+Carolus Linnaeus ने वैज्ञानिक नामकरण और वर्गीकरण के विकास में महत्वपूर्ण योगदान दिया।
+उन्हें Father of Taxonomy कहा जाता है।
+</p>
+
+
+<h3>25. Taxonomic Aids</h3>
+
+<p>
+जीवों की पहचान, अध्ययन और वर्गीकरण में सहायता करने वाले साधनों को
+Taxonomic Aids कहते हैं।
+</p>
+
+
+<h3>26. Herbarium</h3>
+
+<p>
+Herbarium सूखे तथा संरक्षित plant specimens का व्यवस्थित संग्रह होता है।
+</p>
+
+
+<h3>27. Botanical Garden</h3>
+
+<p>
+Botanical Garden में विभिन्न प्रकार के जीवित पौधों को वैज्ञानिक अध्ययन,
+पहचान तथा संरक्षण के लिए रखा जाता है।
+</p>
+
+
+<h3>28. Museum</h3>
+
+<p>
+Museum में पौधों और जन्तुओं के preserved specimens को अध्ययन के लिए सुरक्षित रखा जाता है।
+</p>
+
+
+<h3>29. Zoological Park</h3>
+
+<p>
+Zoological Park में जीवित wild animals को नियंत्रित एवं उपयुक्त परिस्थितियों में रखा जाता है।
+</p>
+
+
+<h3>30. Key</h3>
+
+<p>
+जीवों की पहचान के लिए contrasting characters पर आधारित साधन को Key कहते हैं।
+</p>
+
+<p>
+Key में दिए गए दो contrasting alternatives को <b>Couplet</b> कहा जाता है।
+</p>
+
+
+<h3>⭐ NEET + Veterinary Quick Revision</h3>
+
+<div class="highlight">
+
+<b>Taxonomy</b> =
+Identification + Nomenclature + Classification
 
 <br><br>
 
-<i>Homo</i> → Genus
+<b>Hierarchy</b> =
+Kingdom → Phylum/Division → Class → Order → Family → Genus → Species
 
-<br>
+<br><br>
 
-<i>sapiens</i> → Species
+<b>Basic Unit</b> = Species
 
-</div>
+<br><br>
 
-<div class="highlight">
+<b>Scientific Name</b> = Genus + Specific epithet
 
-<b>द्विनाम पद्धति के जनक:</b>
-Carolus Linnaeus (कैरोलस लिनियस)
+<br><br>
 
-</div>
-
-</div>
-
-`
-
-};
-
-
-/* =========================
-LIST FUNCTION
-========================= */
-
-function list(id,data){
-
-document.getElementById(id).innerHTML=
-
-data.map(x=>`
-
-<div class="card">
-
-<b>${x}</b>
-
-<br>
-
-<button onclick="notes('${x.replace(/'/g,"\\'")}')">
-
-📖 Open Notes
-
-</button>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* LOAD CHAPTERS */
-
-list("bio11List",bio11);
-
-list("phy11List",phy11);
-
-list("chem11List",chem11);
-
-list("vet11List",vet11);
-
-list("bio12List",bio12);
-
-list("phy12List",phy12);
-
-list("chem12List",chem12);
-
-list("vet12List",vet12);
-
-
-/* =========================
-PAGE CONTROL
-========================= */
-
-function show(id){
-
-document.querySelectorAll(".box")
-.forEach(x=>x.classList.add("hide"));
-
-document.getElementById(id)
-.classList.remove("hide");
-
-}
-
-
-/* =========================
-NOTES
-========================= */
-
-let previousPage="bio11";
-
-
-function notes(name){
-
-previousPage=getCurrentPage();
-
-show("notes");
-
-document.getElementById("nt")
-.innerText=name;
-
-
-if(notesData[name]){
-
-document.getElementById("noteContent")
-.innerHTML=notesData[name];
-
-}
-
-else{
-
-document.getElementById("noteContent").innerHTML=`
-
-<div class="card">
-
-<h3>📚 Notes Coming Soon</h3>
-
-<p>
-
-इस chapter के notes जल्द ही यहाँ उपलब्ध होंगे।
-
-</p>
+<b>Taxonomic Aids</b> =
+Herbarium + Botanical Garden + Museum + Zoological Park + Key
 
 </div>
 
 `;
 
-}
-
-}
-
 
 /* =========================
-CURRENT PAGE
+   FUNCTIONS
 ========================= */
+
+let previousPage = "bio11";
+
+
+function show(id){
+
+  document.querySelectorAll(".box").forEach(function(page){
+    page.classList.add("hide");
+  });
+
+  const target = document.getElementById(id);
+
+  if(target){
+    target.classList.remove("hide");
+    window.scrollTo(0,0);
+  }
+}
+
+
+function showSubject(id){
+
+  list(id);
+  show(id);
+
+}
+
+
+function list(id){
+
+  const box = document.getElementById(id);
+
+  if(!box) return;
+
+  const chapters = data[id] || [];
+
+  let html = `
+    <button class="back" onclick="backToClass('${id}')">
+      ⬅ Back
+    </button>
+
+    <div class="card">
+      <h2>📚 ${subjectName(id)}</h2>
+      <p class="small">${chapters.length} Chapters</p>
+  `;
+
+  chapters.forEach(function(chapter,index){
+
+    html += `
+      <button
+        class="chapterbtn"
+        onclick='notes(${JSON.stringify(chapter)})'>
+        ${index+1}. ${chapter}
+      </button>
+    `;
+
+  });
+
+  html += `</div>`;
+
+  box.innerHTML = html;
+}
+
+
+function subjectName(id){
+
+  const names = {
+    bio11:"🧬 Class 11 Biology",
+    phy11:"⚡ Class 11 Physics",
+    chem11:"🧪 Class 11 Chemistry",
+    vet11:"🐄 Class 11 Veterinary",
+
+    bio12:"🧬 Class 12 Biology",
+    phy12:"⚡ Class 12 Physics",
+    chem12:"🧪 Class 12 Chemistry",
+    vet12:"🐄 Class 12 Veterinary"
+  };
+
+  return names[id] || "Subject";
+
+}
+
+
+function backToClass(id){
+
+  if(id.endsWith("11")){
+    show("class11");
+  }else{
+    show("class12");
+  }
+
+}
+
+
+function notes(name){
+
+  previousPage = getCurrentPage();
+
+  document.getElementById("nt").innerText = name;
+
+  if(notesData[name]){
+
+    document.getElementById("noteContent").innerHTML =
+      notesData[name];
+
+  }else{
+
+    document.getElementById("noteContent").innerHTML = `
+      <div class="highlight">
+        📚 इस chapter के detailed notes अभी जल्द जोड़े जाएंगे।
+      </div>
+    `;
+
+  }
+
+  show("notes");
+
+}
+
 
 function getCurrentPage(){
 
-const pages=document.querySelectorAll(".box");
+  const pages = document.querySelectorAll(".box");
 
-for(let page of pages){
+  for(let page of pages){
 
-if(!page.classList.contains("hide")){
+    if(
+      !page.classList.contains("hide") &&
+      page.id !== "notes"
+    ){
 
-return page.id;
+      return page.id;
+
+    }
+
+  }
+
+  return "bio11";
 
 }
 
-}
 
-return "bio11";
+function backToChapterList(){
+
+  show(previousPage);
 
 }
 
 
 /* =========================
-BACK
+   START
 ========================= */
 
-function backToChapterList(){
-
-show(previousPage);
-
-}
+show("home");
 
 </script>
 
 </body>
-   </html>
+       </html>
