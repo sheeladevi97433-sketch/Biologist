@@ -7,9 +7,7 @@
 <title>🧬 Biologist - NEET + Veterinary</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
   margin:0;
@@ -49,8 +47,7 @@ header p{
   box-shadow:0 3px 10px #bbb;
 }
 
-.card h2,
-.card h3{
+.card h2,.card h3{
   color:#087f5b;
 }
 
@@ -147,83 +144,92 @@ ul{
 <body>
 
 <header>
-  <h1>🧬 Biologist</h1>
-  <p>NEET + Veterinary Study Hub</p>
+<h1>🧬 Biologist</h1>
+<p>NEET + Veterinary Study Hub</p>
 </header>
 
 
 <!-- HOME -->
+
 <div id="home" class="box">
 
-  <div class="card">
-    <h2>📚 Welcome to Biologist</h2>
-    <p>Class 11 और Class 12 के notes एक ही जगह पढ़ें।</p>
-  </div>
+<div class="card">
+<h2>📚 Welcome to Biologist</h2>
+<p>Class 11 और Class 12 के notes एक ही जगह पढ़ें।</p>
+</div>
 
-  <button class="classbtn" onclick="show('class11')">
-    📘 Class 11
-  </button>
+<button class="classbtn" onclick="show('class11')">
+📘 Class 11
+</button>
 
-  <button class="classbtn" onclick="show('class12')">
-    📗 Class 12
-  </button>
+<button class="classbtn" onclick="show('class12')">
+📗 Class 12
+</button>
 
 </div>
 
 
 <!-- CLASS 11 -->
+
 <div id="class11" class="box hide">
 
-  <button class="back" onclick="show('home')">⬅ Back</button>
+<button class="back" onclick="show('home')">
+⬅ Back
+</button>
 
-  <div class="card">
-    <h2>📘 Class 11</h2>
+<div class="card">
 
-    <button class="subjectbtn" onclick="showSubject('bio11')">
-      🧬 Biology
-    </button>
+<h2>📘 Class 11</h2>
 
-    <button class="subjectbtn" onclick="showSubject('phy11')">
-      ⚡ Physics
-    </button>
+<button class="subjectbtn" onclick="showSubject('bio11')">
+🧬 Biology
+</button>
 
-    <button class="subjectbtn" onclick="showSubject('chem11')">
-      🧪 Chemistry
-    </button>
+<button class="subjectbtn" onclick="showSubject('phy11')">
+⚡ Physics
+</button>
 
-    <button class="subjectbtn" onclick="showSubject('vet11')">
-      🐄 Veterinary
-    </button>
-  </div>
+<button class="subjectbtn" onclick="showSubject('chem11')">
+🧪 Chemistry
+</button>
 
+<button class="subjectbtn" onclick="showSubject('vet11')">
+🐄 Veterinary
+</button>
+
+</div>
 </div>
 
 
 <!-- CLASS 12 -->
+
 <div id="class12" class="box hide">
 
-  <button class="back" onclick="show('home')">⬅ Back</button>
+<button class="back" onclick="show('home')">
+⬅ Back
+</button>
 
-  <div class="card">
-    <h2>📗 Class 12</h2>
+<div class="card">
 
-    <button class="subjectbtn" onclick="showSubject('bio12')">
-      🧬 Biology
-    </button>
+<h2>📗 Class 12</h2>
 
-    <button class="subjectbtn" onclick="showSubject('phy12')">
-      ⚡ Physics
-    </button>
+<button class="subjectbtn" onclick="showSubject('bio12')">
+🧬 Biology
+</button>
 
-    <button class="subjectbtn" onclick="showSubject('chem12')">
-      🧪 Chemistry
-    </button>
+<button class="subjectbtn" onclick="showSubject('phy12')">
+⚡ Physics
+</button>
 
-    <button class="subjectbtn" onclick="showSubject('vet12')">
-      🐄 Veterinary
-    </button>
-  </div>
+<button class="subjectbtn" onclick="showSubject('chem12')">
+🧪 Chemistry
+</button>
 
+<button class="subjectbtn" onclick="showSubject('vet12')">
+🐄 Veterinary
+</button>
+
+</div>
 </div>
 
 
@@ -241,17 +247,20 @@ ul{
 
 
 <!-- NOTES -->
+
 <div id="notes" class="box hide">
 
-  <button class="back" onclick="backToChapterList()">
-    ⬅ Back to Chapters
-  </button>
+<button class="back" onclick="backToChapterList()">
+⬅ Back to Chapters
+</button>
 
-  <div class="card">
-    <h2 id="nt" class="note-title"></h2>
-    <div id="noteContent"></div>
-  </div>
+<div class="card">
 
+<h2 id="nt" class="note-title"></h2>
+
+<div id="noteContent"></div>
+
+</div>
 </div>
 
 
@@ -261,7 +270,7 @@ ul{
    CHAPTER DATA
 ========================= */
 
-const data = {
+const data={
 
 bio11:[
 "The Living World",
@@ -391,535 +400,17 @@ vet12:[
 
 
 /* =========================
-   NOTES
+   NOTES DATA
 ========================= */
 
-const notesData = {};notesData["Biological Classification"] = `
+const notesData={};
 
-<h2>🧬 Biological Classification</h2>
-
-<div class="highlight">
-<b>Class 11 Biology | NEET + Veterinary</b><br>
-जीवों की विविधता को समझने, पहचानने और व्यवस्थित करने के लिए
-Biological Classification का अध्ययन किया जाता है।
-</div>
-
-
-<h3>1. Biological Classification क्या है?</h3>
-
-<p>
-पृथ्वी पर पाए जाने वाले जीवों में बहुत अधिक विविधता होती है।
-जीवों की समानताओं और असमानताओं के आधार पर उन्हें अलग-अलग समूहों में
-व्यवस्थित करने की प्रक्रिया को <b>Biological Classification</b> कहते हैं।
-</p>
-
-<p>
-Classification के कारण बहुत बड़ी संख्या में पाए जाने वाले जीवों का
-अध्ययन और पहचान आसान हो जाती है।
-</p>
-
-
-<h3>2. Classification की आवश्यकता</h3>
-
-<ul>
-<li>जीवों की पहचान आसान होती है।</li>
-<li>जीवों का अध्ययन व्यवस्थित रूप से किया जा सकता है।</li>
-<li>समान विशेषताओं वाले जीवों को एक समूह में रखा जा सकता है।</li>
-<li>जीवों की विविधता को समझने में सहायता मिलती है।</li>
-<li>जीवों के बीच संबंधों को समझने में सहायता मिलती है।</li>
-</ul>
-
-
-<h3>3. पुराने Classification की समस्या</h3>
-
-<p>
-प्रारंभिक समय में जीवों को केवल उनके बाहरी लक्षणों के आधार पर
-विभिन्न समूहों में रखा जाता था। लेकिन जैसे-जैसे जीवों के बारे में
-अधिक जानकारी प्राप्त हुई, पुराने classification में कई समस्याएँ सामने आईं।
-</p>
-
-<p>
-विशेष रूप से bacteria, fungi और unicellular organisms को पौधों या
-जन्तुओं में रखना कठिन था।
-</p>
-
-
-<h3>4. Two Kingdom Classification</h3>
-
-<p>
-प्रारंभिक प्रसिद्ध classification में जीवों को दो Kingdom में रखा गया:
-</p>
-
-<div class="hierarchy">
-Plantae &nbsp; | &nbsp; Animalia
-</div>
-
-<p>
-इस classification में सभी organisms को मुख्यतः plants और animals में
-बाँट दिया गया था।
-</p>
-
-<div class="example">
-<b>समस्या:</b> सभी organisms को केवल Plantae और Animalia में रखना
-सभी जीवों की वास्तविक विविधता को स्पष्ट नहीं करता था।
-</div>
-
-
-<h3>5. Five Kingdom Classification</h3>
-
-<p>
-<b>R.H. Whittaker</b> ने 1969 में Five Kingdom Classification प्रस्तावित किया।
-</p>
-
-<div class="hierarchy">
-Monera<br>
-↓<br>
-Protista<br>
-↓<br>
-Fungi<br>
-↓<br>
-Plantae<br>
-↓<br>
-Animalia
-</div>
-
-<p>
-Whittaker ने classification के लिए मुख्यतः निम्न आधारों को महत्व दिया:
-</p>
-
-<ul>
-<li>Cell structure</li>
-<li>Body organisation</li>
-<li>Mode of nutrition</li>
-<li>Reproduction</li>
-<li>Phylogenetic relationships</li>
-</ul>
-
-
-<h3>6. Five Kingdoms का Overview</h3>
-
-<div class="example">
-<b>Monera</b> → Prokaryotic organisms<br><br>
-<b>Protista</b> → Mainly unicellular eukaryotic organisms<br><br>
-<b>Fungi</b> → Eukaryotic heterotrophs<br><br>
-<b>Plantae</b> → Multicellular plants<br><br>
-<b>Animalia</b> → Multicellular animals
-</div>
-
-
-<h2>🦠 KINGDOM MONERA</h2>
-
-
-<h3>7. Kingdom Monera</h3>
-
-<p>
-Kingdom Monera में मुख्यतः <b>prokaryotic organisms</b> शामिल होते हैं।
-इनमें true nucleus नहीं होता।
-</p>
-
-<ul>
-<li>Prokaryotic cells</li>
-<li>मुख्यतः unicellular</li>
-<li>True nucleus absent</li>
-<li>Membrane-bound organelles absent</li>
-<li>Cell wall कई members में उपस्थित</li>
-</ul>
-
-
-<h3>8. Bacteria</h3>
-
-<p>
-Bacteria Monera के सबसे महत्वपूर्ण members में से हैं।
-ये लगभग सभी प्रकार के habitats में पाए जा सकते हैं।
-</p>
-
-<p>
-कुछ bacteria useful होते हैं जबकि कुछ disease causing भी हो सकते हैं।
-</p>
-
-
-<h3>9. Bacteria की Shapes</h3>
-
-<ul>
-<li><b>Coccus</b> → गोलाकार</li>
-<li><b>Bacillus</b> → Rod-shaped</li>
-<li><b>Vibrio</b> → Comma-shaped</li>
-<li><b>Spirillum</b> → Spiral-shaped</li>
-</ul>
-
-
-<h3>10. Archaebacteria</h3>
-
-<p>
-Archaebacteria ऐसे prokaryotic organisms हैं जो कई extreme habitats में
-जीवित रह सकते हैं।
-</p>
-
-<h4>मुख्य प्रकार:</h4>
-
-<ul>
-<li><b>Methanogens</b></li>
-<li><b>Halophiles</b></li>
-<li><b>Thermoacidophiles</b></li>
-</ul>
-
-
-<h3>11. Methanogens</h3>
-
-<p>
-Methanogens ऐसे archaebacteria हैं जो methane production से संबंधित होते हैं।
-ये कुछ anaerobic environments तथा ruminant animals के gut में पाए जा सकते हैं।
-</p>
-
-<div class="highlight">
-<b>Veterinary Point:</b>
-Ruminant animals के rumen में methanogens पाए जा सकते हैं।
-</div>
-
-
-<h3>12. Halophiles</h3>
-
-<p>
-Halophiles अत्यधिक saline environments में पाए जाने वाले organisms हैं।
-</p>
-
-
-<h3>13. Thermoacidophiles</h3>
-
-<p>
-Thermoacidophiles high temperature और acidic conditions वाले environments
-में पाए जा सकते हैं।
-</p>
-
-
-<h3>14. Eubacteria</h3>
-
-<p>
-Eubacteria को true bacteria भी कहा जाता है।
-ये विभिन्न प्रकार के habitats में पाए जाते हैं।
-</p>
-
-
-<h3>15. Cyanobacteria</h3>
-
-<p>
-Cyanobacteria को blue-green algae भी कहा जाता है।
-ये photosynthetic prokaryotes हैं।
-</p>
-
-<ul>
-<li>Prokaryotic</li>
-<li>Photosynthetic</li>
-<li>कुछ nitrogen fixation कर सकते हैं</li>
-<li>Freshwater तथा marine habitats में पाए जा सकते हैं</li>
-</ul>
-
-
-<h3>16. Heterocysts</h3>
-
-<p>
-कुछ cyanobacteria में विशेष cells पाए जाते हैं जिन्हें
-<b>Heterocysts</b> कहा जाता है। ये nitrogen fixation से संबंधित होते हैं।
-</p>
-
-<div class="example">
-<b>Examples:</b> Nostoc, Anabaena
-</div>
-
-
-<h3>17. Mycoplasma</h3>
-
-<p>
-Mycoplasma बहुत छोटे living cells में से हैं।
-इनकी एक महत्वपूर्ण विशेषता यह है कि इनमें सामान्य bacterial cell wall नहीं होती।
-</p>
-
-<ul>
-<li>Very small organisms</li>
-<li>Cell wall absent</li>
-<li>कुछ pathogenic हो सकते हैं</li>
-</ul>
-
-
-<h2>🧫 KINGDOM PROTISTA</h2>
-
-
-<h3>18. Kingdom Protista</h3>
-
-<p>
-Protista में मुख्यतः unicellular eukaryotic organisms शामिल होते हैं।
-</p>
-
-<ul>
-<li>Eukaryotic</li>
-<li>मुख्यतः unicellular</li>
-<li>True nucleus present</li>
-<li>Membrane-bound organelles present</li>
-<li>अधिकांश aquatic habitats में पाए जाते हैं</li>
-</ul>
-
-
-<h3>19. Protista के प्रमुख Groups</h3>
-
-<ul>
-<li>Chrysophytes</li>
-<li>Dinoflagellates</li>
-<li>Euglenoids</li>
-<li>Slime moulds</li>
-<li>Protozoans</li>
-</ul>
-
-
-<h3>20. Chrysophytes</h3>
-
-<p>
-Chrysophytes में diatoms और golden algae जैसे organisms शामिल होते हैं।
-</p>
-
-<p>
-Diatoms की cell wall में silica पाया जाता है।
-इनकी मृत कोशिकाओं के अवशेष जमा होकर diatomaceous earth बना सकते हैं।
-</p>
-
-<div class="highlight">
-<b>NEET Point:</b> Diatoms की cell wall silica-rich होती है।
-</div>
-
-
-<h3>21. Dinoflagellates</h3>
-
-<p>
-Dinoflagellates मुख्यतः marine organisms हैं।
-इनके शरीर पर cellulose plates हो सकती हैं।
-</p>
-
-<p>
-कुछ dinoflagellates की अत्यधिक वृद्धि समुद्र में red tides से जुड़ी हो सकती है।
-</p>
-
-
-<h3>22. Euglenoids</h3>
-
-<p>
-Euglenoids मुख्यतः freshwater habitats में पाए जाते हैं।
-इनमें cellulose cell wall के स्थान पर protein-rich pellicle पाया जाता है।
-</p>
-
-<div class="example">
-<b>Example:</b> Euglena
-</div>
-
-
-<h3>23. Euglena की विशेषता</h3>
-
-<p>
-Euglena में प्रकाश की उपस्थिति में photosynthetic nutrition और
-उपयुक्त परिस्थितियों में heterotrophic nutrition से संबंधित विशेषताएँ
-देखी जा सकती हैं।
-</p>
-
-
-<h3>24. Slime Moulds</h3>
-
-<p>
-Slime moulds saprophytic protists हैं।
-वे decaying organic matter पर पाए जा सकते हैं।
-</p>
-
-<p>
-अनुकूल परिस्थितियों में ये vegetative अवस्था में रहते हैं तथा
-अनुकूल परिस्थितियाँ न होने पर reproductive structures बना सकते हैं।
-</p>
-
-
-<h3>25. Protozoans</h3>
-
-<p>
-Protozoans unicellular heterotrophic protists हैं।
-इनमें free-living और parasitic दोनों प्रकार के organisms पाए जाते हैं।
-</p>
-
-<div class="example">
-<b>Examples:</b> Amoeba, Paramecium, Plasmodium
-</div>
-
-
-<h3>26. Protozoans के प्रमुख प्रकार</h3>
-
-<ul>
-<li><b>Amoeboid protozoans</b></li>
-<li><b>Flagellated protozoans</b></li>
-<li><b>Ciliated protozoans</b></li>
-<li><b>Sporozoans</b></li>
-</ul>
-
-
-<h3>27. Amoeboid Protozoans</h3>
-
-<p>
-ये pseudopodia की सहायता से movement और food capture कर सकते हैं।
-</p>
-
-<div class="example">
-<b>Example:</b> Amoeba
-</div>
-
-
-<h3>28. Flagellated Protozoans</h3>
-
-<p>
-इनमें flagella locomotion में सहायता करते हैं।
-</p>
-
-
-<h3>29. Ciliated Protozoans</h3>
-
-<p>
-इनमें cilia movement तथा food collection में सहायता कर सकते हैं।
-</p>
-
-<div class="example">
-<b>Example:</b> Paramecium
-</div>
-
-
-<h3>30. Sporozoans</h3>
-
-<p>
-इनमें parasitic forms पाए जाते हैं।
-</p>
-
-<div class="example">
-<b>Example:</b> Plasmodium
-</div>
-
-
-<h2>🍄 KINGDOM FUNGI</h2>
-
-
-<h3>31. Kingdom Fungi</h3>
-
-<p>
-Fungi eukaryotic और heterotrophic organisms हैं।
-इनमें nutrition सामान्यतः absorption द्वारा होता है।
-</p>
-
-<ul>
-<li>Eukaryotic</li>
-<li>Heterotrophic</li>
-<li>Cell wall mainly chitin की</li>
-<li>अधिकांश multicellular</li>
-<li>Yeast unicellular fungus है</li>
-</ul>
-
-
-<h3>32. Hyphae और Mycelium</h3>
-
-<p>
-Fungi की thread-like structures को <b>Hyphae</b> कहा जाता है।
-Hyphae का जाल <b>Mycelium</b> कहलाता है।
-</p>
-
-
-<h3>33. Fungi में Nutrition</h3>
-
-<ul>
-<li><b>Saprophytic</b> — मृत organic matter से भोजन</li>
-<li><b>Parasitic</b> — host से भोजन</li>
-<li><b>Symbiotic</b> — दूसरे organism के साथ संबंध</li>
-</ul>
-
-
-<h3>34. Fungi में Reproduction</h3>
-
-<p><b>Vegetative:</b></p>
-
-<ul>
-<li>Fragmentation</li>
-<li>Fission</li>
-<li>Budding</li>
-</ul>
-
-<p><b>Asexual:</b></p>
-
-<ul>
-<li>S
-notesData["Biological Classification"] = `
-
-<h2>🧬 Biological Classification</h2>
-
-<p><b>Class 11 Biology | NEET + Veterinary</b></p>
-
-<h3>1. Biological Classification</h3>
-<p>
-जीवों को उनकी समानताओं और असमानताओं के आधार पर अलग-अलग समूहों में व्यवस्थित
-करने की प्रक्रिया को Biological Classification कहते हैं।
-</p>
-
-<h3>2. Five Kingdom Classification</h3>
-
-<div class="hierarchy">
-Monera → Protista → Fungi → Plantae → Animalia
-</div>
-
-<h3>3. Kingdom Monera</h3>
-<ul>
-<li>Prokaryotic organisms</li>
-<li>अधिकांश unicellular होते हैं।</li>
-<li>True nucleus अनुपस्थित होता है।</li>
-<li>Membrane-bound organelles अनुपस्थित होते हैं।</li>
-</ul>
-
-<h3>4. Kingdom Protista</h3>
-<ul>
-<li>मुख्यतः unicellular eukaryotic organisms</li>
-<li>True nucleus उपस्थित</li>
-<li>Membrane-bound organelles उपस्थित</li>
-</ul>
-
-<h3>5. Kingdom Fungi</h3>
-<ul>
-<li>Eukaryotic organisms</li>
-<li>Heterotrophic nutrition</li>
-<li>Cell wall मुख्यतः chitin की होती है।</li>
-<li>Yeast एक unicellular fungus है।</li>
-</ul>
-
-<h3>6. Lichens</h3>
-<p>
-Lichens में fungus और photosynthetic partner का symbiotic association होता है।
-</p>
-
-<h3>7. Viruses</h3>
-<ul>
-<li>Cellular organisation नहीं होती।</li>
-<li>DNA या RNA genetic material हो सकता है।</li>
-<li>Protein coat पाया जाता है।</li>
-<li>Host cell के अंदर replication करते हैं।</li>
-</ul>
-
-<h3>8. Viroids</h3>
-<p>
-Viroids बहुत छोटे infectious agents हैं जिनमें मुख्यतः naked RNA पाया जाता है।
-</p>
-
-<div class="highlight">
-<b>⭐ Quick Revision</b><br><br>
-Monera → Prokaryotic<br>
-Protista → Unicellular Eukaryotic<br>
-Fungi → Heterotrophic + Chitin cell wall<br>
-Lichen → Fungus + Photosynthetic partner<br>
-Virus → Acellular infectious agent<br>
-Viroid → Naked infectious RNA
-</div>
-
-`;
 
 /* =========================
    THE LIVING WORLD
 ========================= */
 
-notesData["The Living World"] = `
+notesData["The Living World"]=`
 
 <h2>🌿 The Living World</h2>
 
@@ -929,7 +420,6 @@ notesData["The Living World"] = `
 Taxonomy, Systematics, Taxonomic Hierarchy, Binomial Nomenclature
 और Taxonomic Aids का अध्ययन किया जाता है।
 </div>
-
 
 <h3>1. Biology</h3>
 
@@ -941,7 +431,6 @@ Biology जीवों तथा उनके जीवन का वैज्�
 <li><b>Bio / Bios</b> = Life</li>
 <li><b>Logos</b> = Study</li>
 </ul>
-
 
 <h3>2. Biology की प्रमुख शाखाएँ</h3>
 
@@ -959,7 +448,6 @@ Biology जीवों तथा उनके जीवन का वैज्�
 <li><b>Taxonomy</b> — पहचान, नामकरण और वर्गीकरण</li>
 </ul>
 
-
 <h3>3. What is Living?</h3>
 
 <p>
@@ -972,17 +460,11 @@ Growth + Reproduction + Metabolism +
 Cellular Organisation + Consciousness
 </div>
 
-
 <h3>4. Growth — वृद्धि</h3>
 
 <p>
 जीवों के आकार तथा द्रव्यमान में वृद्धि को Growth कहते हैं।
 </p>
-
-<p>
-बहुकोशिकीय जीवों में वृद्धि कोशिकाओं की संख्या और आकार में वृद्धि के कारण होती है।
-</p>
-
 
 <h3>5. Reproduction — प्रजनन</h3>
 
@@ -999,7 +481,6 @@ Cellular Organisation + Consciousness
 <b>Important:</b> Reproduction individual organism के लिए अनिवार्य नहीं है।
 </div>
 
-
 <h3>6. Metabolism — उपापचय</h3>
 
 <p>
@@ -1010,7 +491,6 @@ Cellular Organisation + Consciousness
 <li><b>Anabolism</b> — निर्माणात्मक क्रियाएँ</li>
 <li><b>Catabolism</b> — अपघटनात्मक क्रियाएँ</li>
 </ul>
-
 
 <h3>7. Cellular Organisation</h3>
 
@@ -1023,7 +503,6 @@ Cellular Organisation + Consciousness
 <li><b>Multicellular</b> — अनेक कोशिकाओं वाले जीव</li>
 </ul>
 
-
 <h3>8. Consciousness — चेतना</h3>
 
 <p>
@@ -1031,79 +510,44 @@ Cellular Organisation + Consciousness
 और उनके प्रति प्रतिक्रिया दे सकते हैं।
 </p>
 
-
-<h3>9. Response to Stimuli</h3>
-
-<ul>
-<li>Light</li>
-<li>Temperature</li>
-<li>Water</li>
-<li>Chemicals</li>
-<li>Touch</li>
-</ul>
-
-
-<h3>10. Biodiversity — जैव विविधता</h3>
+<h3>9. Biodiversity — जैव विविधता</h3>
 
 <p>
 पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के जीवों की विविधता को Biodiversity कहते हैं।
 </p>
 
-
-<h3>11. Classification</h3>
-
-<p>
-समानताओं और असमानताओं के आधार पर जीवों को अलग-अलग समूहों में व्यवस्थित करना
-Classification कहलाता है।
-</p>
-
-
-<h3>12. Taxonomy</h3>
+<h3>10. Taxonomy</h3>
 
 <p>
 जीवों की <b>Identification, Nomenclature और Classification</b>
 के अध्ययन को Taxonomy कहते हैं।
 </p>
 
-<ul>
-<li><b>Identification</b> — पहचान</li>
-<li><b>Nomenclature</b> — नामकरण</li>
-<li><b>Classification</b> — वर्गीकरण</li>
-</ul>
-
-
-<h3>13. Systematics</h3>
+<h3>11. Systematics</h3>
 
 <p>
 Systematics में जीवों की विविधता तथा उनके संबंधों का अध्ययन किया जाता है।
 </p>
 
-
-<h3>14. Taxonomic Hierarchy</h3>
-
-<p>
-जीवों को विभिन्न taxonomic categories में क्रमबद्ध रूप से व्यवस्थित करने को
-Taxonomic Hierarchy कहते हैं।
-</p>
+<h3>12. Taxonomic Hierarchy</h3>
 
 <div class="hierarchy">
-Kingdom
-↓
-Phylum / Division
-↓
-Class
-↓
-Order
-↓
-Family
-↓
-Genus
-↓
+Kingdom<br>
+↓<br>
+Phylum / Division<br>
+↓<br>
+Class<br>
+↓<br>
+Order<br>
+↓<br>
+Family<br>
+↓<br>
+Genus<br>
+↓<br>
 Species
 </div>
 
-
-<h3>15. Species</h3>
+<h3>13. Species</h3>
 
 <p>
 Species taxonomic hierarchy की मूलभूत इकाई है।
@@ -1113,52 +557,7 @@ Species taxonomic hierarchy की मूलभूत इकाई है।
 <b>Example:</b> Homo sapiens
 </div>
 
-
-<h3>16. Genus</h3>
-
-<p>
-समान विशेषताओं वाली संबंधित species को एक genus में रखा जाता है।
-</p>
-
-
-<h3>17. Family</h3>
-
-<p>
-संबंधित genera को एक साथ रखने पर Family बनती है।
-</p>
-
-
-<h3>18. Order</h3>
-
-<p>
-संबंधित families को एक साथ रखने पर Order बनता है।
-</p>
-
-
-<h3>19. Class</h3>
-
-<p>
-संबंधित orders को एक साथ रखने पर Class बनती है।
-</p>
-
-
-<h3>20. Phylum / Division</h3>
-
-<p>
-Animal classification में Phylum तथा plant classification में Division
-शब्द का प्रयोग किया जाता है।
-</p>
-
-
-<h3>21. Kingdom</h3>
-
-<p>
-यह taxonomic hierarchy की एक बड़ी category है जिसमें संबंधित phyla/divisions
-को रखा जाता है।
-</p>
-
-
-<h3>22. Binomial Nomenclature</h3>
+<h3>14. Binomial Nomenclature</h3>
 
 <p>
 जिस वैज्ञानिक नामकरण पद्धति में किसी जीव का नाम दो शब्दों में लिखा जाता है,
@@ -1171,8 +570,7 @@ Homo = Genus<br>
 sapiens = Specific epithet
 </div>
 
-
-<h3>23. Scientific Name लिखने के नियम</h3>
+<h3>15. Scientific Name के नियम</h3>
 
 <ul>
 <li>वैज्ञानिक नाम दो शब्दों का होता है।</li>
@@ -1184,64 +582,23 @@ sapiens = Specific epithet
 <li>Handwritten form में दोनों शब्दों को अलग-अलग underline किया जाता है।</li>
 </ul>
 
-
-<h3>24. Carolus Linnaeus</h3>
-
-<p>
-Carolus Linnaeus ने वैज्ञानिक नामकरण और वर्गीकरण के विकास में महत्वपूर्ण योगदान दिया।
-उन्हें Father of Taxonomy कहा जाता है।
-</p>
-
-
-<h3>25. Taxonomic Aids</h3>
+<h3>16. Carolus Linnaeus</h3>
 
 <p>
-जीवों की पहचान, अध्ययन और वर्गीकरण में सहायता करने वाले साधनों को
-Taxonomic Aids कहते हैं।
+Carolus Linnaeus को Father of Taxonomy कहा जाता है।
 </p>
 
+<h3>17. Taxonomic Aids</h3>
 
-<h3>26. Herbarium</h3>
+<ul>
+<li>Herbarium</li>
+<li>Botanical Garden</li>
+<li>Museum</li>
+<li>Zoological Park</li>
+<li>Key</li>
+</ul>
 
-<p>
-Herbarium सूखे तथा संरक्षित plant specimens का व्यवस्थित संग्रह होता है।
-</p>
-
-
-<h3>27. Botanical Garden</h3>
-
-<p>
-Botanical Garden में विभिन्न प्रकार के जीवित पौधों को वैज्ञानिक अध्ययन,
-पहचान तथा संरक्षण के लिए रखा जाता है।
-</p>
-
-
-<h3>28. Museum</h3>
-
-<p>
-Museum में पौधों और जन्तुओं के preserved specimens को अध्ययन के लिए सुरक्षित रखा जाता है।
-</p>
-
-
-<h3>29. Zoological Park</h3>
-
-<p>
-Zoological Park में जीवित wild animals को नियंत्रित एवं उपयुक्त परिस्थितियों में रखा जाता है।
-</p>
-
-
-<h3>30. Key</h3>
-
-<p>
-जीवों की पहचान के लिए contrasting characters पर आधारित साधन को Key कहते हैं।
-</p>
-
-<p>
-Key में दिए गए दो contrasting alternatives को <b>Couplet</b> कहा जाता है।
-</p>
-
-
-<h3>⭐ NEET + Veterinary Quick Revision</h3>
+<h3>⭐ Quick Revision</h3>
 
 <div class="highlight">
 
@@ -1261,11 +618,319 @@ Kingdom → Phylum/Division → Class → Order → Family → Genus → Species
 
 <b>Scientific Name</b> = Genus + Specific epithet
 
-<br><br>
+</div>
 
-<b>Taxonomic Aids</b> =
-Herbarium + Botanical Garden + Museum + Zoological Park + Key
+`;
 
+
+/* =========================
+   BIOLOGICAL CLASSIFICATION
+========================= */
+
+notesData["Biological Classification"]=`
+
+<h2>🧬 Biological Classification</h2>
+
+<div class="highlight">
+<b>Class 11 Biology | NEET + Veterinary</b><br>
+जीवों की विविधता को समझने, पहचानने और व्यवस्थित करने के लिए
+Biological Classification का अध्ययन किया जाता है।
+</div>
+
+<h3>1. Biological Classification क्या है?</h3>
+
+<p>
+जीवों की समानताओं और असमानताओं के आधार पर उन्हें अलग-अलग समूहों में
+व्यवस्थित करने की प्रक्रिया को <b>Biological Classification</b> कहते हैं।
+</p>
+
+<h3>2. Classification की आवश्यकता</h3>
+
+<ul>
+<li>जीवों की पहचान आसान होती है।</li>
+<li>जीवों का अध्ययन व्यवस्थित रूप से किया जा सकता है।</li>
+<li>समान विशेषताओं वाले जीवों को एक समूह में रखा जा सकता है।</li>
+<li>जीवों की विविधता को समझने में सहायता मिलती है।</li>
+<li>जीवों के बीच संबंधों को समझने में सहायता मिलती है।</li>
+</ul>
+
+<h3>3. Two Kingdom Classification</h3>
+
+<div class="hierarchy">
+Plantae &nbsp; | &nbsp; Animalia
+</div>
+
+<p>
+प्रारंभिक classification में जीवों को मुख्यतः Plantae और Animalia
+दो Kingdom में रखा गया था।
+</p>
+
+<h3>4. Five Kingdom Classification</h3>
+
+<p>
+<b>R.H. Whittaker</b> ने 1969 में Five Kingdom Classification प्रस्तावित किया।
+</p>
+
+<div class="hierarchy">
+Monera → Protista → Fungi → Plantae → Animalia
+</div>
+
+<p>मुख्य आधार:</p>
+
+<ul>
+<li>Cell structure</li>
+<li>Body organisation</li>
+<li>Mode of nutrition</li>
+<li>Reproduction</li>
+<li>Phylogenetic relationships</li>
+</ul>
+
+<h3>5. Kingdom Monera</h3>
+
+<ul>
+<li>Prokaryotic organisms</li>
+<li>मुख्यतः unicellular</li>
+<li>True nucleus absent</li>
+<li>Membrane-bound organelles absent</li>
+<li>Cell wall कई members में उपस्थित</li>
+</ul>
+
+<h3>6. Bacteria</h3>
+
+<p>
+Bacteria Monera के महत्वपूर्ण members हैं। ये विभिन्न प्रकार के habitats
+में पाए जाते हैं।
+</p>
+
+<h3>7. Bacteria की Shapes</h3>
+
+<ul>
+<li><b>Coccus</b> → गोलाकार</li>
+<li><b>Bacillus</b> → Rod-shaped</li>
+<li><b>Vibrio</b> → Comma-shaped</li>
+<li><b>Spirillum</b> → Spiral-shaped</li>
+</ul>
+
+<h3>8. Archaebacteria</h3>
+
+<p>
+Archaebacteria कई extreme habitats में पाए जाने वाले prokaryotic organisms हैं।
+</p>
+
+<ul>
+<li><b>Methanogens</b></li>
+<li><b>Halophiles</b></li>
+<li><b>Thermoacidophiles</b></li>
+</ul>
+
+<h3>9. Methanogens</h3>
+
+<p>
+Methanogens methane production से संबंधित होते हैं और कुछ anaerobic
+environments तथा ruminant animals के gut में पाए जा सकते हैं।
+</p>
+
+<div class="highlight">
+<b>Veterinary Point:</b>
+Ruminant animals के rumen में methanogens पाए जा सकते हैं।
+</div>
+
+<h3>10. Halophiles</h3>
+
+<p>
+Halophiles अत्यधिक saline environments में पाए जाने वाले organisms हैं।
+</p>
+
+<h3>11. Thermoacidophiles</h3>
+
+<p>
+Thermoacidophiles high temperature और acidic conditions वाले environments
+में पाए जा सकते हैं।
+</p>
+
+<h3>12. Eubacteria</h3>
+
+<p>
+Eubacteria को true bacteria भी कहा जाता है।
+</p>
+
+<h3>13. Cyanobacteria</h3>
+
+<p>
+Cyanobacteria को blue-green algae भी कहा जाता है। ये photosynthetic
+prokaryotes हैं।
+</p>
+
+<ul>
+<li>Prokaryotic</li>
+<li>Photosynthetic</li>
+<li>कुछ nitrogen fixation कर सकते हैं</li>
+<li>Freshwater तथा marine habitats में पाए जा सकते हैं</li>
+</ul>
+
+<h3>14. Heterocysts</h3>
+
+<p>
+कुछ cyanobacteria में विशेष cells पाए जाते हैं जिन्हें
+<b>Heterocysts</b> कहा जाता है। ये nitrogen fixation से संबंधित होते हैं।
+</p>
+
+<div class="example">
+<b>Examples:</b> Nostoc, Anabaena
+</div>
+
+<h3>15. Mycoplasma</h3>
+
+<ul>
+<li>बहुत छोटे living cells में से हैं।</li>
+<li>Cell wall absent</li>
+<li>कुछ pathogenic हो सकते हैं।</li>
+</ul>
+
+<h2>🧫 KINGDOM PROTISTA</h2>
+
+<h3>16. Kingdom Protista</h3>
+
+<ul>
+<li>Eukaryotic</li>
+<li>मुख्यतः unicellular</li>
+<li>True nucleus present</li>
+<li>Membrane-bound organelles present</li>
+<li>अधिकांश aquatic habitats में पाए जाते हैं।</li>
+</ul>
+
+<h3>17. Protista के प्रमुख Groups</h3>
+
+<ul>
+<li>Chrysophytes</li>
+<li>Dinoflagellates</li>
+<li>Euglenoids</li>
+<li>Slime moulds</li>
+<li>Protozoans</li>
+</ul>
+
+<h3>18. Chrysophytes</h3>
+
+<p>
+Chrysophytes में diatoms और golden algae जैसे organisms शामिल होते हैं।
+Diatoms की cell wall में silica पाया जाता है।
+</p>
+
+<div class="highlight">
+<b>NEET Point:</b> Diatoms की cell wall silica-rich होती है।
+</div>
+
+<h3>19. Dinoflagellates</h3>
+
+<p>
+Dinoflagellates मुख्यतः marine organisms हैं। कुछ dinoflagellates की
+अत्यधिक वृद्धि red tides से जुड़ी हो सकती है।
+</p>
+
+<h3>20. Euglenoids</h3>
+
+<p>
+Euglenoids मुख्यतः freshwater habitats में पाए जाते हैं।
+इनमें protein-rich pellicle पाया जाता है।
+</p>
+
+<div class="example">
+<b>Example:</b> Euglena
+</div>
+
+<h3>21. Slime Moulds</h3>
+
+<p>
+Slime moulds saprophytic protists हैं और decaying organic matter पर पाए जा सकते हैं।
+</p>
+
+<h3>22. Protozoans</h3>
+
+<p>
+Protozoans unicellular heterotrophic protists हैं।
+</p>
+
+<div class="example">
+<b>Examples:</b> Amoeba, Paramecium, Plasmodium
+</div>
+
+<h3>23. Protozoans के प्रकार</h3>
+
+<ul>
+<li>Amoeboid protozoans</li>
+<li>Flagellated protozoans</li>
+<li>Ciliated protozoans</li>
+<li>Sporozoans</li>
+</ul>
+
+<h2>🍄 KINGDOM FUNGI</h2>
+
+<h3>24. Kingdom Fungi</h3>
+
+<ul>
+<li>Eukaryotic</li>
+<li>Heterotrophic</li>
+<li>Cell wall mainly chitin की</li>
+<li>अधिकांश multicellular</li>
+<li>Yeast unicellular fungus है।</li>
+</ul>
+
+<h3>25. Hyphae और Mycelium</h3>
+
+<p>
+Fungi की thread-like structures को <b>Hyphae</b> कहते हैं।
+Hyphae का जाल <b>Mycelium</b> कहलाता है।
+</p>
+
+<h3>26. Fungi में Nutrition</h3>
+
+<ul>
+<li><b>Saprophytic</b> — मृत organic matter से भोजन</li>
+<li><b>Parasitic</b> — host से भोजन</li>
+<li><b>Symbiotic</b> — दूसरे organism के साथ संबंध</li>
+</ul>
+
+<h3>27. Fungi में Reproduction</h3>
+
+<ul>
+<li>Vegetative — Fragmentation, Fission, Budding</li>
+<li>Asexual — Spores</li>
+<li>Sexual — Sexual reproduction</li>
+</ul>
+
+<h3>28. Lichens</h3>
+
+<p>
+Lichens में fungus और photosynthetic partner का symbiotic association होता है।
+</p>
+
+<h2>🦠 VIRUSES</h2>
+
+<h3>29. Viruses</h3>
+
+<ul>
+<li>Cellular organisation नहीं होती।</li>
+<li>DNA या RNA genetic material हो सकता है।</li>
+<li>Protein coat पाया जाता है।</li>
+<li>Host cell के अंदर replication करते हैं।</li>
+</ul>
+
+<h2>🧬 VIROIDS</h2>
+
+<h3>30. Viroids</h3>
+
+<p>
+Viroids बहुत छोटे infectious agents हैं जिनमें मुख्यतः naked RNA पाया जाता है।
+</p>
+
+<div class="highlight">
+<b>⭐ Quick Revision</b><br><br>
+Monera → Prokaryotic<br>
+Protista → Unicellular Eukaryotic<br>
+Fungi → Heterotrophic + Chitin cell wall<br>
+Lichen → Fungus + Photosynthetic partner<br>
+Virus → Acellular infectious agent<br>
+Viroid → Naked infectious RNA
 </div>
 
 `;
@@ -1275,149 +940,157 @@ Herbarium + Botanical Garden + Museum + Zoological Park + Key
    FUNCTIONS
 ========================= */
 
-let previousPage = "bio11";
+let previousPage="bio11";
 
 
 function show(id){
 
-  document.querySelectorAll(".box").forEach(function(page){
-    page.classList.add("hide");
-  });
+document.querySelectorAll(".box").forEach(function(page){
+page.classList.add("hide");
+});
 
-  const target = document.getElementById(id);
+const target=document.getElementById(id);
 
-  if(target){
-    target.classList.remove("hide");
-    window.scrollTo(0,0);
-  }
+if(target){
+target.classList.remove("hide");
+window.scrollTo(0,0);
+}
+
 }
 
 
 function showSubject(id){
 
-  list(id);
-  show(id);
+list(id);
+show(id);
 
 }
 
 
 function list(id){
 
-  const box = document.getElementById(id);
+const box=document.getElementById(id);
 
-  if(!box) return;
+if(!box)return;
 
-  const chapters = data[id] || [];
+const chapters=data[id]||[];
 
-  let html = `
-    <button class="back" onclick="backToClass('${id}')">
-      ⬅ Back
-    </button>
+let html=`
+<button class="back" onclick="backToClass('${id}')">
+⬅ Back
+</button>
 
-    <div class="card">
-      <h2>📚 ${subjectName(id)}</h2>
-      <p class="small">${chapters.length} Chapters</p>
-  `;
+<div class="card">
 
-  chapters.forEach(function(chapter,index){
+<h2>📚 ${subjectName(id)}</h2>
 
-    html += `
-      <button
-        class="chapterbtn"
-        onclick='notes(${JSON.stringify(chapter)})'>
-        ${index+1}. ${chapter}
-      </button>
-    `;
+<p class="small">${chapters.length} Chapters</p>
+`;
 
-  });
+chapters.forEach(function(chapter,index){
 
-  html += `</div>`;
+html+=`
+<button
+class="chapterbtn"
+onclick='notes(${JSON.stringify(chapter)})'>
+${index+1}. ${chapter}
+</button>
+`;
 
-  box.innerHTML = html;
+});
+
+html+=`</div>`;
+
+box.innerHTML=html;
+
 }
 
 
 function subjectName(id){
 
-  const names = {
-    bio11:"🧬 Class 11 Biology",
-    phy11:"⚡ Class 11 Physics",
-    chem11:"🧪 Class 11 Chemistry",
-    vet11:"🐄 Class 11 Veterinary",
+const names={
 
-    bio12:"🧬 Class 12 Biology",
-    phy12:"⚡ Class 12 Physics",
-    chem12:"🧪 Class 12 Chemistry",
-    vet12:"🐄 Class 12 Veterinary"
-  };
+bio11:"🧬 Class 11 Biology",
+phy11:"⚡ Class 11 Physics",
+chem11:"🧪 Class 11 Chemistry",
+vet11:"🐄 Class 11 Veterinary",
 
-  return names[id] || "Subject";
+bio12:"🧬 Class 12 Biology",
+phy12:"⚡ Class 12 Physics",
+chem12:"🧪 Class 12 Chemistry",
+vet12:"🐄 Class 12 Veterinary"
+
+};
+
+return names[id]||"Subject";
 
 }
 
 
 function backToClass(id){
 
-  if(id.endsWith("11")){
-    show("class11");
-  }else{
-    show("class12");
-  }
+if(id.endsWith("11")){
+show("class11");
+}else{
+show("class12");
+}
 
 }
 
 
 function notes(name){
 
-  previousPage = getCurrentPage();
+previousPage=getCurrentPage();
 
-  document.getElementById("nt").innerText = name;
+document.getElementById("nt").innerText=name;
 
-  if(notesData[name]){
+if(notesData[name]){
 
-    document.getElementById("noteContent").innerHTML =
-      notesData[name];
+document.getElementById("noteContent").innerHTML=
+notesData[name];
 
-  }else{
+}else{
 
-    document.getElementById("noteContent").innerHTML = `
-      <div class="highlight">
-        📚 इस chapter के detailed notes अभी जल्द जोड़े जाएंगे।
-      </div>
-    `;
+document.getElementById("noteContent").innerHTML=`
 
-  }
+<div class="highlight">
+📚 इस chapter के detailed notes अभी जल्द जोड़े जाएंगे।
+</div>
 
-  show("notes");
+`;
+
+}
+
+show("notes");
 
 }
 
 
 function getCurrentPage(){
 
-  const pages = document.querySelectorAll(".box");
+const pages=document.querySelectorAll(".box");
 
-  for(let page of pages){
+for(let page of pages){
 
-    if(
-      !page.classList.contains("hide") &&
-      page.id !== "notes"
-    ){
+if(
+!page.classList.contains("hide") &&
+page.id!=="notes"
+){
 
-      return page.id;
+return page.id;
 
-    }
+}
 
-  }
+}
 
-  return "bio11";
+return "bio11";
 
 }
 
 
 function backToChapterList(){
 
-  show(previousPage);
+show(previousPage);
 
 }
 
@@ -1431,4 +1104,4 @@ show("home");
 </script>
 
 </body>
-       </html>
+  </html>
