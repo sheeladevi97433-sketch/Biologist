@@ -1,563 +1,832 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
 
-.back{
-  background:#444;
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>🧬 Biologist - NEET + Veterinary</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
 }
 
-.classbtn{
-  font-size:19px;
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#eefaf7;
+  color:#123;
+}
+
+header{
+  background:#087f5b;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+
+header h1{
+  margin:0;
+  font-size:30px;
+}
+
+header p{
+  margin:5px 0 0;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  margin:12px 0;
+  border-radius:15px;
+  box-shadow:0 3px 10px #bbb;
+}
+
+h2{
+  color:#087f5b;
+}
+
+button{
+  border:0;
+  border-radius:9px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.class-btn{
   width:100%;
-  padding:17px;
+  padding:18px;
   margin:8px 0;
+  background:#087f5b;
+  color:white;
 }
 
-.subjectbtn{
+.subject-btn{
   width:100%;
-  font-size:17px;
+  padding:15px;
+  margin:7px 0;
   text-align:left;
-  padding:14px;
+  background:#087f5b;
+  color:white;
 }
 
-.chapterbtn{
+.chapter-btn{
   width:100%;
+  padding:14px;
+  margin:6px 0;
   text-align:left;
   background:#f1f8f6;
   color:#123;
   border:1px solid #c9e5dc;
 }
 
+.chapter-btn:hover{
+  background:#dff3ec;
+}
+
+.back-btn{
+  background:#444;
+  color:white;
+  padding:11px 16px;
+  margin-bottom:10px;
+}
+
 .hide{
   display:none;
 }
 
-.highlight{
+.chapter-page{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 3px 10px #bbb;
+}
+
+.chapter-page h2{
+  margin-top:0;
+}
+
+.info{
   background:#e8f8f5;
-  border-left:5px solid #087f5b;
-  padding:12px;
-  margin:12px 0;
-  border-radius:8px;
-}
-
-.example{
-  background:#fff8e1;
-  padding:12px;
-  border-radius:8px;
-  margin-top:10px;
-}
-
-.hierarchy{
-  background:#eef6ff;
   padding:15px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:bold;
-  color:#174ea6;
-  overflow-x:auto;
-}
-
-ul{
-  padding-left:25px;
-}
-
-.note-title{
-  color:#087f5b;
-  font-size:25px;
-}
-
-.small{
-  color:#666;
-  font-size:14px;
-}
-
-.pdfbtn{
-  display:inline-block;
-  background:#087f5b;
-  color:white;
-  padding:12px 18px;
+  border-left:5px solid #087f5b;
   border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-  margin-top:10px;
 }
+
 </style>
+
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
 <h1>🧬 Biologist</h1>
+
 <p>NEET + Veterinary Study Hub</p>
+
 </header>
 
 
 <!-- HOME -->
 
-<div id="home" class="box">
+<div id="home" class="container">
 
 <div class="card">
+
 <h2>📚 Welcome to Biologist</h2>
-<p>Class 11 और Class 12 के notes एक ही जगह पढ़ें।</p>
+
+<p>
+Class 11 और Class 12 के Biology, Physics,
+Chemistry और Veterinary chapters यहाँ पढ़ें।
+</p>
+
 </div>
 
-<button class="classbtn" onclick="show('class11')">
+<button
+class="class-btn"
+onclick="openClass('class11')">
+
 📘 Class 11
+
 </button>
 
-<button class="classbtn" onclick="show('class12')">
+
+<button
+class="class-btn"
+onclick="openClass('class12')">
+
 📗 Class 12
+
 </button>
 
 </div>
+
 
 
 <!-- CLASS 11 -->
 
-<div id="class11" class="box hide">
+<div id="class11" class="container hide">
 
-<button class="back" onclick="show('home')">
+<button
+class="back-btn"
+onclick="goHome()">
+
 ⬅ Back
+
 </button>
 
 <div class="card">
 
 <h2>📘 Class 11</h2>
 
-<button class="subjectbtn" onclick="showSubject('bio11')">
+<button
+class="subject-btn"
+onclick="openSubject('bio11')">
+
 🧬 Biology
+
 </button>
 
-<button class="subjectbtn" onclick="showSubject('phy11')">
+<button
+class="subject-btn"
+onclick="openSubject('phy11')">
+
 ⚡ Physics
+
 </button>
 
-<button class="subjectbtn" onclick="showSubject('chem11')">
+<button
+class="subject-btn"
+onclick="openSubject('chem11')">
+
 🧪 Chemistry
+
 </button>
 
-<button class="subjectbtn" onclick="showSubject('vet11')">
+<button
+class="subject-btn"
+onclick="openSubject('vet11')">
+
 🐄 Veterinary
+
 </button>
 
 </div>
+
 </div>
+
 
 
 <!-- CLASS 12 -->
 
-<div id="class12" class="box hide">
+<div id="class12" class="container hide">
 
-<button class="back" onclick="show('home')">
+<button
+class="back-btn"
+onclick="goHome()">
+
 ⬅ Back
+
 </button>
 
 <div class="card">
 
 <h2>📗 Class 12</h2>
 
-<button class="subjectbtn" onclick="showSubject('bio12')">
+<button
+class="subject-btn"
+onclick="openSubject('bio12')">
+
 🧬 Biology
+
 </button>
 
-<button class="subjectbtn" onclick="showSubject('phy12')">
+<button
+class="subject-btn"
+onclick="openSubject('phy12')">
+
 ⚡ Physics
+
 </button>
 
-<button class="subjectbtn" onclick="showSubject('chem12')">
+<button
+class="subject-btn"
+onclick="openSubject('chem12')">
+
 🧪 Chemistry
+
 </button>
 
-<button class="subjectbtn" onclick="showSubject('vet12')">
+<button
+class="subject-btn"
+onclick="openSubject('vet12')">
+
 🐄 Veterinary
+
 </button>
 
 </div>
+
 </div>
 
 
-<!-- SUBJECT PAGES -->
 
-<div id="bio11" class="box hide"></div>
-<div id="phy11" class="box hide"></div>
-<div id="chem11" class="box hide"></div>
-<div id="vet11" class="box hide"></div>
+<!-- SUBJECT -->
 
-<div id="bio12" class="box hide"></div>
-<div id="phy12" class="box hide"></div>
-<div id="chem12" class="box hide"></div>
-<div id="vet12" class="box hide"></div>
+<div id="subjectPage" class="container hide">
 
+<button
+class="back-btn"
+onclick="backToClass()">
 
-<!-- NOTES -->
+⬅ Back
 
-<div id="notes" class="box hide">
-
-<button class="back" onclick="backToChapterList()">
-⬅ Back to Chapters
 </button>
 
 <div class="card">
 
-<h2 id="nt" class="note-title"></h2>
+<h2 id="subjectTitle"></h2>
 
-<div id="noteContent"></div>
+<p id="chapterCount"></p>
+
+<div id="chapterList"></div>
 
 </div>
+
 </div>
+
+
+
+<!-- CHAPTER -->
+
+<div id="chapterPage" class="container hide">
+
+<button
+class="back-btn"
+onclick="backToSubject()">
+
+⬅ Back to Chapters
+
+</button>
+
+<div class="chapter-page">
+
+<h2 id="chapterTitle"></h2>
+
+<div class="info">
+
+📚 इस chapter के notes यहाँ जोड़े जाएंगे।
+
+<br><br>
+
+📝 Chapter खुल गया है।
+
+</div>
+
+</div>
+
+</div>
+
 
 
 <script>
 
+
 /* =========================
-   CHAPTERS
+   ALL CHAPTERS
 ========================= */
 
-const data={
+const chapters = {
 
-bio11:[
+
+/* CLASS 11 BIOLOGY */
+
+bio11: [
+
 "The Living World",
+
 "Biological Classification",
+
 "Plant Kingdom",
+
 "Animal Kingdom",
+
 "Morphology of Flowering Plants",
+
 "Anatomy of Flowering Plants",
+
 "Structural Organisation in Animals",
+
 "Cell: The Unit of Life",
+
 "Biomolecules",
+
 "Cell Cycle and Cell Division",
+
 "Transport in Plants",
+
 "Mineral Nutrition",
+
 "Photosynthesis in Plants",
+
 "Respiration in Plants",
+
 "Plant Growth and Development",
+
 "Digestion and Absorption",
+
 "Breathing and Exchange of Gases",
+
 "Body Fluids and Circulation",
+
 "Excretory Products and Their Elimination",
+
 "Locomotion and Movement",
+
 "Neural Control and Coordination",
+
 "Chemical Coordination and Integration"
+
 ],
 
-phy11:[
+
+/* CLASS 11 PHYSICS */
+
+phy11: [
+
 "Units and Measurements",
+
 "Motion in a Straight Line",
+
 "Motion in a Plane",
+
 "Laws of Motion",
+
 "Work, Energy and Power",
+
 "System of Particles and Rotational Motion",
+
 "Gravitation",
+
 "Mechanical Properties of Solids",
+
 "Mechanical Properties of Fluids",
+
 "Thermal Properties of Matter",
+
 "Thermodynamics",
+
 "Kinetic Theory",
+
 "Oscillations",
+
 "Waves"
+
 ],
 
-chem11:[
+
+/* CLASS 11 CHEMISTRY */
+
+chem11: [
+
 "Some Basic Concepts of Chemistry",
+
 "Structure of Atom",
+
 "Classification of Elements and Periodicity in Properties",
+
 "Chemical Bonding and Molecular Structure",
+
 "Thermodynamics",
+
 "Equilibrium",
+
 "Redox Reactions",
+
 "Organic Chemistry – Basic Principles and Techniques",
+
 "Hydrocarbons"
+
 ],
 
-vet11:[
+
+/* CLASS 11 VETERINARY */
+
+vet11: [
+
 "Animal Science",
+
 "Veterinary Biology",
+
 "Animal Scientific Names",
+
 "Veterinary Important Topics",
+
 "Veterinary Model Papers"
+
 ],
 
-bio12:[
+
+
+/* CLASS 12 BIOLOGY */
+
+bio12: [
+
 "Sexual Reproduction in Flowering Plants",
+
 "Human Reproduction",
+
 "Reproductive Health",
+
 "Principles of Inheritance and Variation",
+
 "Molecular Basis of Inheritance",
+
 "Evolution",
+
 "Human Health and Disease",
+
 "Strategies for Enhancement in Food Production",
+
 "Microbes in Human Welfare",
+
 "Biotechnology: Principles and Processes",
+
 "Biotechnology and Its Applications",
+
 "Organisms and Populations",
+
 "Ecosystem",
+
 "Biodiversity and Conservation"
+
 ],
 
-phy12:[
+
+/* CLASS 12 PHYSICS */
+
+phy12: [
+
 "Electric Charges and Fields",
+
 "Electrostatic Potential and Capacitance",
+
 "Current Electricity",
+
 "Moving Charges and Magnetism",
+
 "Magnetism and Matter",
+
 "Electromagnetic Induction",
+
 "Alternating Current",
+
 "Electromagnetic Waves",
+
 "Ray Optics and Optical Instruments",
+
 "Wave Optics",
+
 "Dual Nature of Radiation and Matter",
+
 "Atoms",
+
 "Nuclei",
+
 "Semiconductor Electronics"
+
 ],
 
-chem12:[
+
+/* CLASS 12 CHEMISTRY */
+
+chem12: [
+
 "Solutions",
+
 "Electrochemistry",
+
 "Chemical Kinetics",
+
 "Surface Chemistry",
+
 "General Principles and Processes of Isolation of Elements",
+
 "p-Block Elements",
+
 "d- and f-Block Elements",
+
 "Coordination Compounds",
+
 "Haloalkanes and Haloarenes",
+
 "Alcohols, Phenols and Ethers",
+
 "Aldehydes, Ketones and Carboxylic Acids",
+
 "Amines",
+
 "Biomolecules",
+
 "Polymers",
+
 "Chemistry in Everyday Life"
+
 ],
 
-vet12:[
+
+/* CLASS 12 VETERINARY */
+
+vet12: [
+
 "Veterinary Biology",
+
 "Animal Anatomy Basics",
+
 "Animal Physiology Basics",
+
 "Animal Nutrition",
+
 "Animal Scientific Names",
+
 "Veterinary Important Topics",
+
 "Veterinary Model Papers"
+
 ]
 
 };
 
 
-/* =========================
-   NOTES
-========================= */
-
-const notesData={};
-
 
 /* =========================
-   LIVING WORLD
+   SUBJECT NAMES
 ========================= */
 
-notesData["The Living World"]=`
+const subjectNames = {
 
-<h2>🌿 The Living World</h2>
+bio11:"🧬 Class 11 Biology",
 
-<div class="highlight">
-<b>Class 11 Biology | NEET + Veterinary</b><br>
-इस chapter में जीवित संसार, जीवों की विशेषताएँ, Biodiversity,
-Taxonomy, Systematics, Taxonomic Hierarchy, Binomial Nomenclature
-और Taxonomic Aids का अध्ययन किया जाता है।
-</div>
+phy11:"⚡ Class 11 Physics",
 
+chem11:"🧪 Class 11 Chemistry",
 
-<!-- PDF BUTTON -->
+vet11:"🐄 Class 11 Veterinary",
 
-<div class="highlight">
+bio12:"🧬 Class 12 Biology",
 
-<b>📄 Living World PDF Notes</b><br>
+phy12:"⚡ Class 12 Physics",
 
-अपनी PDF को इसी HTML file वाले folder में रखो।
+chem12:"🧪 Class 12 Chemistry",
 
-<br>
+vet12:"🐄 Class 12 Veterinary"
 
-<a class="pdfbtn"
-href="biology (living world) 2.pdf"
-target="_blank">
+};
 
-📖 PDF खोलें
 
-</a>
+let currentSubject = "";
 
-</div>
+let currentClass = "";
 
 
-<h3>1. Biology</h3>
 
-<p>
-Biology जीवों तथा उनके जीवन का वैज्ञानिक अध्ययन है।
-</p>
+/* =========================
+   SHOW ONLY ONE PAGE
+========================= */
 
-<ul>
-<li><b>Bio / Bios</b> = Life</li>
-<li><b>Logos</b> = Study</li>
-</ul>
+function hideAll(){
 
+document
+.querySelectorAll(".container")
+.forEach(function(page){
 
-<h3>2. Biology की प्रमुख शाखाएँ</h3>
+page.classList.add("hide");
 
-<ul>
-<li><b>Botany</b> — पौधों का अध्ययन</li>
-<li><b>Zoology</b> — जन्तुओं का अध्ययन</li>
-<li><b>Microbiology</b> — सूक्ष्मजीवों का अध्ययन</li>
-<li><b>Morphology</b> — बाहरी संरचना</li>
-<li><b>Anatomy</b> — आंतरिक संरचना</li>
-<li><b>Cytology</b> — कोशिका का अध्ययन</li>
-<li><b>Histology</b> — ऊतकों का अध्ययन</li>
-<li><b>Physiology</b> — शारीरिक क्रियाओं का अध्ययन</li>
-<li><b>Genetics</b> — आनुवंशिकता का अध्ययन</li>
-<li><b>Ecology</b> — जीव और पर्यावरण के संबंध</li>
-<li><b>Taxonomy</b> — पहचान, नामकरण और वर्गीकरण</li>
-</ul>
+});
 
+}
 
-<h3>3. What is Living?</h3>
 
-<p>
-जीवित जीवों में कुछ विशेष लक्षण पाए जाते हैं
-जो उन्हें निर्जीव वस्तुओं से अलग करते हैं।
-</p>
 
-<div class="highlight">
+/* =========================
+   HOME
+========================= */
 
-<b>मुख्य Life Characteristics:</b><br>
+function goHome(){
 
-Growth + Reproduction + Metabolism +
-Cellular Organisation + Consciousness
+hideAll();
 
-</div>
+document
+.getElementById("home")
+.classList.remove("hide");
 
+window.scrollTo(0,0);
 
-<h3>4. Growth — वृद्धि</h3>
+}
 
-<p>
-जीवों के आकार तथा द्रव्यमान में वृद्धि को Growth कहते हैं।
-</p>
 
 
-<h3>5. Reproduction — प्रजनन</h3>
+/* =========================
+   OPEN CLASS
+========================= */
 
-<p>
-जीवों द्वारा अपने समान नई संतति उत्पन्न करने की प्रक्रिया
-Reproduction कहलाती है।
-</p>
+function openClass(classId){
 
-<ul>
-<li><b>Asexual Reproduction</b></li>
-<li><b>Sexual Reproduction</b></li>
-</ul>
+hideAll();
 
+document
+.getElementById(classId)
+.classList.remove("hide");
 
-<div class="example">
+currentClass = classId;
 
-<b>Important:</b>
-Reproduction individual organism के लिए अनिवार्य नहीं है।
+window.scrollTo(0,0);
 
-</div>
+}
 
 
-<h3>6. Metabolism — उपापचय</h3>
 
-<p>
-जीव के शरीर में होने वाली सभी रासायनिक क्रियाओं के कुल योग को
-Metabolism कहते हैं।
-</p>
+/* =========================
+   OPEN SUBJECT
+========================= */
 
-<ul>
-<li><b>Anabolism</b> — निर्माणात्मक क्रियाएँ</li>
-<li><b>Catabolism</b> — अपघटनात्मक क्रियाएँ</li>
-</ul>
+function openSubject(subjectId){
 
+currentSubject = subjectId;
 
-<h3>7. Cellular Organisation</h3>
+hideAll();
 
-<p>
-कोशिका जीवन की मूलभूत संरचनात्मक और क्रियात्मक इकाई है।
-</p>
+document
+.getElementById("subjectPage")
+.classList.remove("hide");
 
-<ul>
-<li><b>Unicellular</b> — एक कोशिका वाले जीव</li>
-<li><b>Multicellular</b> — अनेक कोशिकाओं वाले जीव</li>
-</ul>
+document
+.getElementById("subjectTitle")
+.innerText =
+subjectNames[subjectId];
 
+const list =
+chapters[subjectId];
 
-<h3>8. Consciousness — चेतना</h3>
+document
+.getElementById("chapterCount")
+.innerText =
+list.length + " Chapters";
 
-<p>
-जीव अपने वातावरण में होने वाले परिवर्तनों को महसूस कर सकते हैं
-और उनके प्रति प्रतिक्रिया दे सकते हैं।
-</p>
+const chapterList =
+document.getElementById("chapterList");
 
+chapterList.innerHTML = "";
 
-<h3>9. Biodiversity — जैव विविधता</h3>
 
-<p>
-पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के जीवों की विविधता को
-Biodiversity कहते हैं।
-</p>
+/* CREATE CHAPTER BUTTONS */
 
+list.forEach(function(chapter,index){
 
-<h3>10. Taxonomy</h3>
+const button =
+document.createElement("button");
 
-<p>
-जीवों की <b>Identification, Nomenclature और Classification</b>
-के अध्ययन को Taxonomy कहते हैं।
-</p>
+button.className =
+"chapter-btn";
 
+button.innerText =
+(index + 1) + ". " + chapter;
 
-<h3>11. Systematics</h3>
 
-<p>
-Systematics में जीवों की विविधता तथा उनके संबंधों का अध्ययन किया जाता है।
-</p>
+/* CHAPTER CLICK */
 
+button.onclick = function(){
 
-<h3>12. Taxonomic Hierarchy</h3>
+openChapter(chapter);
 
-<div class="hierarchy">
+};
 
-Kingdom<br>
-↓<br>
-Phylum / Division<br>
-↓<br>
-Class<br>
-↓<br>
-Order<br>
-↓<br>
-Family<br>
-↓<br>
-Genus<br>
-↓<br>
-Species
 
-</div>
+chapterList.appendChild(button);
 
+});
 
-<h3>13. Species</h3>
+window.scrollTo(0,0);
 
-<p>
-Species taxonomic hierarchy की मूलभूत इकाई है।
-</p>
+}
 
 
-<div class="example">
 
-<b>Example:</b> Homo sapiens
+/* =========================
+   OPEN CHAPTER
+========================= */
 
-</div>
+function openChapter(chapterName){
 
+hideAll();
 
-<h3>14. Binomial Nomenclature</h3>
+document
+.getElementById("chapterPage")
+.classList.remove("hide");
 
-<p>
-जिस वैज्ञानिक नामकरण पद्धति में किसी जीव का नाम दो शब्दों में लिखा जाता है,
-उसे Binomial Nomenclature कहते हैं।
-</p>
+document
+.getElementById("chapterTitle")
+.innerText =
+chapterName;
 
+window.scrollTo(0,0);
 
-<div class="example">
+}
 
-<b>Homo sapiens</b><br>
-Homo = Genus<br>
 
+
+/* =========================
+   BACK TO SUBJECT
+========================= */
+
+function backToSubject(){
+
+openSubject(currentSubject);
+
+}
+
+
+
+/* =========================
+   BACK TO CLASS
+========================= */
+
+function backToClass(){
+
+hideAll();
+
+document
+.getElementById(currentClass)
+.classList.remove("hide");
+
+window.scrollTo(0,0);
+
+}
+
+
+
+/* =========================
+   START WEBSITE
+========================= */
+
+goHome();
+
+
+</script>
+
+</body>
+  </html>
