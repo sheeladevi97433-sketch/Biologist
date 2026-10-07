@@ -7,7 +7,7 @@
 <title>🧬 Biologist - NEET + Veterinary</title>
 
 <style>
-*{box-sizing:border-box;}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -47,7 +47,8 @@ header p{
   box-shadow:0 3px 10px #bbb;
 }
 
-.card h2,.card h3{
+.card h2,
+.card h3{
   color:#087f5b;
 }
 
@@ -60,10 +61,6 @@ button{
   margin-top:8px;
   font-size:15px;
   cursor:pointer;
-}
-
-button:hover{
-  opacity:.9;
 }
 
 .back{
@@ -90,10 +87,6 @@ button:hover{
   background:#f1f8f6;
   color:#123;
   border:1px solid #c9e5dc;
-}
-
-.chapterbtn:hover{
-  background:#dff3ec;
 }
 
 .hide{
@@ -137,6 +130,17 @@ ul{
 .small{
   color:#666;
   font-size:14px;
+}
+
+.pdfbtn{
+  display:inline-block;
+  background:#087f5b;
+  color:white;
+  padding:12px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:10px;
 }
 </style>
 </head>
@@ -233,7 +237,7 @@ ul{
 </div>
 
 
-<!-- CHAPTER LISTS -->
+<!-- SUBJECT PAGES -->
 
 <div id="bio11" class="box hide"></div>
 <div id="phy11" class="box hide"></div>
@@ -267,14 +271,13 @@ ul{
 <script>
 
 /* =========================
-   CHAPTER DATA
+   CHAPTERS
 ========================= */
 
 const data={
 
-bio11:
-  </a>
-</div>
+bio11:[
+"The Living World",
 "Biological Classification",
 "Plant Kingdom",
 "Animal Kingdom",
@@ -401,14 +404,14 @@ vet12:[
 
 
 /* =========================
-   NOTES DATA
+   NOTES
 ========================= */
 
 const notesData={};
 
 
 /* =========================
-   THE LIVING WORLD
+   LIVING WORLD
 ========================= */
 
 notesData["The Living World"]=`
@@ -422,6 +425,28 @@ Taxonomy, Systematics, Taxonomic Hierarchy, Binomial Nomenclature
 और Taxonomic Aids का अध्ययन किया जाता है।
 </div>
 
+
+<!-- PDF BUTTON -->
+
+<div class="highlight">
+
+<b>📄 Living World PDF Notes</b><br>
+
+अपनी PDF को इसी HTML file वाले folder में रखो।
+
+<br>
+
+<a class="pdfbtn"
+href="biology (living world) 2.pdf"
+target="_blank">
+
+📖 PDF खोलें
+
+</a>
+
+</div>
+
+
 <h3>1. Biology</h3>
 
 <p>
@@ -432,6 +457,7 @@ Biology जीवों तथा उनके जीवन का वैज्�
 <li><b>Bio / Bios</b> = Life</li>
 <li><b>Logos</b> = Study</li>
 </ul>
+
 
 <h3>2. Biology की प्रमुख शाखाएँ</h3>
 
@@ -449,17 +475,23 @@ Biology जीवों तथा उनके जीवन का वैज्�
 <li><b>Taxonomy</b> — पहचान, नामकरण और वर्गीकरण</li>
 </ul>
 
+
 <h3>3. What is Living?</h3>
 
 <p>
-जीवित जीवों में कुछ विशेष लक्षण पाए जाते हैं जो उन्हें निर्जीव वस्तुओं से अलग करते हैं।
+जीवित जीवों में कुछ विशेष लक्षण पाए जाते हैं
+जो उन्हें निर्जीव वस्तुओं से अलग करते हैं।
 </p>
 
 <div class="highlight">
+
 <b>मुख्य Life Characteristics:</b><br>
+
 Growth + Reproduction + Metabolism +
 Cellular Organisation + Consciousness
+
 </div>
+
 
 <h3>4. Growth — वृद्धि</h3>
 
@@ -467,10 +499,12 @@ Cellular Organisation + Consciousness
 जीवों के आकार तथा द्रव्यमान में वृद्धि को Growth कहते हैं।
 </p>
 
+
 <h3>5. Reproduction — प्रजनन</h3>
 
 <p>
-जीवों द्वारा अपने समान नई संतति उत्पन्न करने की प्रक्रिया Reproduction कहलाती है।
+जीवों द्वारा अपने समान नई संतति उत्पन्न करने की प्रक्रिया
+Reproduction कहलाती है।
 </p>
 
 <ul>
@@ -478,20 +512,27 @@ Cellular Organisation + Consciousness
 <li><b>Sexual Reproduction</b></li>
 </ul>
 
+
 <div class="example">
-<b>Important:</b> Reproduction individual organism के लिए अनिवार्य नहीं है।
+
+<b>Important:</b>
+Reproduction individual organism के लिए अनिवार्य नहीं है।
+
 </div>
+
 
 <h3>6. Metabolism — उपापचय</h3>
 
 <p>
-जीव के शरीर में होने वाली सभी रासायनिक क्रियाओं के कुल योग को Metabolism कहते हैं।
+जीव के शरीर में होने वाली सभी रासायनिक क्रियाओं के कुल योग को
+Metabolism कहते हैं।
 </p>
 
 <ul>
 <li><b>Anabolism</b> — निर्माणात्मक क्रियाएँ</li>
 <li><b>Catabolism</b> — अपघटनात्मक क्रियाएँ</li>
 </ul>
+
 
 <h3>7. Cellular Organisation</h3>
 
@@ -504,6 +545,7 @@ Cellular Organisation + Consciousness
 <li><b>Multicellular</b> — अनेक कोशिकाओं वाले जीव</li>
 </ul>
 
+
 <h3>8. Consciousness — चेतना</h3>
 
 <p>
@@ -511,11 +553,14 @@ Cellular Organisation + Consciousness
 और उनके प्रति प्रतिक्रिया दे सकते हैं।
 </p>
 
+
 <h3>9. Biodiversity — जैव विविधता</h3>
 
 <p>
-पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के जीवों की विविधता को Biodiversity कहते हैं।
+पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के जीवों की विविधता को
+Biodiversity कहते हैं।
 </p>
+
 
 <h3>10. Taxonomy</h3>
 
@@ -524,15 +569,18 @@ Cellular Organisation + Consciousness
 के अध्ययन को Taxonomy कहते हैं।
 </p>
 
+
 <h3>11. Systematics</h3>
 
 <p>
 Systematics में जीवों की विविधता तथा उनके संबंधों का अध्ययन किया जाता है।
 </p>
 
+
 <h3>12. Taxonomic Hierarchy</h3>
 
 <div class="hierarchy">
+
 Kingdom<br>
 ↓<br>
 Phylum / Division<br>
@@ -546,7 +594,9 @@ Family<br>
 Genus<br>
 ↓<br>
 Species
+
 </div>
+
 
 <h3>13. Species</h3>
 
@@ -554,9 +604,13 @@ Species
 Species taxonomic hierarchy की मूलभूत इकाई है।
 </p>
 
+
 <div class="example">
+
 <b>Example:</b> Homo sapiens
+
 </div>
+
 
 <h3>14. Binomial Nomenclature</h3>
 
@@ -565,544 +619,8 @@ Species taxonomic hierarchy की मूलभूत इकाई है।
 उसे Binomial Nomenclature कहते हैं।
 </p>
 
+
 <div class="example">
+
 <b>Homo sapiens</b><br>
 Homo = Genus<br>
-sapiens = Specific epithet
-</div>
-
-<h3>15. Scientific Name के नियम</h3>
-
-<ul>
-<li>वैज्ञानिक नाम दो शब्दों का होता है।</li>
-<li>पहला शब्द Genus होता है।</li>
-<li>दूसरा शब्द Specific epithet होता है।</li>
-<li>Genus का पहला अक्षर Capital होता है।</li>
-<li>Specific epithet छोटे अक्षर से लिखा जाता है।</li>
-<li>Printed form में नाम Italic लिखा जाता है।</li>
-<li>Handwritten form में दोनों शब्दों को अलग-अलग underline किया जाता है।</li>
-</ul>
-
-<h3>16. Carolus Linnaeus</h3>
-
-<p>
-Carolus Linnaeus को Father of Taxonomy कहा जाता है।
-</p>
-
-<h3>17. Taxonomic Aids</h3>
-
-<ul>
-<li>Herbarium</li>
-<li>Botanical Garden</li>
-<li>Museum</li>
-<li>Zoological Park</li>
-<li>Key</li>
-</ul>
-
-<h3>⭐ Quick Revision</h3>
-
-<div class="highlight">
-
-<b>Taxonomy</b> =
-Identification + Nomenclature + Classification
-
-<br><br>
-
-<b>Hierarchy</b> =
-Kingdom → Phylum/Division → Class → Order → Family → Genus → Species
-
-<br><br>
-
-<b>Basic Unit</b> = Species
-
-<br><br>
-
-<b>Scientific Name</b> = Genus + Specific epithet
-
-</div>
-
-`;
-
-
-/* =========================
-   BIOLOGICAL CLASSIFICATION
-========================= */
-
-notesData["Biological Classification"]=`
-
-<h2>🧬 Biological Classification</h2>
-
-<div class="highlight">
-<b>Class 11 Biology | NEET + Veterinary</b><br>
-जीवों की विविधता को समझने, पहचानने और व्यवस्थित करने के लिए
-Biological Classification का अध्ययन किया जाता है।
-</div>
-
-<h3>1. Biological Classification क्या है?</h3>
-
-<p>
-जीवों की समानताओं और असमानताओं के आधार पर उन्हें अलग-अलग समूहों में
-व्यवस्थित करने की प्रक्रिया को <b>Biological Classification</b> कहते हैं।
-</p>
-
-<h3>2. Classification की आवश्यकता</h3>
-
-<ul>
-<li>जीवों की पहचान आसान होती है।</li>
-<li>जीवों का अध्ययन व्यवस्थित रूप से किया जा सकता है।</li>
-<li>समान विशेषताओं वाले जीवों को एक समूह में रखा जा सकता है।</li>
-<li>जीवों की विविधता को समझने में सहायता मिलती है।</li>
-<li>जीवों के बीच संबंधों को समझने में सहायता मिलती है।</li>
-</ul>
-
-<h3>3. Two Kingdom Classification</h3>
-
-<div class="hierarchy">
-Plantae &nbsp; | &nbsp; Animalia
-</div>
-
-<p>
-प्रारंभिक classification में जीवों को मुख्यतः Plantae और Animalia
-दो Kingdom में रखा गया था।
-</p>
-
-<h3>4. Five Kingdom Classification</h3>
-
-<p>
-<b>R.H. Whittaker</b> ने 1969 में Five Kingdom Classification प्रस्तावित किया।
-</p>
-
-<div class="hierarchy">
-Monera → Protista → Fungi → Plantae → Animalia
-</div>
-
-<p>मुख्य आधार:</p>
-
-<ul>
-<li>Cell structure</li>
-<li>Body organisation</li>
-<li>Mode of nutrition</li>
-<li>Reproduction</li>
-<li>Phylogenetic relationships</li>
-</ul>
-
-<h3>5. Kingdom Monera</h3>
-
-<ul>
-<li>Prokaryotic organisms</li>
-<li>मुख्यतः unicellular</li>
-<li>True nucleus absent</li>
-<li>Membrane-bound organelles absent</li>
-<li>Cell wall कई members में उपस्थित</li>
-</ul>
-
-<h3>6. Bacteria</h3>
-
-<p>
-Bacteria Monera के महत्वपूर्ण members हैं। ये विभिन्न प्रकार के habitats
-में पाए जाते हैं।
-</p>
-
-<h3>7. Bacteria की Shapes</h3>
-
-<ul>
-<li><b>Coccus</b> → गोलाकार</li>
-<li><b>Bacillus</b> → Rod-shaped</li>
-<li><b>Vibrio</b> → Comma-shaped</li>
-<li><b>Spirillum</b> → Spiral-shaped</li>
-</ul>
-
-<h3>8. Archaebacteria</h3>
-
-<p>
-Archaebacteria कई extreme habitats में पाए जाने वाले prokaryotic organisms हैं।
-</p>
-
-<ul>
-<li><b>Methanogens</b></li>
-<li><b>Halophiles</b></li>
-<li><b>Thermoacidophiles</b></li>
-</ul>
-
-<h3>9. Methanogens</h3>
-
-<p>
-Methanogens methane production से संबंधित होते हैं और कुछ anaerobic
-environments तथा ruminant animals के gut में पाए जा सकते हैं।
-</p>
-
-<div class="highlight">
-<b>Veterinary Point:</b>
-Ruminant animals के rumen में methanogens पाए जा सकते हैं।
-</div>
-
-<h3>10. Halophiles</h3>
-
-<p>
-Halophiles अत्यधिक saline environments में पाए जाने वाले organisms हैं।
-</p>
-
-<h3>11. Thermoacidophiles</h3>
-
-<p>
-Thermoacidophiles high temperature और acidic conditions वाले environments
-में पाए जा सकते हैं।
-</p>
-
-<h3>12. Eubacteria</h3>
-
-<p>
-Eubacteria को true bacteria भी कहा जाता है।
-</p>
-
-<h3>13. Cyanobacteria</h3>
-
-<p>
-Cyanobacteria को blue-green algae भी कहा जाता है। ये photosynthetic
-prokaryotes हैं।
-</p>
-
-<ul>
-<li>Prokaryotic</li>
-<li>Photosynthetic</li>
-<li>कुछ nitrogen fixation कर सकते हैं</li>
-<li>Freshwater तथा marine habitats में पाए जा सकते हैं</li>
-</ul>
-
-<h3>14. Heterocysts</h3>
-
-<p>
-कुछ cyanobacteria में विशेष cells पाए जाते हैं जिन्हें
-<b>Heterocysts</b> कहा जाता है। ये nitrogen fixation से संबंधित होते हैं।
-</p>
-
-<div class="example">
-<b>Examples:</b> Nostoc, Anabaena
-</div>
-
-<h3>15. Mycoplasma</h3>
-
-<ul>
-<li>बहुत छोटे living cells में से हैं।</li>
-<li>Cell wall absent</li>
-<li>कुछ pathogenic हो सकते हैं।</li>
-</ul>
-
-<h2>🧫 KINGDOM PROTISTA</h2>
-
-<h3>16. Kingdom Protista</h3>
-
-<ul>
-<li>Eukaryotic</li>
-<li>मुख्यतः unicellular</li>
-<li>True nucleus present</li>
-<li>Membrane-bound organelles present</li>
-<li>अधिकांश aquatic habitats में पाए जाते हैं।</li>
-</ul>
-
-<h3>17. Protista के प्रमुख Groups</h3>
-
-<ul>
-<li>Chrysophytes</li>
-<li>Dinoflagellates</li>
-<li>Euglenoids</li>
-<li>Slime moulds</li>
-<li>Protozoans</li>
-</ul>
-
-<h3>18. Chrysophytes</h3>
-
-<p>
-Chrysophytes में diatoms और golden algae जैसे organisms शामिल होते हैं।
-Diatoms की cell wall में silica पाया जाता है।
-</p>
-
-<div class="highlight">
-<b>NEET Point:</b> Diatoms की cell wall silica-rich होती है।
-</div>
-
-<h3>19. Dinoflagellates</h3>
-
-<p>
-Dinoflagellates मुख्यतः marine organisms हैं। कुछ dinoflagellates की
-अत्यधिक वृद्धि red tides से जुड़ी हो सकती है।
-</p>
-
-<h3>20. Euglenoids</h3>
-
-<p>
-Euglenoids मुख्यतः freshwater habitats में पाए जाते हैं।
-इनमें protein-rich pellicle पाया जाता है।
-</p>
-
-<div class="example">
-<b>Example:</b> Euglena
-</div>
-
-<h3>21. Slime Moulds</h3>
-
-<p>
-Slime moulds saprophytic protists हैं और decaying organic matter पर पाए जा सकते हैं।
-</p>
-
-<h3>22. Protozoans</h3>
-
-<p>
-Protozoans unicellular heterotrophic protists हैं।
-</p>
-
-<div class="example">
-<b>Examples:</b> Amoeba, Paramecium, Plasmodium
-</div>
-
-<h3>23. Protozoans के प्रकार</h3>
-
-<ul>
-<li>Amoeboid protozoans</li>
-<li>Flagellated protozoans</li>
-<li>Ciliated protozoans</li>
-<li>Sporozoans</li>
-</ul>
-
-<h2>🍄 KINGDOM FUNGI</h2>
-
-<h3>24. Kingdom Fungi</h3>
-
-<ul>
-<li>Eukaryotic</li>
-<li>Heterotrophic</li>
-<li>Cell wall mainly chitin की</li>
-<li>अधिकांश multicellular</li>
-<li>Yeast unicellular fungus है।</li>
-</ul>
-
-<h3>25. Hyphae और Mycelium</h3>
-
-<p>
-Fungi की thread-like structures को <b>Hyphae</b> कहते हैं।
-Hyphae का जाल <b>Mycelium</b> कहलाता है।
-</p>
-
-<h3>26. Fungi में Nutrition</h3>
-
-<ul>
-<li><b>Saprophytic</b> — मृत organic matter से भोजन</li>
-<li><b>Parasitic</b> — host से भोजन</li>
-<li><b>Symbiotic</b> — दूसरे organism के साथ संबंध</li>
-</ul>
-
-<h3>27. Fungi में Reproduction</h3>
-
-<ul>
-<li>Vegetative — Fragmentation, Fission, Budding</li>
-<li>Asexual — Spores</li>
-<li>Sexual — Sexual reproduction</li>
-</ul>
-
-<h3>28. Lichens</h3>
-
-<p>
-Lichens में fungus और photosynthetic partner का symbiotic association होता है।
-</p>
-
-<h2>🦠 VIRUSES</h2>
-
-<h3>29. Viruses</h3>
-
-<ul>
-<li>Cellular organisation नहीं होती।</li>
-<li>DNA या RNA genetic material हो सकता है।</li>
-<li>Protein coat पाया जाता है।</li>
-<li>Host cell के अंदर replication करते हैं।</li>
-</ul>
-
-<h2>🧬 VIROIDS</h2>
-
-<h3>30. Viroids</h3>
-
-<p>
-Viroids बहुत छोटे infectious agents हैं जिनमें मुख्यतः naked RNA पाया जाता है।
-</p>
-
-<div class="highlight">
-<b>⭐ Quick Revision</b><br><br>
-Monera → Prokaryotic<br>
-Protista → Unicellular Eukaryotic<br>
-Fungi → Heterotrophic + Chitin cell wall<br>
-Lichen → Fungus + Photosynthetic partner<br>
-Virus → Acellular infectious agent<br>
-Viroid → Naked infectious RNA
-</div>
-
-`;
-
-
-/* =========================
-   FUNCTIONS
-========================= */
-
-let previousPage="bio11";
-
-
-function show(id){
-
-document.querySelectorAll(".box").forEach(function(page){
-page.classList.add("hide");
-});
-
-const target=document.getElementById(id);
-
-if(target){
-target.classList.remove("hide");
-window.scrollTo(0,0);
-}
-
-}
-
-
-function showSubject(id){
-
-list(id);
-show(id);
-
-}
-
-
-function list(id){
-
-const box=document.getElementById(id);
-
-if(!box)return;
-
-const chapters=data[id]||[];
-
-let html=`
-<button class="back" onclick="backToClass('${id}')">
-⬅ Back
-</button>
-
-<div class="card">
-
-<h2>📚 ${subjectName(id)}</h2>
-
-<p class="small">${chapters.length} Chapters</p>
-`;
-
-chapters.forEach(function(chapter,index){
-
-html+=`
-<button
-class="chapterbtn"
-onclick='notes(${JSON.stringify(chapter)})'>
-${index+1}. ${chapter}
-</button>
-`;
-
-});
-
-html+=`</div>`;
-
-box.innerHTML=html;
-
-}
-
-
-function subjectName(id){
-
-const names={
-
-bio11:"🧬 Class 11 Biology",
-phy11:"⚡ Class 11 Physics",
-chem11:"🧪 Class 11 Chemistry",
-vet11:"🐄 Class 11 Veterinary",
-
-bio12:"🧬 Class 12 Biology",
-phy12:"⚡ Class 12 Physics",
-chem12:"🧪 Class 12 Chemistry",
-vet12:"🐄 Class 12 Veterinary"
-
-};
-
-return names[id]||"Subject";
-
-}
-
-
-function backToClass(id){
-
-if(id.endsWith("11")){
-show("class11");
-}else{
-show("class12");
-}
-
-}
-
-
-function notes(name){
-
-previousPage=getCurrentPage();
-
-document.getElementById("nt").innerText=name;
-
-if(notesData[name]){
-
-document.getElementById("noteContent").innerHTML=
-notesData[name];
-
-}else{
-
-document.getElementById("noteContent").innerHTML=`
-
-<div class="highlight">
-📚 इस chapter के detailed notes अभी जल्द जोड़े जाएंगे।
-</div>
-
-`;
-
-}
-
-show("notes");
-
-}
-
-
-function getCurrentPage(){
-
-const pages=document.querySelectorAll(".box");
-
-for(let page of pages){
-
-if(
-!page.classList.contains("hide") &&
-page.id!=="notes"
-){
-
-return page.id;
-
-}
-
-}
-
-return "bio11";
-
-}
-
-
-function backToChapterList(){
-
-show(previousPage);
-
-}
-
-
-/* =========================
-   START
-========================= */
-
-show("home");
-
-</script>
-
-</body>
-  </html>
