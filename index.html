@@ -350,7 +350,881 @@ onclick="backToSubject()">
    ALL CHAPTERS
 ========================= */
 
-const chapters = {
+const chapters = {<script>
+
+/* =========================
+   CHAPTER NOTES
+========================= */
+
+const chapterNotes = {};
+
+
+/* =========================
+   THE LIVING WORLD
+========================= */
+
+chapterNotes["The Living World"] = `
+
+<h2>🌿 The Living World</h2>
+
+<div class="info">
+
+<b>Class 11 Biology | NEET + Veterinary</b><br><br>
+
+इस chapter में Living World, जीवों की विशेषताएँ,
+Biodiversity, Taxonomy, Systematics,
+Taxonomic Hierarchy और Binomial Nomenclature का अध्ययन किया जाता है।
+
+</div>
+
+
+<h3>1. Biology क्या है?</h3>
+
+<p>
+Biology जीवों तथा उनके जीवन का वैज्ञानिक अध्ययन है।
+</p>
+
+<ul>
+
+<li><b>Bio / Bios</b> = Life अर्थात जीवन</li>
+
+<li><b>Logos</b> = Study अर्थात अध्ययन</li>
+
+</ul>
+
+
+<h3>2. Biology की प्रमुख शाखाएँ</h3>
+
+<ul>
+
+<li><b>Botany</b> — पौधों का अध्ययन</li>
+
+<li><b>Zoology</b> — जन्तुओं का अध्ययन</li>
+
+<li><b>Microbiology</b> — सूक्ष्मजीवों का अध्ययन</li>
+
+<li><b>Morphology</b> — जीव की बाहरी संरचना</li>
+
+<li><b>Anatomy</b> — जीव की आंतरिक संरचना</li>
+
+<li><b>Cytology</b> — कोशिका का अध्ययन</li>
+
+<li><b>Histology</b> — ऊतकों का अध्ययन</li>
+
+<li><b>Physiology</b> — शारीरिक क्रियाओं का अध्ययन</li>
+
+<li><b>Genetics</b> — आनुवंशिकता का अध्ययन</li>
+
+<li><b>Ecology</b> — जीव और पर्यावरण के संबंधों का अध्ययन</li>
+
+<li><b>Taxonomy</b> — पहचान, नामकरण और वर्गीकरण</li>
+
+</ul>
+
+
+<h3>3. Living की विशेषताएँ</h3>
+
+<p>
+जीवित जीवों में कुछ विशेष लक्षण पाए जाते हैं
+जो उन्हें निर्जीव वस्तुओं से अलग करते हैं।
+</p>
+
+<div class="info">
+
+<b>मुख्य विशेषताएँ:</b><br><br>
+
+Growth<br>
+Reproduction<br>
+Metabolism<br>
+Cellular Organisation<br>
+Consciousness
+
+</div>
+
+
+<h3>4. Growth — वृद्धि</h3>
+
+<p>
+जीव के आकार तथा द्रव्यमान में वृद्धि को Growth कहते हैं।
+</p>
+
+<p>
+पौधों में वृद्धि जीवनभर होती रह सकती है।
+जबकि अधिकांश जन्तुओं में वृद्धि एक निश्चित अवस्था तक होती है।
+</p>
+
+
+<h3>5. Reproduction — प्रजनन</h3>
+
+<p>
+जीवों द्वारा अपने समान नई संतति उत्पन्न करने की प्रक्रिया
+Reproduction कहलाती है।
+</p>
+
+<ul>
+
+<li><b>Asexual Reproduction</b> — अलैंगिक प्रजनन</li>
+
+<li><b>Sexual Reproduction</b> — लैंगिक प्रजनन</li>
+
+</ul>
+
+<div class="info">
+
+Reproduction species की continuity के लिए महत्वपूर्ण है।
+
+</div>
+
+
+<h3>6. Metabolism — उपापचय</h3>
+
+<p>
+जीव के शरीर में होने वाली सभी रासायनिक क्रियाओं के कुल योग को
+Metabolism कहते हैं।
+</p>
+
+<ul>
+
+<li><b>Anabolism</b> — निर्माणात्मक क्रियाएँ</li>
+
+<li><b>Catabolism</b> — अपघटनात्मक क्रियाएँ</li>
+
+</ul>
+
+
+<h3>7. Cellular Organisation</h3>
+
+<p>
+कोशिका जीवन की मूलभूत संरचनात्मक और क्रियात्मक इकाई है।
+</p>
+
+<ul>
+
+<li><b>Unicellular</b> — एक कोशिका वाले जीव</li>
+
+<li><b>Multicellular</b> — अनेक कोशिकाओं वाले जीव</li>
+
+</ul>
+
+
+<h3>8. Consciousness — चेतना</h3>
+
+<p>
+जीव अपने वातावरण में होने वाले परिवर्तनों को महसूस कर सकते हैं
+और उनके प्रति प्रतिक्रिया दे सकते हैं।
+</p>
+
+
+<h3>9. Biodiversity — जैव विविधता</h3>
+
+<p>
+पृथ्वी पर पाए जाने वाले विभिन्न प्रकार के जीवों की विविधता को
+Biodiversity कहते हैं।
+</p>
+
+
+<h3>10. Taxonomy</h3>
+
+<p>
+जीवों की
+<b>Identification + Nomenclature + Classification</b>
+के अध्ययन को Taxonomy कहते हैं।
+</p>
+
+
+<h3>11. Identification</h3>
+
+<p>
+किसी जीव की विशेषताओं के आधार पर उसकी पहचान करना
+Identification कहलाता है।
+</p>
+
+
+<h3>12. Nomenclature</h3>
+
+<p>
+जीवों को वैज्ञानिक नाम देने की प्रक्रिया
+Nomenclature कहलाती है।
+</p>
+
+
+<h3>13. Classification</h3>
+
+<p>
+समान विशेषताओं वाले जीवों को अलग-अलग समूहों में व्यवस्थित करना
+Classification कहलाता है।
+</p>
+
+
+<h3>14. Systematics</h3>
+
+<p>
+Systematics में जीवों की विविधता तथा उनके आपसी संबंधों का
+अध्ययन किया जाता है।
+</p>
+
+
+<h3>15. Taxonomic Hierarchy</h3>
+
+<div class="info">
+
+<b>Kingdom</b><br>
+↓<br>
+<b>Phylum / Division</b><br>
+↓<br>
+<b>Class</b><br>
+↓<br>
+<b>Order</b><br>
+↓<br>
+<b>Family</b><br>
+↓<br>
+<b>Genus</b><br>
+↓<br>
+<b>Species</b>
+
+</div>
+
+
+<h3>16. Species</h3>
+
+<p>
+Species taxonomic hierarchy की मूलभूत इकाई है।
+</p>
+
+<p>
+एक species के जीव सामान्यतः आपस में प्रजनन करके
+fertile offspring उत्पन्न कर सकते हैं।
+</p>
+
+
+<h3>17. Binomial Nomenclature</h3>
+
+<p>
+जिस वैज्ञानिक नामकरण पद्धति में किसी जीव का नाम
+दो शब्दों में लिखा जाता है,
+उसे Binomial Nomenclature कहते हैं।
+</p>
+
+<div class="info">
+
+<b>Example:</b><br><br>
+
+Homo sapiens<br><br>
+
+Homo = Genus<br>
+sapiens = Specific epithet
+
+</div>
+
+
+<h3>18. Scientific Name लिखने के नियम</h3>
+
+<ul>
+
+<li>वैज्ञानिक नाम दो शब्दों का होता है।</li>
+
+<li>पहला शब्द Genus होता है।</li>
+
+<li>दूसरा शब्द Specific epithet होता है।</li>
+
+<li>Genus का पहला अक्षर Capital होता है।</li>
+
+<li>Specific epithet छोटे अक्षर से लिखा जाता है।</li>
+
+<li>Printed form में नाम Italic लिखा जाता है।</li>
+
+<li>Handwritten form में दोनों शब्दों को अलग-अलग underline किया जाता है।</li>
+
+</ul>
+
+
+<h3>19. Carolus Linnaeus</h3>
+
+<p>
+<b>Carolus Linnaeus</b> को Father of Taxonomy कहा जाता है।
+</p>
+
+<p>
+उन्होंने वैज्ञानिक नामकरण और classification के विकास में
+महत्वपूर्ण योगदान दिया।
+</p>
+
+
+<h3>20. Taxonomic Aids</h3>
+
+<p>
+जीवों की पहचान, अध्ययन और classification में सहायता देने वाले
+साधनों को Taxonomic Aids कहते हैं।
+</p>
+
+<ul>
+
+<li><b>Herbarium</b></li>
+
+<li><b>Botanical Garden</b></li>
+
+<li><b>Museum</b></li>
+
+<li><b>Zoological Park</b></li>
+
+<li><b>Key</b></li>
+
+</ul>
+
+
+<h3>21. Herbarium</h3>
+
+<p>
+सूखे और संरक्षित plant specimens के संग्रह को Herbarium कहते हैं।
+</p>
+
+
+<h3>22. Botanical Garden</h3>
+
+<p>
+जीवित पौधों को वैज्ञानिक रूप से उगाकर रखने वाले स्थान को
+Botanical Garden कहते हैं।
+</p>
+
+
+<h3>23. Museum</h3>
+
+<p>
+Museum में पौधों और जन्तुओं के preserved specimens रखे जाते हैं।
+</p>
+
+
+<h3>24. Zoological Park</h3>
+
+<p>
+जहाँ जीवित जंगली जन्तुओं को उनके प्राकृतिक वातावरण के
+करीब रखा जाता है, उसे Zoological Park कहते हैं।
+</p>
+
+
+<h3>25. Key</h3>
+
+<p>
+जीवों की पहचान करने के लिए contrasting characters का उपयोग
+करने वाले taxonomic aid को Key कहते हैं।
+</p>
+
+
+<h3>⭐ Quick Revision</h3>
+
+<div class="info">
+
+<b>Taxonomy</b><br>
+Identification + Nomenclature + Classification
+
+<br><br>
+
+<b>Basic Unit</b><br>
+Species
+
+<br><br>
+
+<b>Hierarchy</b><br>
+Kingdom → Phylum/Division → Class → Order → Family → Genus → Species
+
+<br><br>
+
+<b>Binomial Nomenclature</b><br>
+Genus + Specific epithet
+
+<br><br>
+
+<b>Father of Taxonomy</b><br>
+Carolus Linnaeus
+
+</div>
+
+`;
+
+
+
+/* =========================
+   BIOLOGICAL CLASSIFICATION
+========================= */
+
+chapterNotes["Biological Classification"] = `
+
+<h2>🧬 Biological Classification</h2>
+
+<div class="info">
+
+<b>Class 11 Biology | NEET + Veterinary</b><br><br>
+
+इस chapter में जीवों के classification,
+Five Kingdom Classification,
+Monera, Protista, Fungi, Plantae और Animalia
+से संबंधित मूल बातें पढ़ी जाती हैं।
+
+</div>
+
+
+<h3>1. Biological Classification क्या है?</h3>
+
+<p>
+जीवों की समानताओं और असमानताओं के आधार पर उन्हें
+अलग-अलग समूहों में व्यवस्थित करने की प्रक्रिया को
+Biological Classification कहते हैं।
+</p>
+
+
+<h3>2. Classification की आवश्यकता</h3>
+
+<ul>
+
+<li>जीवों की पहचान आसान होती है।</li>
+
+<li>जीवों का अध्ययन व्यवस्थित रूप से किया जा सकता है।</li>
+
+<li>समान विशेषताओं वाले जीवों को एक समूह में रखा जा सकता है।</li>
+
+<li>जीवों की विविधता को समझने में सहायता मिलती है।</li>
+
+<li>जीवों के evolutionary relationships को समझने में सहायता मिलती है।</li>
+
+</ul>
+
+
+<h3>3. Two Kingdom Classification</h3>
+
+<p>
+पुराने classification system में जीवों को मुख्यतः
+दो kingdoms में रखा गया था:
+</p>
+
+<div class="info">
+
+Plantae → पौधे
+
+<br><br>
+
+Animalia → जन्तु
+
+</div>
+
+
+<h3>4. Five Kingdom Classification</h3>
+
+<p>
+<b>R.H. Whittaker</b> ने 1969 में
+Five Kingdom Classification प्रस्तावित किया।
+</p>
+
+<div class="info">
+
+<b>Five Kingdoms:</b><br><br>
+
+1. Monera<br>
+2. Protista<br>
+3. Fungi<br>
+4. Plantae<br>
+5. Animalia
+
+</div>
+
+
+<h3>5. Classification के प्रमुख आधार</h3>
+
+<ul>
+
+<li>Cell structure</li>
+
+<li>Body organisation</li>
+
+<li>Mode of nutrition</li>
+
+<li>Reproduction</li>
+
+<li>Phylogenetic relationship</li>
+
+</ul>
+
+
+<h3>6. Kingdom Monera</h3>
+
+<p>
+Monera में मुख्यतः prokaryotic organisms को रखा जाता है।
+</p>
+
+<ul>
+
+<li>अधिकांश unicellular होते हैं।</li>
+
+<li>True nucleus absent होता है।</li>
+
+<li>Membrane-bound organelles absent होते हैं।</li>
+
+<li>Cell wall कई bacteria में उपस्थित होती है।</li>
+
+</ul>
+
+
+<h3>7. Bacteria</h3>
+
+<p>
+Bacteria Monera के प्रमुख organisms हैं।
+</p>
+
+<p>
+उनके आकार के आधार पर कुछ प्रमुख प्रकार:
+</p>
+
+<ul>
+
+<li><b>Coccus</b> — गोलाकार</li>
+
+<li><b>Bacillus</b> — rod-shaped</li>
+
+<li><b>Vibrio</b> — comma-shaped</li>
+
+<li><b>Spirillum</b> — spiral-shaped</li>
+
+</ul>
+
+
+<h3>8. Archaebacteria</h3>
+
+<p>
+Archaebacteria ऐसे bacteria हैं जो कई extreme environments में
+जीवित रह सकते हैं।
+</p>
+
+<ul>
+
+<li><b>Methanogens</b></li>
+
+<li><b>Halophiles</b></li>
+
+<li><b>Thermoacidophiles</b></li>
+
+</ul>
+
+
+<h3>9. Methanogens</h3>
+
+<p>
+Methanogens methane gas के production से जुड़े होते हैं।
+ये कई बार ruminant animals के digestive system में भी पाए जाते हैं।
+</p>
+
+
+<h3>10. Halophiles</h3>
+
+<p>
+Halophiles high salt concentration वाले environments में पाए जाते हैं।
+</p>
+
+
+<h3>11. Thermoacidophiles</h3>
+
+<p>
+ये organisms high temperature और acidic environments में
+जीवित रहने में सक्षम होते हैं।
+</p>
+
+
+<h3>12. Eubacteria</h3>
+
+<p>
+Eubacteria को true bacteria भी कहा जाता है।
+</p>
+
+<ul>
+
+<li>Prokaryotic</li>
+
+<li>Unicellular</li>
+
+<li>Cell wall सामान्यतः उपस्थित</li>
+
+<li>विभिन्न प्रकार के nutrition पाए जाते हैं</li>
+
+</ul>
+
+
+<h3>13. Cyanobacteria</h3>
+
+<p>
+Cyanobacteria को blue-green algae भी कहा जाता है।
+</p>
+
+<p>
+इनमें photosynthesis की क्षमता होती है।
+</p>
+
+
+<h3>14. Heterocyst</h3>
+
+<p>
+कुछ cyanobacteria में nitrogen fixation के लिए
+विशेष कोशिकाएँ होती हैं जिन्हें Heterocyst कहते हैं।
+</p>
+
+
+<h3>15. Mycoplasma</h3>
+
+<p>
+Mycoplasma में cell wall नहीं होती।
+</p>
+
+<div class="info">
+
+<b>Important:</b><br>
+Mycoplasma = cell wall absent
+
+</div>
+
+
+<h3>16. Kingdom Protista</h3>
+
+<p>
+Protista में मुख्यतः unicellular eukaryotic organisms को रखा जाता है।
+</p>
+
+<ul>
+
+<li>True nucleus present</li>
+
+<li>Membrane-bound organelles present</li>
+
+<li>अधिकांश aquatic होते हैं</li>
+
+</ul>
+
+
+<h3>17. Chrysophytes</h3>
+
+<p>
+Chrysophytes में diatoms और golden algae शामिल होते हैं।
+</p>
+
+
+<h3>18. Dinoflagellates</h3>
+
+<p>
+Dinoflagellates मुख्यतः marine organisms हैं।
+कुछ species red tides उत्पन्न कर सकती हैं।
+</p>
+
+
+<h3>19. Euglenoids</h3>
+
+<p>
+Euglenoids में Euglena प्रमुख example है।
+इनमें plant और animal दोनों जैसी कुछ विशेषताएँ देखी जाती हैं।
+</p>
+
+
+<h3>20. Slime Moulds</h3>
+
+<p>
+Slime moulds saprophytic protists हैं।
+अनुकूल परिस्थितियों में ये vegetative mass बनाते हैं।
+</p>
+
+
+<h3>21. Protozoans</h3>
+
+<p>
+Protozoans unicellular heterotrophic protists होते हैं।
+</p>
+
+<p>
+कुछ प्रमुख groups:
+</p>
+
+<ul>
+
+<li>Zooflagellates</li>
+
+<li>Sarcodines</li>
+
+<li>Ciliates</li>
+
+<li>Sporozoans</li>
+
+</ul>
+
+
+<h3>22. Kingdom Fungi</h3>
+
+<p>
+Fungi eukaryotic और heterotrophic organisms हैं।
+</p>
+
+<ul>
+
+<li>Cell wall mainly chitin की होती है।</li>
+
+<li>अधिकांश multicellular होते हैं।</li>
+
+<li>Nutrition absorptive होता है।</li>
+
+<li>Hyphae से body बन सकती है।</li>
+
+</ul>
+
+
+<h3>23. Hyphae</h3>
+
+<p>
+Fungi की thread-like structures को Hyphae कहते हैं।
+</p>
+
+
+<h3>24. Mycelium</h3>
+
+<p>
+Hyphae का जाल Mycelium कहलाता है।
+</p>
+
+
+<h3>25. Fungi में Nutrition</h3>
+
+<ul>
+
+<li>Saprophytic</li>
+
+<li>Parasitic</li>
+
+<li>Symbiotic</li>
+
+</ul>
+
+
+<h3>26. Fungi में Reproduction</h3>
+
+<ul>
+
+<li>Vegetative reproduction</li>
+
+<li>Asexual reproduction</li>
+
+<li>Sexual reproduction</li>
+
+</ul>
+
+
+<h3>27. Lichens</h3>
+
+<p>
+Lichen एक symbiotic association है जिसमें
+alga और fungus साथ रहते हैं।
+</p>
+
+<div class="info">
+
+Alga → Food बनाता है
+
+<br><br>
+
+Fungus → Shelter और minerals/water उपलब्ध कराने में सहायता करता है
+
+</div>
+
+
+<h3>28. Viruses</h3>
+
+<p>
+Viruses acellular infectious particles होते हैं।
+इनमें genetic material के रूप में DNA या RNA पाया जाता है।
+</p>
+
+
+<h3>29. Viroids</h3>
+
+<p>
+Viroids छोटे infectious RNA molecules होते हैं।
+इनमें protein coat नहीं होता।
+</p>
+
+
+<h3>30. Quick Revision</h3>
+
+<div class="info">
+
+<b>Whittaker</b> → Five Kingdom Classification → 1969
+
+<br><br>
+
+<b>Monera</b> → Prokaryotic
+
+<br><br>
+
+<b>Protista</b> → Unicellular Eukaryotic
+
+<br><br>
+
+<b>Fungi</b> → Chitin cell wall
+
+<br><br>
+
+<b>Cyanobacteria</b> → Photosynthetic
+
+<br><br>
+
+<b>Mycoplasma</b> → Cell wall absent
+
+<br><br>
+
+<b>Lichen</b> → Alga + Fungus
+
+<br><br>
+
+<b>Viroid</b> → Infectious RNA, protein coat absent
+
+</div>
+
+`;
+
+
+
+/* =========================
+   CHAPTER OPEN FUNCTION
+========================= */
+
+function openChapter(chapterName){
+
+hideAll();
+
+document
+.getElementById("chapterPage")
+.classList.remove("hide");
+
+document
+.getElementById("chapterTitle")
+.innerText = chapterName;
+
+
+/* NOTES दिखाओ */
+
+const chapterContent =
+document.querySelector(".chapter-page .info");
+
+if(chapterNotes[chapterName]){
+
+chapterContent.innerHTML =
+chapterNotes[chapterName];
+
+}else{
+
+chapterContent.innerHTML = `
+<p>
+📚 इस chapter के detailed notes अभी जोड़े जाएंगे।
+</p>
+`;
+
+}
+
+window.scrollTo(0,0);
+
+}
+
+</script>
 
 
 /* CLASS 11 BIOLOGY */
