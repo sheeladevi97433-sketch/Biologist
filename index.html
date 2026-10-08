@@ -3,208 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>🧬 Biologist - NEET + Veterinary</title>
-
 <style>
-*{box-sizing:border-box;}
-
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#eefaf7;
-  color:#123;
-}
-
-header{
-  background:#087f5b;
-  color:white;
-  text-align:center;
-  padding:25px 15px;
-}
-
-header h1{
-  margin:0;
-  font-size:30px;
-}
-
-header p{
-  margin:5px 0 0;
-}
-
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:15px;
-}
-
-.card{
-  background:white;
-  padding:18px;
-  margin:12px 0;
-  border-radius:15px;
-  box-shadow:0 3px 10px #bbb;
-}
-
-h2{
-  color:#087f5b;
-}
-
-button{
-  border:0;
-  border-radius:9px;
-  cursor:pointer;
-  font-size:16px;
-}
-
-.class-btn{
-  width:100%;
-  padding:18px;
-  margin:8px 0;
-  background:#087f5b;
-  color:white;
-}
-
-.subject-btn{
-  width:100%;
-  padding:15px;
-  margin:7px 0;
-  text-align:left;
-  background:#087f5b;
-  color:white;
-}
-
-.chapter-btn{
-  width:100%;
-  padding:14px;
-  margin:6px 0;
-  text-align:left;
-  background:#f1f8f6;
-  color:#123;
-  border:1px solid #c9e5dc;
-}
-
-.chapter-btn:hover{
-  background:#dff3ec;
-}
-
-.back-btn{
-  background:#444;
-  color:white;
-  padding:11px 16px;
-  margin-bottom:10px;
-}
-
-.admin-btn{
-  background:#174ea6;
-  color:white;
-  padding:11px 16px;
-  margin-top:8px;
-}
-
-.green-btn{
-  background:#087f5b;
-  color:white;
-  padding:12px 18px;
-  margin:5px;
-}
-
-.red-btn{
-  background:#c62828;
-  color:white;
-  padding:10px 15px;
-  margin:5px;
-}
-
-.hide{
-  display:none;
-}
-
-.chapter-page{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 3px 10px #bbb;
-}
-
-.chapter-page h2{
-  margin-top:0;
-}
-
-.info{
-  background:#e8f8f5;
-  padding:15px;
-  border-left:5px solid #087f5b;
-  border-radius:8px;
-}
-
-textarea{
-  width:100%;
-  min-height:250px;
-  padding:14px;
-  border:1px solid #ccc;
-  border-radius:10px;
-  font-size:16px;
-  resize:vertical;
-}
-
-input,select{
-  width:100%;
-  padding:13px;
-  margin:7px 0 12px;
-  border:1px solid #ccc;
-  border-radius:9px;
-  font-size:16px;
-}
-
-.note{
-  background:#fff;
-  border:1px solid #d8e8e3;
-  border-radius:12px;
-  padding:15px;
-  margin:12px 0;
-}
-
-.note img{
-  max-width:100%;
-  height:auto;
-  display:block;
-  margin:10px auto;
-  border-radius:8px;
-}
-
-.note-text{
-  white-space:pre-wrap;
-  line-height:1.7;
-}
-
-.admin-note{
-  border-left:5px solid #174ea6;
-}
-
-.small{
-  color:#666;
-  font-size:14px;
-}
-
-.success{
-  background:#e8f8e8;
-  color:#176b17;
-  padding:12px;
-  border-radius:8px;
-  margin:10px 0;
-}
-
-.error{
-  background:#ffeaea;
-  color:#a00;
-  padding:12px;
-  border-radius:8px;
-  margin:10px 0;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#eefaf7;color:#123;line-height:1.6}
+header{background:#087f5b;color:#fff;text-align:center;padding:25px 15px}
+header h1{margin:0;font-size:30px}
+header p{margin:5px 0 0}
+.container{max-width:900px;margin:auto;padding:15px}
+.card,.chapter-page{background:#fff;padding:18px;margin:12px 0;border-radius:15px;box-shadow:0 3px 10px #bbb}
+h2{color:#087f5b}
+button{border:0;border-radius:9px;cursor:pointer;font-size:16px}
+.class-btn{width:100%;padding:18px;margin:8px 0;background:#087f5b;color:#fff}
+.subject-btn{width:100%;padding:15px;margin:7px 0;text-align:left;background:#087f5b;color:#fff}
+.chapter-btn{width:100%;padding:14px;margin:6px 0;text-align:left;background:#f1f8f6;color:#123;border:1px solid #c9e5dc}
+.chapter-btn:hover{background:#dff3ec}
+.back-btn{background:#444;color:#fff;padding:11px 16px;margin-bottom:10px}
+.admin-btn{background:#174ea6;color:#fff;padding:12px 18px;margin:10px 0}
+.danger{background:#c62828;color:#fff;padding:8px 12px}
+.save-btn{background:#087f5b;color:#fff;padding:12px 18px}
+.hide{display:none}
+.info{background:#e8f8f5;padding:15px;border-left:5px solid #087f5b;border-radius:8px}
+textarea,input,select{width:100%;padding:12px;margin:7px 0;border:1px solid #bbb;border-radius:8px;font-size:16px}
+textarea{min-height:180px;resize:vertical}
+.note{background:#fff;padding:15px;margin:12px 0;border-radius:10px;border:1px solid #d7e9e3}
+.note img{max-width:100%;height:auto;border-radius:8px;margin-top:10px}
+.small{font-size:13px;color:#666}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row button{flex:1}
+#adminMessage{font-weight:bold}
 </style>
 </head>
-
 <body>
 
 <header>
@@ -212,1105 +41,366 @@ input,select{
 <p>NEET + Veterinary Study Hub</p>
 </header>
 
-
-<!-- HOME -->
-
 <div id="home" class="container">
-
 <div class="card">
 <h2>📚 Welcome to Biologist</h2>
-
-<p>
-Class 11 और Class 12 के Biology, Physics,
-Chemistry और Veterinary chapters यहाँ पढ़ें।
-</p>
-
-<button class="admin-btn" onclick="openAdminLogin()">
-🔐 Admin Panel
-</button>
-
+<p>Class 11 और Class 12 के Biology, Physics, Chemistry और Veterinary chapters यहाँ पढ़ें।</p>
 </div>
-
-<button class="class-btn"
-onclick="openClass('class11')">
-📘 Class 11
-</button>
-
-<button class="class-btn"
-onclick="openClass('class12')">
-📗 Class 12
-</button>
-
+<button class="class-btn" onclick="openClass('class11')">📘 Class 11</button>
+<button class="class-btn" onclick="openClass('class12')">📗 Class 12</button>
+<div class="card" style="text-align:center">
+<button class="admin-btn" onclick="openAdminLogin()">🔐 Admin Panel</button>
+<p class="small">केवल owner के लिए notes management.</p>
 </div>
-
-
-<!-- CLASS 11 -->
+</div>
 
 <div id="class11" class="container hide">
-
-<button class="back-btn" onclick="goHome()">
-⬅ Back
-</button>
-
+<button class="back-btn" onclick="goHome()">⬅ Back</button>
 <div class="card">
-
 <h2>📘 Class 11</h2>
-
-<button class="subject-btn"
-onclick="openSubject('bio11')">
-🧬 Biology
-</button>
-
-<button class="subject-btn"
-onclick="openSubject('phy11')">
-⚡ Physics
-</button>
-
-<button class="subject-btn"
-onclick="openSubject('chem11')">
-🧪 Chemistry
-</button>
-
-<button class="subject-btn"
-onclick="openSubject('vet11')">
-🐄 Veterinary
-</button>
-
+<button class="subject-btn" onclick="openSubject('bio11')">🧬 Biology</button>
+<button class="subject-btn" onclick="openSubject('phy11')">⚡ Physics</button>
+<button class="subject-btn" onclick="openSubject('chem11')">🧪 Chemistry</button>
+<button class="subject-btn" onclick="openSubject('vet11')">🐄 Veterinary</button>
 </div>
 </div>
-
-
-<!-- CLASS 12 -->
 
 <div id="class12" class="container hide">
-
-<button class="back-btn" onclick="goHome()">
-⬅ Back
-</button>
-
+<button class="back-btn" onclick="goHome()">⬅ Back</button>
 <div class="card">
-
 <h2>📗 Class 12</h2>
-
-<button class="subject-btn"
-onclick="openSubject('bio12')">
-🧬 Biology
-</button>
-
-<button class="subject-btn"
-onclick="openSubject('phy12')">
-⚡ Physics
-</button>
-
-<button class="subject-btn"
-onclick="openSubject('chem12')">
-🧪 Chemistry
-</button>
-
-<button class="subject-btn"
-onclick="openSubject('vet12')">
-🐄 Veterinary
-</button>
-
+<button class="subject-btn" onclick="openSubject('bio12')">🧬 Biology</button>
+<button class="subject-btn" onclick="openSubject('phy12')">⚡ Physics</button>
+<button class="subject-btn" onclick="openSubject('chem12')">🧪 Chemistry</button>
+<button class="subject-btn" onclick="openSubject('vet12')">🐄 Veterinary</button>
 </div>
 </div>
-
-
-<!-- SUBJECT -->
 
 <div id="subjectPage" class="container hide">
-
-<button class="back-btn" onclick="backToClass()">
-⬅ Back
-</button>
-
+<button class="back-btn" onclick="backToClass()">⬅ Back</button>
 <div class="card">
-
 <h2 id="subjectTitle"></h2>
-
 <p id="chapterCount"></p>
-
 <div id="chapterList"></div>
-
 </div>
 </div>
-
-
-<!-- CHAPTER -->
 
 <div id="chapterPage" class="container hide">
-
-<button class="back-btn"
-onclick="backToSubject()">
-⬅ Back to Chapters
-</button>
-
+<button class="back-btn" onclick="backToSubject()">⬅ Back to Chapters</button>
 <div class="chapter-page">
-
 <h2 id="chapterTitle"></h2>
-
-<div id="chapterNotes"></div>
-
+<div id="publicNotes"></div>
 </div>
 </div>
-
-
-<!-- ADMIN LOGIN -->
 
 <div id="adminLogin" class="container hide">
-
-<button class="back-btn" onclick="goHome()">
-⬅ Back
-</button>
-
+<button class="back-btn" onclick="goHome()">⬅ Back</button>
 <div class="card">
-
 <h2>🔐 Admin Login</h2>
-
-<p class="small">
-केवल website owner notes add/edit/delete कर सकता है।
-</p>
-
-<input
-type="password"
-id="adminPassword"
-placeholder="Admin Password">
-
-<button class="green-btn"
-onclick="adminLogin()">
-🔓 Login
-</button>
-
-<div id="loginMessage"></div>
-
+<p>Notes manage करने के लिए password डालें।</p>
+<input id="adminPassword" type="password" placeholder="Admin password">
+<button class="save-btn" onclick="checkAdmin()">Login</button>
+<p id="loginMessage"></p>
 </div>
 </div>
 
-
-<!-- ADMIN PANEL -->
-
-<div id="adminPanel" class="container hide">
-
-<button class="back-btn"
-onclick="goHome()">
-⬅ Home
-</button>
+<div id="adminPage" class="container hide">
+<button class="back-btn" onclick="goHome()">⬅ Home</button>
 
 <div class="card">
-
-<h2>🛠️ Admin Panel</h2>
-
-<p>
-Welcome Admin 👋
-</p>
-
-<button class="green-btn"
-onclick="showAddNote()">
-➕ Add New Note
-</button>
-
-<button class="red-btn"
-onclick="adminLogout()">
-🔒 Logout
-</button>
-
-</div>
-
-<div id="addNoteBox" class="card hide">
-
 <h2>📝 Add Notes</h2>
+<p class="small">यहाँ से code बदले बिना notes add कर सकते हो।</p>
 
-<label>Class</label>
-
-<select id="noteClass"
-onchange="loadAdminSubjects()">
-
-<option value="">Select Class</option>
-<option value="11">Class 11</option>
-<option value="12">Class 12</option>
-
-</select>
-
-
-<label>Subject</label>
-
-<select id="noteSubject"
-onchange="loadAdminChapters()">
-
-<option value="">Select Subject</option>
-
-</select>
-
+<label>Class + Subject</label>
+<select id="adminSubject" onchange="loadAdminChapters()"></select>
 
 <label>Chapter</label>
+<select id="adminChapter"></select>
 
-<select id="noteChapter">
-
-<option value="">
-Select Chapter
-</option>
-
+<label>Note type</label>
+<select id="noteType">
+<option value="text">✍️ Typed Notes</option>
+<option value="image">📝 Handwritten Notes Photo</option>
+<option value="both">✍️ Typed + 📝 Handwritten</option>
 </select>
 
-
-<label>Notes Title</label>
-
-<input
-type="text"
-id="noteTitle"
-placeholder="Example: The Living World Notes">
-
-
 <label>Typed Notes</label>
+<textarea id="typedNotes" placeholder="अपने notes यहाँ लिखो..."></textarea>
 
-<textarea
-id="typedNotes"
-placeholder="यहाँ अपने notes type करो..."></textarea>
+<label>Handwritten Notes की photo</label>
+<input id="noteImage" type="file" accept="image/*">
 
-
-<label>Handwritten Notes / Image</label>
-
-<input
-type="file"
-id="noteImage"
-accept="image/*">
-
-
-<div id="imagePreview"></div>
-
-<br>
-
-<button class="green-btn"
-onclick="saveNote()">
-💾 Save Notes
-</button>
-
-<button class="back-btn"
-onclick="hideAddNote()">
-Cancel
-</button>
-
-<div id="saveMessage"></div>
-
+<div class="row">
+<button class="save-btn" onclick="saveNote()">💾 Save Note</button>
+<button class="danger" onclick="clearForm()">Clear</button>
 </div>
-
+<p id="adminMessage"></p>
+</div>
 
 <div class="card">
-
 <h2>📚 Saved Notes</h2>
-
-<div id="adminNotesList"></div>
-
+<div id="savedNotes"></div>
 </div>
-
 </div>
-
 
 <script>
-
 /* =========================
-   ALL CHAPTERS
+   ADMIN PASSWORD
+   इसे बदलकर अपना password रखो
 ========================= */
+const ADMIN_PASSWORD = "Biologist@123";
 
 const chapters = {
-
-bio11:[
-"The Living World",
-"Biological Classification",
-"Plant Kingdom",
-"Animal Kingdom",
-"Morphology of Flowering Plants",
-"Anatomy of Flowering Plants",
-"Structural Organisation in Animals",
-"Cell: The Unit of Life",
-"Biomolecules",
-"Cell Cycle and Cell Division",
-"Transport in Plants",
-"Mineral Nutrition",
-"Photosynthesis in Plants",
-"Respiration in Plants",
-"Plant Growth and Development",
-"Digestion and Absorption",
-"Breathing and Exchange of Gases",
-"Body Fluids and Circulation",
-"Excretory Products and Their Elimination",
-"Locomotion and Movement",
-"Neural Control and Coordination",
-"Chemical Coordination and Integration"
-],
-
-phy11:[
-"Units and Measurements",
-"Motion in a Straight Line",
-"Motion in a Plane",
-"Laws of Motion",
-"Work, Energy and Power",
-"System of Particles and Rotational Motion",
-"Gravitation",
-"Mechanical Properties of Solids",
-"Mechanical Properties of Fluids",
-"Thermal Properties of Matter",
-"Thermodynamics",
-"Kinetic Theory",
-"Oscillations",
-"Waves"
-],
-
-chem11:[
-"Some Basic Concepts of Chemistry",
-"Structure of Atom",
-"Classification of Elements and Periodicity in Properties",
-"Chemical Bonding and Molecular Structure",
-"Thermodynamics",
-"Equilibrium",
-"Redox Reactions",
-"Organic Chemistry – Basic Principles and Techniques",
-"Hydrocarbons"
-],
-
-vet11:[
-"Animal Science",
-"Veterinary Biology",
-"Animal Scientific Names",
-"Veterinary Important Topics",
-"Veterinary Model Papers"
-],
-
-bio12:[
-"Sexual Reproduction in Flowering Plants",
-"Human Reproduction",
-"Reproductive Health",
-"Principles of Inheritance and Variation",
-"Molecular Basis of Inheritance",
-"Evolution",
-"Human Health and Disease",
-"Strategies for Enhancement in Food Production",
-"Microbes in Human Welfare",
-"Biotechnology: Principles and Processes",
-"Biotechnology and Its Applications",
-"Organisms and Populations",
-"Ecosystem",
-"Biodiversity and Conservation"
-],
-
-phy12:[
-"Electric Charges and Fields",
-"Electrostatic Potential and Capacitance",
-"Current Electricity",
-"Moving Charges and Magnetism",
-"Magnetism and Matter",
-"Electromagnetic Induction",
-"Alternating Current",
-"Electromagnetic Waves",
-"Ray Optics and Optical Instruments",
-"Wave Optics",
-"Dual Nature of Radiation and Matter",
-"Atoms",
-"Nuclei",
-"Semiconductor Electronics"
-],
-
-chem12:[
-"Solutions",
-"Electrochemistry",
-"Chemical Kinetics",
-"Surface Chemistry",
-"General Principles and Processes of Isolation of Elements",
-"p-Block Elements",
-"d- and f-Block Elements",
-"Coordination Compounds",
-"Haloalkanes and Haloarenes",
-"Alcohols, Phenols and Ethers",
-"Aldehydes, Ketones and Carboxylic Acids",
-"Amines",
-"Biomolecules",
-"Polymers",
-"Chemistry in Everyday Life"
-],
-
-vet12:[
-"Veterinary Biology",
-"Animal Anatomy Basics",
-"Animal Physiology Basics",
-"Animal Nutrition",
-"Animal Scientific Names",
-"Veterinary Important Topics",
-"Veterinary Model Papers"
-]
-
+bio11:["The Living World","Biological Classification","Plant Kingdom","Animal Kingdom","Morphology of Flowering Plants","Anatomy of Flowering Plants","Structural Organisation in Animals","Cell: The Unit of Life","Biomolecules","Cell Cycle and Cell Division","Transport in Plants","Mineral Nutrition","Photosynthesis in Plants","Respiration in Plants","Plant Growth and Development","Digestion and Absorption","Breathing and Exchange of Gases","Body Fluids and Circulation","Excretory Products and Their Elimination","Locomotion and Movement","Neural Control and Coordination","Chemical Coordination and Integration"],
+phy11:["Units and Measurements","Motion in a Straight Line","Motion in a Plane","Laws of Motion","Work, Energy and Power","System of Particles and Rotational Motion","Gravitation","Mechanical Properties of Solids","Mechanical Properties of Fluids","Thermal Properties of Matter","Thermodynamics","Kinetic Theory","Oscillations","Waves"],
+chem11:["Some Basic Concepts of Chemistry","Structure of Atom","Classification of Elements and Periodicity in Properties","Chemical Bonding and Molecular Structure","Thermodynamics","Equilibrium","Redox Reactions","Organic Chemistry – Basic Principles and Techniques","Hydrocarbons"],
+vet11:["Animal Science","Veterinary Biology","Animal Scientific Names","Veterinary Important Topics","Veterinary Model Papers"],
+bio12:["Sexual Reproduction in Flowering Plants","Human Reproduction","Reproductive Health","Principles of Inheritance and Variation","Molecular Basis of Inheritance","Evolution","Human Health and Disease","Strategies for Enhancement in Food Production","Microbes in Human Welfare","Biotechnology: Principles and Processes","Biotechnology and Its Applications","Organisms and Populations","Ecosystem","Biodiversity and Conservation"],
+phy12:["Electric Charges and Fields","Electrostatic Potential and Capacitance","Current Electricity","Moving Charges and Magnetism","Magnetism and Matter","Electromagnetic Induction","Alternating Current","Electromagnetic Waves","Ray Optics and Optical Instruments","Wave Optics","Dual Nature of Radiation and Matter","Atoms","Nuclei","Semiconductor Electronics"],
+chem12:["Solutions","Electrochemistry","Chemical Kinetics","Surface Chemistry","General Principles and Processes of Isolation of Elements","p-Block Elements","d- and f-Block Elements","Coordination Compounds","Haloalkanes and Haloarenes","Alcohols, Phenols and Ethers","Aldehydes, Ketones and Carboxylic Acids","Amines","Biomolecules","Polymers","Chemistry in Everyday Life"],
+vet12:["Veterinary Biology","Animal Anatomy Basics","Animal Physiology Basics","Animal Nutrition","Animal Scientific Names","Veterinary Important Topics","Veterinary Model Papers"]
 };
-
-
-/* =========================
-   SUBJECT NAMES
-========================= */
 
 const subjectNames={
-
-bio11:"🧬 Class 11 Biology",
-phy11:"⚡ Class 11 Physics",
-chem11:"🧪 Class 11 Chemistry",
-vet11:"🐄 Class 11 Veterinary",
-
-bio12:"🧬 Class 12 Biology",
-phy12:"⚡ Class 12 Physics",
-chem12:"🧪 Class 12 Chemistry",
-vet12:"🐄 Class 12 Veterinary"
-
+bio11:"🧬 Class 11 Biology",phy11:"⚡ Class 11 Physics",chem11:"🧪 Class 11 Chemistry",vet11:"🐄 Class 11 Veterinary",
+bio12:"🧬 Class 12 Biology",phy12:"⚡ Class 12 Physics",chem12:"🧪 Class 12 Chemistry",vet12:"🐄 Class 12 Veterinary"
 };
-
 
 let currentSubject="";
 let currentClass="";
-
-
-/* =========================
-   ADMIN
-========================= */
-
-const ADMIN_PASSWORD="Biologist@123";
-
-let adminLoggedIn=false;
-
-
-/* =========================
-   LOCAL STORAGE
-========================= */
-
-function getNotes(){
-
-try{
-
-return JSON.parse(
-localStorage.getItem("biologistNotes")
-)||[];
-
-}catch(e){
-
-return [];
-
-}
-
-}
-
-
-function saveNotesToStorage(notes){
-
-localStorage.setItem(
-"biologistNotes",
-JSON.stringify(notes)
-);
-
-}
-
-
-/* =========================
-   HIDE ALL
-========================= */
+let currentChapter="";
 
 function hideAll(){
-
-document
-.querySelectorAll(".container")
-.forEach(function(page){
-
-page.classList.add("hide");
-
-});
-
+document.querySelectorAll(".container").forEach(p=>p.classList.add("hide"));
 }
-
-
-/* =========================
-   HOME
-========================= */
 
 function goHome(){
-
 hideAll();
-
-document
-.getElementById("home")
-.classList.remove("hide");
-
+document.getElementById("home").classList.remove("hide");
 window.scrollTo(0,0);
-
 }
 
-
-/* =========================
-   CLASS
-========================= */
-
-function openClass(classId){
-
+function openClass(id){
 hideAll();
-
-document
-.getElementById(classId)
-.classList.remove("hide");
-
-currentClass=classId;
-
+document.getElementById(id).classList.remove("hide");
+currentClass=id;
 window.scrollTo(0,0);
-
 }
 
-
-/* =========================
-   SUBJECT
-========================= */
-
-function openSubject(subjectId){
-
-currentSubject=subjectId;
-
-currentClass=
-subjectId.endsWith("11")
-?"class11"
-:"class12";
-
+function openSubject(id){
+currentSubject=id;
+currentClass=id.endsWith("11")?"class11":"class12";
 hideAll();
-
-document
-.getElementById("subjectPage")
-.classList.remove("hide");
-
-document
-.getElementById("subjectTitle")
-.innerText=
-subjectNames[subjectId];
-
-const list=chapters[subjectId];
-
-document
-.getElementById("chapterCount")
-.innerText=
-list.length+" Chapters";
-
-const chapterList=
-document.getElementById("chapterList");
-
-chapterList.innerHTML="";
-
-list.forEach(function(chapter,index){
-
-const button=
-document.createElement("button");
-
-button.className="chapter-btn";
-
-button.innerText=
-(index+1)+". "+chapter;
-
-button.onclick=function(){
-
-openChapter(chapter);
-
-};
-
-chapterList.appendChild(button);
-
+document.getElementById("subjectPage").classList.remove("hide");
+document.getElementById("subjectTitle").innerText=subjectNames[id];
+const list=chapters[id]||[];
+document.getElementById("chapterCount").innerText=list.length+" Chapters";
+const box=document.getElementById("chapterList");
+box.innerHTML="";
+list.forEach((chapter,index)=>{
+const b=document.createElement("button");
+b.className="chapter-btn";
+b.innerText=(index+1)+". "+chapter;
+b.onclick=()=>openChapter(chapter);
+box.appendChild(b);
 });
-
 window.scrollTo(0,0);
-
 }
 
+function backToSubject(){openSubject(currentSubject)}
+function backToClass(){openClass(currentClass)}
 
-/* =========================
-   CHAPTER
-========================= */
+function getNotes(){
+try{return JSON.parse(localStorage.getItem("biologistNotes")||"[]")}catch(e){return []}
+}
 
-function openChapter(chapterName){
+function saveNotes(data){
+localStorage.setItem("biologistNotes",JSON.stringify(data));
+}
 
+function openChapter(name){
+currentChapter=name;
 hideAll();
-
-document
-.getElementById("chapterPage")
-.classList.remove("hide");
-
-document
-.getElementById("chapterTitle")
-.innerText=
-chapterName;
-
-const notesBox=
-document.getElementById("chapterNotes");
-
-const allNotes=getNotes();
-
-const chapterNotes=
-allNotes.filter(function(note){
-
-return note.chapter===chapterName;
-
-});
-
-
-if(chapterNotes.length===0){
-
-notesBox.innerHTML=`
-
-<div class="info">
-
-📚 इस chapter के notes अभी add नहीं किए गए हैं।
-
-</div>
-
-`;
-
-}else{
-
-notesBox.innerHTML="";
-
-chapterNotes.forEach(function(note){
-
-const noteDiv=
-document.createElement("div");
-
-noteDiv.className="note";
-
-let html="";
-
-if(note.title){
-
-html+=`
-<h3>${escapeHTML(note.title)}</h3>
-`;
-
-}
-
-if(note.text){
-
-html+=`
-<div class="note-text">
-${escapeHTML(note.text)}
-</div>
-`;
-
-}
-
-if(note.image){
-
-html+=`
-<img src="${note.image}"
-alt="Handwritten Notes">
-`;
-
-}
-
-html+=`
-<p class="small">
-📝 Biologist Notes
-</p>
-`;
-
-noteDiv.innerHTML=html;
-
-notesBox.appendChild(noteDiv);
-
-});
-
-}
-
+document.getElementById("chapterPage").classList.remove("hide");
+document.getElementById("chapterTitle").innerText=name;
+renderPublicNotes(name);
 window.scrollTo(0,0);
-
 }
 
-
-/* =========================
-   BACK SUBJECT
-========================= */
-
-function backToSubject(){
-
-openSubject(currentSubject);
-
+function renderPublicNotes(chapter){
+const box=document.getElementById("publicNotes");
+const notes=getNotes().filter(n=>n.chapter===chapter);
+if(!notes.length){
+box.innerHTML='<div class="info">📚 इस chapter के notes अभी add नहीं किए गए हैं।</div>';
+return;
 }
-
-
-/* =========================
-   BACK CLASS
-========================= */
-
-function backToClass(){
-
-hideAll();
-
-document
-.getElementById(currentClass)
-.classList.remove("hide");
-
-window.scrollTo(0,0);
-
+box.innerHTML="";
+notes.forEach(n=>{
+const div=document.createElement("div");
+div.className="note";
+if(n.text){
+const p=document.createElement("div");
+p.innerText=n.text;
+div.appendChild(p);
 }
-
-
-/* =========================
-   ADMIN LOGIN
-========================= */
+if(n.image){
+const img=document.createElement("img");
+img.src=n.image;
+img.alt="Handwritten notes";
+div.appendChild(img);
+}
+box.appendChild(div);
+});
+}
 
 function openAdminLogin(){
-
 hideAll();
-
-document
-.getElementById("adminLogin")
-.classList.remove("hide");
-
-document
-.getElementById("adminPassword")
-.value="";
-
-document
-.getElementById("loginMessage")
-.innerHTML="";
-
+document.getElementById("adminLogin").classList.remove("hide");
+document.getElementById("adminPassword").value="";
+document.getElementById("loginMessage").innerText="";
 window.scrollTo(0,0);
-
 }
 
-
-function adminLogin(){
-
-const password=
-document
-.getElementById("adminPassword")
-.value;
-
-if(password===ADMIN_PASSWORD){
-
-adminLoggedIn=true;
-
-openAdminPanel();
-
+function checkAdmin(){
+const p=document.getElementById("adminPassword").value;
+if(p===ADMIN_PASSWORD){
+document.getElementById("adminPassword").value="";
+openAdmin();
 }else{
-
-document
-.getElementById("loginMessage")
-.innerHTML=`
-
-<div class="error">
-❌ गलत password
-</div>
-
-`;
-
+document.getElementById("loginMessage").innerText="❌ Password गलत है।";
+document.getElementById("loginMessage").style.color="#c62828";
+}
 }
 
-}
-
-
-/* =========================
-   ADMIN PANEL
-========================= */
-
-function openAdminPanel(){
-
-if(!adminLoggedIn){
-
-openAdminLogin();
-
-return;
-
-}
-
+function openAdmin(){
 hideAll();
-
-document
-.getElementById("adminPanel")
-.classList.remove("hide");
-
-loadAdminNotes();
-
+document.getElementById("adminPage").classList.remove("hide");
+fillAdminSubjects();
+renderSavedNotes();
 window.scrollTo(0,0);
-
 }
 
-
-function adminLogout(){
-
-adminLoggedIn=false;
-
-goHome();
-
-}
-
-
-/* =========================
-   ADD NOTE
-========================= */
-
-function showAddNote(){
-
-document
-.getElementById("addNoteBox")
-.classList.remove("hide");
-
-document
-.getElementById("saveMessage")
-.innerHTML="";
-
-document
-.getElementById("noteTitle")
-.value="";
-
-document
-.getElementById("typedNotes")
-.value="";
-
-document
-.getElementById("noteImage")
-.value="";
-
-document
-.getElementById("imagePreview")
-.innerHTML="";
-
-loadAdminSubjects();
-
-}
-
-
-function hideAddNote(){
-
-document
-.getElementById("addNoteBox")
-.classList.add("hide");
-
-}
-
-
-/* =========================
-   ADMIN SUBJECTS
-========================= */
-
-function loadAdminSubjects(){
-
-const classValue=
-document
-.getElementById("noteClass")
-.value;
-
-const subject=
-document
-.getElementById("noteSubject");
-
-subject.innerHTML=
-'<option value="">Select Subject</option>';
-
-const chapter=
-document
-.getElementById("noteChapter");
-
-chapter.innerHTML=
-'<option value="">Select Chapter</option>';
-
-if(!classValue)return;
-
-const suffix=
-classValue==="11"?"11":"12";
-
-const subjects=[
-
-["bio"+suffix,"🧬 Biology"],
-["phy"+suffix,"⚡ Physics"],
-["chem"+suffix,"🧪 Chemistry"],
-["vet"+suffix,"🐄 Veterinary"]
-
-];
-
-subjects.forEach(function(item){
-
-const option=
-document.createElement("option");
-
-option.value=item[0];
-
-option.textContent=item[1];
-
-subject.appendChild(option);
-
+function fillAdminSubjects(){
+const s=document.getElementById("adminSubject");
+s.innerHTML="";
+Object.keys(chapters).forEach(id=>{
+const o=document.createElement("option");
+o.value=id;
+o.innerText=subjectNames[id];
+s.appendChild(o);
 });
-
+loadAdminChapters();
 }
-
-
-/* =========================
-   ADMIN CHAPTERS
-========================= */
 
 function loadAdminChapters(){
-
-const subjectId=
-document
-.getElementById("noteSubject")
-.value;
-
-const chapter=
-document
-.getElementById("noteChapter");
-
-chapter.innerHTML=
-'<option value="">Select Chapter</option>';
-
-if(!subjectId)return;
-
-chapters[subjectId].forEach(function(name){
-
-const option=
-document.createElement("option");
-
-option.value=name;
-
-option.textContent=name;
-
-chapter.appendChild(option);
-
+const id=document.getElementById("adminSubject").value;
+const c=document.getElementById("adminChapter");
+c.innerHTML="";
+(chapters[id]||[]).forEach(ch=>{
+const o=document.createElement("option");
+o.value=ch;
+o.innerText=ch;
+c.appendChild(o);
 });
-
 }
 
-
-/* =========================
-   IMAGE PREVIEW
-========================= */
-
-document
-.getElementById("noteImage")
-.addEventListener("change",function(){
-
-const file=this.files[0];
-
-const preview=
-document.getElementById("imagePreview");
-
-preview.innerHTML="";
-
-if(!file)return;
-
-const reader=
-new FileReader();
-
-reader.onload=function(e){
-
-preview.innerHTML=`
-
-<p class="small">
-Image Preview:
-</p>
-
-<img src="${e.target.result}"
-style="max-width:100%;border-radius:10px;">
-
-`;
-
-};
-
-reader.readAsDataURL(file);
-
-});
-
-
-/* =========================
-   SAVE NOTE
-========================= */
+function clearForm(){
+document.getElementById("typedNotes").value="";
+document.getElementById("noteImage").value="";
+document.getElementById("adminMessage").innerText="";
+}
 
 function saveNote(){
+const subject=document.getElementById("adminSubject").value;
+const chapter=document.getElementById("adminChapter").value;
+const type=document.getElementById("noteType").value;
+const text=document.getElementById("typedNotes").value.trim();
+const file=document.getElementById("noteImage").files[0];
 
-if(!adminLoggedIn){
-
-alert("Admin login required.");
-
-return;
-
+if((type==="text"||type==="both")&&!text){
+showAdminMessage("❌ Typed notes खाली हैं।","#c62828");return;
+}
+if((type==="image"||type==="both")&&!file){
+showAdminMessage("❌ Handwritten photo select करो।","#c62828");return;
 }
 
-const subject=
-document
-.getElementById("noteSubject")
-.value;
-
-const chapter=
-document
-.getElementById("noteChapter")
-.value;
-
-const title=
-document
-.getElementById("noteTitle")
-.value
-.trim();
-
-const text=
-document
-.getElementById("typedNotes")
-.value
-.trim();
-
-const imageFile=
-document
-.getElementById("noteImage")
-.files[0];
-
-if(!subject || !chapter){
-
-alert("Class, Subject और Chapter select करो.");
-
-return;
-
-}
-
-if(!title && !text && !imageFile){
-
-alert("कम से कम notes, title या image डालो.");
-
-return;
-
-}
-
-
-/* IMAGE READER */
-
-if(imageFile){
-
-const reader=
-new FileReader();
-
-reader.onload=function(e){
-
-saveNoteData(
-subject,
-chapter,
-title,
-text,
-e.target.result
-);
-
+if(file){
+const reader=new FileReader();
+reader.onload=function(){
+finishSave(subject,chapter,type,text,reader.result);
 };
-
-reader.readAsDataURL(imageFile);
-
+reader.readAsDataURL(file);
 }else{
-
-saveNoteData(
-subject,
-chapter,
-title,
-text,
-""
-);
-
+finishSave(subject,chapter,type,text,"");
+}
 }
 
+function finishSave(subject,chapter,type,text,image){
+const data=getNotes();
+data.push({
+id:Date.now(),
+subject,chapter,
+type,
+text:(type==="image"?"":text),
+image:(type==="text"?"":image)
+});
+try{
+saveNotes(data);
+showAdminMessage("✅ Notes successfully save हो गए!","#087f5b");
+clearForm();
+renderSavedNotes();
+}catch(e){
+showAdminMessage("❌ Storage full हो गया। बड़ी photo हटाकर छोटी image try करो।","#c62828");
+}
 }
 
+function showAdminMessage(msg,color){
+const el=document.getElementById("adminMessage");
+el.innerText=msg;
+el.style.color=color;
+}
 
-/* =========================
-   SAVE NOTE DATA
-========================= */
+function renderSavedNotes(){
+const box=document.getElementById("savedNotes");
+const data=getNotes();
+if(!data.length){
+box.innerHTML='<p class="small">अभी कोई note saved नहीं है।</p>';
+return;
+}
+box.innerHTML="";
+data.slice().reverse().forEach(n=>{
+const div=document.createElement("div");
+div.className="note";
+const title=document.createElement("b");
+title.innerText=(subjectNames[n.subject]||n.subject)+" → "+n.chapter;
+div.appendChild(title);
+if(n.text){
+const p=document.createElement("p");
+p.innerText=n.text.length>180?n.text.slice(0,180)+"...":n.text;
+div.appendChild(p);
+}
+if(n.image){
+const img=document.createElement("img");
+img.src=n.image;
+img.style.maxHeight="180px";
+div.appendChild(img);
+}
+const del=document.createElement("button");
+del.className="danger";
+del.innerText="🗑 Delete";
+del.onclick=function(){deleteNote(n.id)};
+div.appendChild(del);
+box.appendChild(div);
+});
+}
 
-function saveNoteData(
-subject,
-chapter
+function deleteNote(id){
+if(!confirm("यह note delete करना है?"))return;
+saveNotes(getNotes().filter(n=>n.id!==id));
+renderSavedNotes();
+}
+
+goHome();
+</script>
+</body>
+</html>
