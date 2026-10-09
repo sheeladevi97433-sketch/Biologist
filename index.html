@@ -5,23 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🧬 Biologist - NEET + Veterinary</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#eefaf7;color:#123;line-height:1.6}
-header{background:#087f5b;color:#fff;text-align:center;padding:25px 15px}header h1{margin:0;font-size:30px}header p{margin:5px 0 0}
-.container{max-width:900px;margin:auto;padding:15px}.card,.chapter-page{background:#fff;padding:18px;margin:12px 0;border-radius:15px;box-shadow:0 3px 10px #bbb}
-h2{color:#087f5b}button{border:0;border-radius:9px;cursor:pointer;font-size:16px}.class-btn{width:100%;padding:18px;margin:8px 0;background:#087f5b;color:#fff}
-.subject-btn{width:100%;padding:15px;margin:7px 0;text-align:left;background:#087f5b;color:#fff}.chapter-btn{width:100%;padding:14px;margin:6px 0;text-align:left;background:#f1f8f6;color:#123;border:1px solid #c9e5dc}
-.back-btn{background:#444;color:#fff;padding:11px 16px;margin-bottom:10px}.admin-btn{background:#174ea6;color:#fff;padding:12px 18px;margin:10px 0}.danger{background:#c62828;color:#fff;padding:8px 12px}.save-btn{background:#087f5b;color:#fff;padding:12px 18px}
-.hide{display:none}.info{background:#e8f8f5;padding:15px;border-left:5px solid #087f5b;border-radius:8px}
-textarea,input,select{width:100%;padding:12px;margin:7px 0;border:1px solid #bbb;border-radius:8px;font-size:16px}textarea{min-height:180px;resize:vertical}
-.note{background:#fff;padding:15px;margin:12px 0;border-radius:10px;border:1px solid #d7e9e3;overflow-wrap:anywhere}.note img{max-width:100%;height:auto;border-radius:8px;margin-top:10px}
-.small{font-size:13px;color:#666}.row{display:flex;gap:8px;flex-wrap:wrap}.row button{flex:1}#adminMessage{font-weight:bold}
+*{box-sizing:border-box}
+:root{--green:#087f5b;--deep:#064e3b;--mint:#e9f8f1;--ink:#17332b;--muted:#60756d;--line:#d6e9df;--white:#fff}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#e8f7f0 0,#f7fbf8 330px,#f4f8f6 100%);color:var(--ink);line-height:1.65}
+header{position:relative;overflow:hidden;background:linear-gradient(135deg,#064e3b,#087f5b 58%,#16a36f);color:#fff;text-align:center;padding:32px 16px 38px;border-radius:0 0 28px 28px;box-shadow:0 8px 24px #064e3b24}
+header:before,header:after{content:"";position:absolute;border:1px solid #ffffff20;border-radius:50%;pointer-events:none}
+header:before{width:210px;height:210px;left:-75px;top:-100px}
+header:after{width:280px;height:280px;right:-115px;bottom:-205px}
+header h1{position:relative;margin:0;font-size:clamp(30px,7vw,42px);letter-spacing:.3px;font-weight:850}
+header p{position:relative;margin:7px 0 0;color:#e0fff0;font-size:15px}
+.container{max-width:860px;margin:0 auto;padding:16px}
+.card,.chapter-page{background:var(--white);padding:20px;margin:14px 0;border:1px solid #e1eee7;border-radius:20px;box-shadow:0 8px 24px #174b3510}
+h2{color:var(--deep);line-height:1.3;margin-top:0}
+p{margin-top:8px}
+button{border:0;border-radius:12px;cursor:pointer;font-size:16px;font-weight:650;transition:transform .15s ease,box-shadow .15s ease,filter .15s ease}
+button:active{transform:scale(.985)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #65c79a;outline-offset:2px}
+.class-btn{width:100%;padding:18px;margin:8px 0;background:linear-gradient(120deg,#087f5b,#11966a);color:#fff;box-shadow:0 5px 12px #087f5b22}
+.subject-btn{width:100%;padding:16px;margin:7px 0;text-align:left;background:#f0faf5;color:#075c43;border:1px solid #d8eee2;display:flex;align-items:center;justify-content:space-between}
+.subject-btn:hover,.chapter-btn:hover{filter:brightness(.98);box-shadow:0 4px 12px #0c6a4610}
+.chapter-btn{width:100%;padding:14px;margin:6px 0;text-align:left;background:#f8fcf9;color:#17332b;border:1px solid #dcece3;border-radius:12px}
+.back-btn{background:#24463a;color:#fff;padding:11px 16px;margin-bottom:10px}
+.admin-btn{background:#eaf2ff;color:#174ea6;border:1px solid #d4e2ff;padding:12px 18px;margin:10px 0}
+.danger{background:#b42318;color:#fff;padding:9px 13px}
+.save-btn{background:linear-gradient(120deg,#087f5b,#11966a);color:#fff;padding:12px 18px;box-shadow:0 4px 10px #087f5b20}
+.hide{display:none}.info{background:#e8f8f0;padding:15px;border-left:5px solid var(--green);border-radius:12px}
+textarea,input,select{width:100%;padding:13px;margin:7px 0;border:1px solid #cbded3;border-radius:12px;font:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:180px;resize:vertical}
+.note{background:#fbfefc;padding:16px;margin:12px 0;border-radius:14px;border:1px solid #dcece3;overflow-wrap:anywhere}
+.note img{max-width:100%;height:auto;border-radius:10px;margin-top:10px}
+.small{font-size:13px;color:var(--muted)}.row{display:flex;gap:8px;flex-wrap:wrap}.row button{flex:1;min-width:120px}#adminMessage{font-weight:700}
+#chapterTitle{font-size:clamp(22px,5vw,30px)}
+#publicNotes:empty:after{content:"इस अध्याय के नोट्स जल्द जोड़े जाएँगे।";display:block;padding:16px;background:#f4faf6;border:1px dashed #c8e4d5;border-radius:12px;color:var(--muted)}
+@media(min-width:620px){#home>.class-btn{width:calc(50% - 8px);margin:8px 3px}.card,.chapter-page{padding:24px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <header><h1>🧬 Biologist</h1><p>NEET + Veterinary Study Hub</p></header>
 
 <div id="home" class="container">
-<div class="card"><h2>📚 Welcome to Biologist</h2><p>Class 11 और Class 12 के Biology, Physics, Chemistry और Veterinary chapters यहाँ पढ़ें।</p></div>
+<div class="card" style="background:linear-gradient(135deg,#ffffff,#effaf4);border-color:#d4ecdf">
+<h2>📚 पढ़ाई अब एक ही जगह</h2>
+<p>Class 11 और Class 12 के Biology, Physics, Chemistry और Veterinary chapters यहाँ पढ़ें। अपने notes और handwritten PDFs के साथ NEET की तैयारी को व्यवस्थित रखें।</p>
+<div class="row" style="margin-top:14px">
+<span style="display:inline-block;background:#e1f6e9;color:#075c43;border-radius:999px;padding:6px 11px;font-size:13px;font-weight:700">🧬 Biology</span>
+<span style="display:inline-block;background:#e8f0ff;color:#244f9b;border-radius:999px;padding:6px 11px;font-size:13px;font-weight:700">🎯 NEET Prep</span>
+<span style="display:inline-block;background:#fff3d9;color:#8a5a00;border-radius:999px;padding:6px 11px;font-size:13px;font-weight:700">🐄 Veterinary</span>
+</div></div>
 <button class="class-btn" onclick="openClass('class11')">📘 Class 11</button>
 <button class="class-btn" onclick="openClass('class12')">📗 Class 12</button>
 <div class="card" style="text-align:center"><button class="admin-btn" onclick="openAdminLogin()">🔐 Admin Panel</button><p class="small">केवल owner के लिए notes management.</p></div>
