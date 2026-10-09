@@ -5,152 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🧬 Biologist - NEET + Veterinary</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#eefaf7;color:#123;line-height:1.6}
-header{background:#087f5b;color:#fff;text-align:center;padding:25px 15px}
-header h1{margin:0;font-size:30px}
-header p{margin:5px 0 0}
-.container{max-width:900px;margin:auto;padding:15px}
-.card,.chapter-page{background:#fff;padding:18px;margin:12px 0;border-radius:15px;box-shadow:0 3px 10px #bbb}
-h2{color:#087f5b}
-button{border:0;border-radius:9px;cursor:pointer;font-size:16px}
-.class-btn{width:100%;padding:18px;margin:8px 0;background:#087f5b;color:#fff}
-.subject-btn{width:100%;padding:15px;margin:7px 0;text-align:left;background:#087f5b;color:#fff}
-.chapter-btn{width:100%;padding:14px;margin:6px 0;text-align:left;background:#f1f8f6;color:#123;border:1px solid #c9e5dc}
-.chapter-btn:hover{background:#dff3ec}
-.back-btn{background:#444;color:#fff;padding:11px 16px;margin-bottom:10px}
-.admin-btn{background:#174ea6;color:#fff;padding:12px 18px;margin:10px 0}
-.danger{background:#c62828;color:#fff;padding:8px 12px}
-.save-btn{background:#087f5b;color:#fff;padding:12px 18px}
-.hide{display:none}
-.info{background:#e8f8f5;padding:15px;border-left:5px solid #087f5b;border-radius:8px}
-textarea,input,select{width:100%;padding:12px;margin:7px 0;border:1px solid #bbb;border-radius:8px;font-size:16px}
-textarea{min-height:180px;resize:vertical}
-.note{background:#fff;padding:15px;margin:12px 0;border-radius:10px;border:1px solid #d7e9e3}
-.note img{max-width:100%;height:auto;border-radius:8px;margin-top:10px}
-.small{font-size:13px;color:#666}
-.row{display:flex;gap:8px;flex-wrap:wrap}
-.row button{flex:1}
-#adminMessage{font-weight:bold}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#eefaf7;color:#123;line-height:1.6}
+header{background:#087f5b;color:#fff;text-align:center;padding:25px 15px}header h1{margin:0;font-size:30px}header p{margin:5px 0 0}
+.container{max-width:900px;margin:auto;padding:15px}.card,.chapter-page{background:#fff;padding:18px;margin:12px 0;border-radius:15px;box-shadow:0 3px 10px #bbb}
+h2{color:#087f5b}button{border:0;border-radius:9px;cursor:pointer;font-size:16px}.class-btn{width:100%;padding:18px;margin:8px 0;background:#087f5b;color:#fff}
+.subject-btn{width:100%;padding:15px;margin:7px 0;text-align:left;background:#087f5b;color:#fff}.chapter-btn{width:100%;padding:14px;margin:6px 0;text-align:left;background:#f1f8f6;color:#123;border:1px solid #c9e5dc}
+.back-btn{background:#444;color:#fff;padding:11px 16px;margin-bottom:10px}.admin-btn{background:#174ea6;color:#fff;padding:12px 18px;margin:10px 0}.danger{background:#c62828;color:#fff;padding:8px 12px}.save-btn{background:#087f5b;color:#fff;padding:12px 18px}
+.hide{display:none}.info{background:#e8f8f5;padding:15px;border-left:5px solid #087f5b;border-radius:8px}
+textarea,input,select{width:100%;padding:12px;margin:7px 0;border:1px solid #bbb;border-radius:8px;font-size:16px}textarea{min-height:180px;resize:vertical}
+.note{background:#fff;padding:15px;margin:12px 0;border-radius:10px;border:1px solid #d7e9e3;overflow-wrap:anywhere}.note img{max-width:100%;height:auto;border-radius:8px;margin-top:10px}
+.small{font-size:13px;color:#666}.row{display:flex;gap:8px;flex-wrap:wrap}.row button{flex:1}#adminMessage{font-weight:bold}
 </style>
 </head>
 <body>
-
-<header>
-<h1>🧬 Biologist</h1>
-<p>NEET + Veterinary Study Hub</p>
-</header>
+<header><h1>🧬 Biologist</h1><p>NEET + Veterinary Study Hub</p></header>
 
 <div id="home" class="container">
-<div class="card">
-<h2>📚 Welcome to Biologist</h2>
-<p>Class 11 और Class 12 के Biology, Physics, Chemistry और Veterinary chapters यहाँ पढ़ें।</p>
-</div>
+<div class="card"><h2>📚 Welcome to Biologist</h2><p>Class 11 और Class 12 के Biology, Physics, Chemistry और Veterinary chapters यहाँ पढ़ें।</p></div>
 <button class="class-btn" onclick="openClass('class11')">📘 Class 11</button>
 <button class="class-btn" onclick="openClass('class12')">📗 Class 12</button>
-<div class="card" style="text-align:center">
-<button class="admin-btn" onclick="openAdminLogin()">🔐 Admin Panel</button>
-<p class="small">केवल owner के लिए notes management.</p>
-</div>
+<div class="card" style="text-align:center"><button class="admin-btn" onclick="openAdminLogin()">🔐 Admin Panel</button><p class="small">केवल owner के लिए notes management.</p></div>
 </div>
 
-<div id="class11" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Back</button>
-<div class="card">
-<h2>📘 Class 11</h2>
-<button class="subject-btn" onclick="openSubject('bio11')">🧬 Biology</button>
-<button class="subject-btn" onclick="openSubject('phy11')">⚡ Physics</button>
-<button class="subject-btn" onclick="openSubject('chem11')">🧪 Chemistry</button>
-<button class="subject-btn" onclick="openSubject('vet11')">🐄 Veterinary</button>
-</div>
-</div>
+<div id="class11" class="container hide"><button class="back-btn" onclick="goHome()">⬅ Back</button><div class="card"><h2>📘 Class 11</h2>
+<button class="subject-btn" onclick="openSubject('bio11')">🧬 Biology</button><button class="subject-btn" onclick="openSubject('phy11')">⚡ Physics</button><button class="subject-btn" onclick="openSubject('chem11')">🧪 Chemistry</button><button class="subject-btn" onclick="openSubject('vet11')">🐄 Veterinary</button></div></div>
+<div id="class12" class="container hide"><button class="back-btn" onclick="goHome()">⬅ Back</button><div class="card"><h2>📗 Class 12</h2>
+<button class="subject-btn" onclick="openSubject('bio12')">🧬 Biology</button><button class="subject-btn" onclick="openSubject('phy12')">⚡ Physics</button><button class="subject-btn" onclick="openSubject('chem12')">🧪 Chemistry</button><button class="subject-btn" onclick="openSubject('vet12')">🐄 Veterinary</button></div></div>
 
-<div id="class12" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Back</button>
-<div class="card">
-<h2>📗 Class 12</h2>
-<button class="subject-btn" onclick="openSubject('bio12')">🧬 Biology</button>
-<button class="subject-btn" onclick="openSubject('phy12')">⚡ Physics</button>
-<button class="subject-btn" onclick="openSubject('chem12')">🧪 Chemistry</button>
-<button class="subject-btn" onclick="openSubject('vet12')">🐄 Veterinary</button>
-</div>
-</div>
+<div id="subjectPage" class="container hide"><button class="back-btn" onclick="backToClass()">⬅ Back</button><div class="card"><h2 id="subjectTitle"></h2><p id="chapterCount"></p><div id="chapterList"></div></div></div>
+<div id="chapterPage" class="container hide"><button class="back-btn" onclick="backToSubject()">⬅ Back to Chapters</button><div class="chapter-page"><h2 id="chapterTitle"></h2><div id="publicNotes"></div></div></div>
 
-<div id="subjectPage" class="container hide">
-<button class="back-btn" onclick="backToClass()">⬅ Back</button>
-<div class="card">
-<h2 id="subjectTitle"></h2>
-<p id="chapterCount"></p>
-<div id="chapterList"></div>
-</div>
-</div>
+<div id="adminLogin" class="container hide"><button class="back-btn" onclick="goHome()">⬅ Back</button><div class="card"><h2>🔐 Admin Login</h2>
+<p>Firebase Authentication में registered email और password डालें।</p><input id="adminEmail" type="email" autocomplete="username" placeholder="Firebase login email"><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Firebase password">
+<button class="save-btn" onclick="checkAdmin()">Login</button><p id="loginMessage"></p></div></div>
 
-<div id="chapterPage" class="container hide">
-<button class="back-btn" onclick="backToSubject()">⬅ Back to Chapters</button>
-<div class="chapter-page">
-<h2 id="chapterTitle"></h2>
-<div id="publicNotes"></div>
-</div>
-</div>
+<div id="adminPage" class="container hide"><button class="back-btn" onclick="goHome()">⬅ Home</button>
+<div class="card"><h2>📝 Add Notes</h2><p class="small">Notes Firebase पर save होंगे और दूसरे devices पर भी दिखाई देंगे।</p>
+<label>Class + Subject</label><select id="adminSubject" onchange="loadAdminChapters()"></select><label>Chapter</label><select id="adminChapter"></select>
+<label>Note type</label><select id="noteType"><option value="text">✍️ Typed Notes</option><option value="image">📝 Handwritten Notes Photo</option><option value="both">✍️ Typed + 📝 Handwritten</option></select>
+<label>Typed Notes</label><textarea id="typedNotes" placeholder="अपने notes यहाँ लिखो..."></textarea><label>Handwritten Notes की photo</label><input id="noteImage" type="file" accept="image/*">
+<p class="small">Photo को compress करके Firestore में सेव करने की कोशिश होगी। बहुत बड़ी photo के लिए Firebase Storage setup अलग से करना पड़ सकता है।</p>
+<div class="row"><button class="save-btn" onclick="saveNote()">💾 Save Note</button><button class="danger" onclick="clearForm()">Clear</button></div><p id="adminMessage"></p><button class="back-btn" onclick="logoutAdmin()">Logout</button></div>
+<div class="card"><h2>📚 Saved Notes</h2><div id="savedNotes">Notes लोड हो रहे हैं...</div></div></div>
 
-<div id="adminLogin" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Back</button>
-<div class="card">
-<h2>🔐 Admin Login</h2>
-<p>Notes manage करने के लिए password डालें।</p>
-<input id="adminPassword" type="password" placeholder="Admin password">
-<button class="save-btn" onclick="checkAdmin()">Login</button>
-<p id="loginMessage"></p>
-</div>
-</div>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+import {getAuth,signInWithEmailAndPassword,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+import {getFirestore,collection,addDoc,getDocs,query,where,deleteDoc,doc,orderBy,serverTimestamp} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-<div id="adminPage" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Home</button>
+const firebaseConfig={
+apiKey:"AIzaSyDGpDsqrgnnat9RO1ObZBeMfN_Dp6qnlZ0",
+authDomain:"biologist-105f8.firebaseapp.com",
+projectId:"biologist-105f8",
+storageBucket:"biologist-105f8.firebasestorage.app",
+messagingSenderId:"200713580196",
+appId:"1:200713580196:web:1546109e7e5df9f2774031",
+measurementId:"G-7M2B7JQXXG"
+};
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),notesCollection=collection(db,"notes");
 
-<div class="card">
-<h2>📝 Add Notes</h2>
-<p class="small">यहाँ से code बदले बिना notes add कर सकते हो।</p>
-
-<label>Class + Subject</label>
-<select id="adminSubject" onchange="loadAdminChapters()"></select>
-
-<label>Chapter</label>
-<select id="adminChapter"></select>
-
-<label>Note type</label>
-<select id="noteType">
-<option value="text">✍️ Typed Notes</option>
-<option value="image">📝 Handwritten Notes Photo</option>
-<option value="both">✍️ Typed + 📝 Handwritten</option>
-</select>
-
-<label>Typed Notes</label>
-<textarea id="typedNotes" placeholder="अपने notes यहाँ लिखो..."></textarea>
-
-<label>Handwritten Notes की photo</label>
-<input id="noteImage" type="file" accept="image/*">
-
-<div class="row">
-<button class="save-btn" onclick="saveNote()">💾 Save Note</button>
-<button class="danger" onclick="clearForm()">Clear</button>
-</div>
-<p id="adminMessage"></p>
-</div>
-
-<div class="card">
-<h2>📚 Saved Notes</h2>
-<div id="savedNotes"></div>
-</div>
-</div>
-
-<script>
-/* =========================
-   ADMIN PASSWORD
-   इसे बदलकर अपना password रखो
-========================= */
-const ADMIN_PASSWORD = "Biologist@123";
-
-const chapters = {
+const chapters={
 bio11:["The Living World","Biological Classification","Plant Kingdom","Animal Kingdom","Morphology of Flowering Plants","Anatomy of Flowering Plants","Structural Organisation in Animals","Cell: The Unit of Life","Biomolecules","Cell Cycle and Cell Division","Transport in Plants","Mineral Nutrition","Photosynthesis in Plants","Respiration in Plants","Plant Growth and Development","Digestion and Absorption","Breathing and Exchange of Gases","Body Fluids and Circulation","Excretory Products and Their Elimination","Locomotion and Movement","Neural Control and Coordination","Chemical Coordination and Integration"],
 phy11:["Units and Measurements","Motion in a Straight Line","Motion in a Plane","Laws of Motion","Work, Energy and Power","System of Particles and Rotational Motion","Gravitation","Mechanical Properties of Solids","Mechanical Properties of Fluids","Thermal Properties of Matter","Thermodynamics","Kinetic Theory","Oscillations","Waves"],
 chem11:["Some Basic Concepts of Chemistry","Structure of Atom","Classification of Elements and Periodicity in Properties","Chemical Bonding and Molecular Structure","Thermodynamics","Equilibrium","Redox Reactions","Organic Chemistry – Basic Principles and Techniques","Hydrocarbons"],
@@ -158,249 +72,32 @@ vet11:["Animal Science","Veterinary Biology","Animal Scientific Names","Veterina
 bio12:["Sexual Reproduction in Flowering Plants","Human Reproduction","Reproductive Health","Principles of Inheritance and Variation","Molecular Basis of Inheritance","Evolution","Human Health and Disease","Strategies for Enhancement in Food Production","Microbes in Human Welfare","Biotechnology: Principles and Processes","Biotechnology and Its Applications","Organisms and Populations","Ecosystem","Biodiversity and Conservation"],
 phy12:["Electric Charges and Fields","Electrostatic Potential and Capacitance","Current Electricity","Moving Charges and Magnetism","Magnetism and Matter","Electromagnetic Induction","Alternating Current","Electromagnetic Waves","Ray Optics and Optical Instruments","Wave Optics","Dual Nature of Radiation and Matter","Atoms","Nuclei","Semiconductor Electronics"],
 chem12:["Solutions","Electrochemistry","Chemical Kinetics","Surface Chemistry","General Principles and Processes of Isolation of Elements","p-Block Elements","d- and f-Block Elements","Coordination Compounds","Haloalkanes and Haloarenes","Alcohols, Phenols and Ethers","Aldehydes, Ketones and Carboxylic Acids","Amines","Biomolecules","Polymers","Chemistry in Everyday Life"],
-vet12:["Veterinary Biology","Animal Anatomy Basics","Animal Physiology Basics","Animal Nutrition","Animal Scientific Names","Veterinary Important Topics","Veterinary Model Papers"]
-};
-
-const subjectNames={
-bio11:"🧬 Class 11 Biology",phy11:"⚡ Class 11 Physics",chem11:"🧪 Class 11 Chemistry",vet11:"🐄 Class 11 Veterinary",
-bio12:"🧬 Class 12 Biology",phy12:"⚡ Class 12 Physics",chem12:"🧪 Class 12 Chemistry",vet12:"🐄 Class 12 Veterinary"
-};
-
-let currentSubject="";
-let currentClass="";
-let currentChapter="";
-
-function hideAll(){
-document.querySelectorAll(".container").forEach(p=>p.classList.add("hide"));
-}
-
-function goHome(){
-hideAll();
-document.getElementById("home").classList.remove("hide");
-window.scrollTo(0,0);
-}
-
-function openClass(id){
-hideAll();
-document.getElementById(id).classList.remove("hide");
-currentClass=id;
-window.scrollTo(0,0);
-}
-
-function openSubject(id){
-currentSubject=id;
-currentClass=id.endsWith("11")?"class11":"class12";
-hideAll();
-document.getElementById("subjectPage").classList.remove("hide");
-document.getElementById("subjectTitle").innerText=subjectNames[id];
-const list=chapters[id]||[];
-document.getElementById("chapterCount").innerText=list.length+" Chapters";
-const box=document.getElementById("chapterList");
-box.innerHTML="";
-list.forEach((chapter,index)=>{
-const b=document.createElement("button");
-b.className="chapter-btn";
-b.innerText=(index+1)+". "+chapter;
-b.onclick=()=>openChapter(chapter);
-box.appendChild(b);
-});
-window.scrollTo(0,0);
-}
-
-function backToSubject(){openSubject(currentSubject)}
-function backToClass(){openClass(currentClass)}
-
-function getNotes(){
-try{return JSON.parse(localStorage.getItem("biologistNotes")||"[]")}catch(e){return []}
-}
-
-function saveNotes(data){
-localStorage.setItem("biologistNotes",JSON.stringify(data));
-}
-
-function openChapter(name){
-currentChapter=name;
-hideAll();
-document.getElementById("chapterPage").classList.remove("hide");
-document.getElementById("chapterTitle").innerText=name;
-renderPublicNotes(name);
-window.scrollTo(0,0);
-}
-
-function renderPublicNotes(chapter){
-const box=document.getElementById("publicNotes");
-const notes=getNotes().filter(n=>n.chapter===chapter);
-if(!notes.length){
-box.innerHTML='<div class="info">📚 इस chapter के notes अभी add नहीं किए गए हैं।</div>';
-return;
-}
-box.innerHTML="";
-notes.forEach(n=>{
-const div=document.createElement("div");
-div.className="note";
-if(n.text){
-const p=document.createElement("div");
-p.innerText=n.text;
-div.appendChild(p);
-}
-if(n.image){
-const img=document.createElement("img");
-img.src=n.image;
-img.alt="Handwritten notes";
-div.appendChild(img);
-}
-box.appendChild(div);
-});
-}
-
-function openAdminLogin(){
-hideAll();
-document.getElementById("adminLogin").classList.remove("hide");
-document.getElementById("adminPassword").value="";
-document.getElementById("loginMessage").innerText="";
-window.scrollTo(0,0);
-}
-
-function checkAdmin(){
-const p=document.getElementById("adminPassword").value;
-if(p===ADMIN_PASSWORD){
-document.getElementById("adminPassword").value="";
-openAdmin();
-}else{
-document.getElementById("loginMessage").innerText="❌ Password गलत है।";
-document.getElementById("loginMessage").style.color="#c62828";
-}
-}
-
-function openAdmin(){
-hideAll();
-document.getElementById("adminPage").classList.remove("hide");
-fillAdminSubjects();
-renderSavedNotes();
-window.scrollTo(0,0);
-}
-
-function fillAdminSubjects(){
-const s=document.getElementById("adminSubject");
-s.innerHTML="";
-Object.keys(chapters).forEach(id=>{
-const o=document.createElement("option");
-o.value=id;
-o.innerText=subjectNames[id];
-s.appendChild(o);
-});
-loadAdminChapters();
-}
-
-function loadAdminChapters(){
-const id=document.getElementById("adminSubject").value;
-const c=document.getElementById("adminChapter");
-c.innerHTML="";
-(chapters[id]||[]).forEach(ch=>{
-const o=document.createElement("option");
-o.value=ch;
-o.innerText=ch;
-c.appendChild(o);
-});
-}
-
-function clearForm(){
-document.getElementById("typedNotes").value="";
-document.getElementById("noteImage").value="";
-document.getElementById("adminMessage").innerText="";
-}
-
-function saveNote(){
-const subject=document.getElementById("adminSubject").value;
-const chapter=document.getElementById("adminChapter").value;
-const type=document.getElementById("noteType").value;
-const text=document.getElementById("typedNotes").value.trim();
-const file=document.getElementById("noteImage").files[0];
-
-if((type==="text"||type==="both")&&!text){
-showAdminMessage("❌ Typed notes खाली हैं।","#c62828");return;
-}
-if((type==="image"||type==="both")&&!file){
-showAdminMessage("❌ Handwritten photo select करो।","#c62828");return;
-}
-
-if(file){
-const reader=new FileReader();
-reader.onload=function(){
-finishSave(subject,chapter,type,text,reader.result);
-};
-reader.readAsDataURL(file);
-}else{
-finishSave(subject,chapter,type,text,"");
-}
-}
-
-function finishSave(subject,chapter,type,text,image){
-const data=getNotes();
-data.push({
-id:Date.now(),
-subject,chapter,
-type,
-text:(type==="image"?"":text),
-image:(type==="text"?"":image)
-});
-try{
-saveNotes(data);
-showAdminMessage("✅ Notes successfully save हो गए!","#087f5b");
-clearForm();
-renderSavedNotes();
-}catch(e){
-showAdminMessage("❌ Storage full हो गया। बड़ी photo हटाकर छोटी image try करो।","#c62828");
-}
-}
-
-function showAdminMessage(msg,color){
-const el=document.getElementById("adminMessage");
-el.innerText=msg;
-el.style.color=color;
-}
-
-function renderSavedNotes(){
-const box=document.getElementById("savedNotes");
-const data=getNotes();
-if(!data.length){
-box.innerHTML='<p class="small">अभी कोई note saved नहीं है।</p>';
-return;
-}
-box.innerHTML="";
-data.slice().reverse().forEach(n=>{
-const div=document.createElement("div");
-div.className="note";
-const title=document.createElement("b");
-title.innerText=(subjectNames[n.subject]||n.subject)+" → "+n.chapter;
-div.appendChild(title);
-if(n.text){
-const p=document.createElement("p");
-p.innerText=n.text.length>180?n.text.slice(0,180)+"...":n.text;
-div.appendChild(p);
-}
-if(n.image){
-const img=document.createElement("img");
-img.src=n.image;
-img.style.maxHeight="180px";
-div.appendChild(img);
-}
-const del=document.createElement("button");
-del.className="danger";
-del.innerText="🗑 Delete";
-del.onclick=function(){deleteNote(n.id)};
-div.appendChild(del);
-box.appendChild(div);
-});
-}
-
-function deleteNote(id){
-if(!confirm("यह note delete करना है?"))return;
-saveNotes(getNotes().filter(n=>n.id!==id));
-renderSavedNotes();
-}
-
+vet12:["Veterinary Biology","Animal Anatomy Basics","Animal Physiology Basics","Animal Nutrition","Animal Scientific Names","Veterinary Important Topics","Veterinary Model Papers"]};
+const subjectNames={bio11:"🧬 Class 11 Biology",phy11:"⚡ Class 11 Physics",chem11:"🧪 Class 11 Chemistry",vet11:"🐄 Class 11 Veterinary",bio12:"🧬 Class 12 Biology",phy12:"⚡ Class 12 Physics",chem12:"🧪 Class 12 Chemistry",vet12:"🐄 Class 12 Veterinary"};
+let currentSubject="",currentClass="",currentChapter="";
+function hideAll(){document.querySelectorAll(".container").forEach(p=>p.classList.add("hide"))}
+function goHome(){hideAll();document.getElementById("home").classList.remove("hide");window.scrollTo(0,0)}
+function openClass(id){hideAll();document.getElementById(id).classList.remove("hide");currentClass=id;window.scrollTo(0,0)}
+function openSubject(id){currentSubject=id;currentClass=id.endsWith("11")?"class11":"class12";hideAll();document.getElementById("subjectPage").classList.remove("hide");document.getElementById("subjectTitle").innerText=subjectNames[id];let list=chapters[id]||[];document.getElementById("chapterCount").innerText=list.length+" Chapters";let box=document.getElementById("chapterList");box.innerHTML="";list.forEach((ch,i)=>{let b=document.createElement("button");b.className="chapter-btn";b.innerText=(i+1)+". "+ch;b.onclick=()=>openChapter(ch);box.appendChild(b)});window.scrollTo(0,0)}
+function backToSubject(){openSubject(currentSubject)}function backToClass(){openClass(currentClass)}
+async function getNotes(chapter=null){let q=chapter?query(notesCollection,where("chapter","==",chapter)):query(notesCollection,orderBy("createdAt","desc"));let snap=await getDocs(q);return snap.docs.map(d=>({id:d.id,...d.data()}))}
+async function openChapter(name){currentChapter=name;hideAll();document.getElementById("chapterPage").classList.remove("hide");document.getElementById("chapterTitle").innerText=name;document.getElementById("publicNotes").innerHTML='<div class="info">⏳ Notes लोड हो रहे हैं...</div>';window.scrollTo(0,0);await renderPublicNotes(name)}
+async function renderPublicNotes(chapter){let box=document.getElementById("publicNotes");try{let notes=await getNotes(chapter);if(!notes.length){box.innerHTML='<div class="info">📚 इस chapter के notes अभी add नहीं किए गए हैं।</div>';return}box.innerHTML="";notes.forEach(n=>{let div=document.createElement("div");div.className="note";if(n.text){let p=document.createElement("div");p.style.whiteSpace="pre-wrap";p.innerText=n.text;div.appendChild(p)}if(n.image){let img=document.createElement("img");img.src=n.image;img.alt="Handwritten notes";div.appendChild(img)}box.appendChild(div)})}catch(e){box.innerHTML='<div class="info">❌ Notes लोड नहीं हुए। Firebase Rules और internet connection जाँचें।</div>';console.error(e)}}
+function openAdminLogin(){hideAll();document.getElementById("adminLogin").classList.remove("hide");document.getElementById("adminPassword").value="";document.getElementById("adminEmail").value="";document.getElementById("loginMessage").innerText="";window.scrollTo(0,0)}
+async function checkAdmin(){let email=document.getElementById("adminEmail").value.trim(),password=document.getElementById("adminPassword").value,msg=document.getElementById("loginMessage");msg.style.color="#c62828";if(!email||!password){msg.innerText="ईमेल और password दोनों भरें।";return}msg.innerText="Login हो रहा है...";try{await signInWithEmailAndPassword(auth,email,password);document.getElementById("adminPassword").value="";openAdmin()}catch(e){msg.innerText="Login नहीं हुआ। Email/password जाँचें और Firebase Authentication में Email/Password enabled होना चाहिए।";console.error(e)}}
+function openAdmin(){hideAll();document.getElementById("adminPage").classList.remove("hide");fillAdminSubjects();renderSavedNotes();window.scrollTo(0,0)}
+function fillAdminSubjects(){let s=document.getElementById("adminSubject");s.innerHTML="";Object.keys(chapters).forEach(id=>{let o=document.createElement("option");o.value=id;o.innerText=subjectNames[id];s.appendChild(o)});loadAdminChapters()}
+function loadAdminChapters(){let id=document.getElementById("adminSubject").value,c=document.getElementById("adminChapter");c.innerHTML="";(chapters[id]||[]).forEach(ch=>{let o=document.createElement("option");o.value=ch;o.innerText=ch;c.appendChild(o)})}
+function clearForm(){document.getElementById("typedNotes").value="";document.getElementById("noteImage").value="";document.getElementById("adminMessage").innerText=""}
+function showAdminMessage(msg,color){let el=document.getElementById("adminMessage");el.innerText=msg;el.style.color=color}
+function compressImage(file){return new Promise((resolve,reject)=>{if(!file.type.startsWith("image/")){reject(Error("कृपया image file चुनें।"));return}let r=new FileReader();r.onerror=()=>reject(Error("Photo पढ़ी नहीं जा सकी।"));r.onload=()=>{let img=new Image();img.onerror=()=>reject(Error("Photo खुल नहीं सकी।"));img.onload=()=>{let scale=Math.min(1,1000/img.width,1400/img.height),canvas=document.createElement("canvas");canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));let ctx=canvas.getContext("2d");ctx.fillStyle="#fff";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);let quality=.62,data=canvas.toDataURL("image/jpeg",quality);while(data.length>420000&&quality>.3){quality-=.07;data=canvas.toDataURL("image/jpeg",quality)}if(data.length>480000){reject(Error("Photo बहुत बड़ी है। छोटी photo/crop करके फिर try करें।"));return}resolve(data)};img.src=r.result};r.readAsDataURL(file)})}
+async function saveNote(){if(!auth.currentUser){showAdminMessage("पहले Admin Login करें।","#c62828");return}let subject=document.getElementById("adminSubject").value,chapter=document.getElementById("adminChapter").value,type=document.getElementById("noteType").value,text=document.getElementById("typedNotes").value.trim(),file=document.getElementById("noteImage").files[0];if((type==="text"||type==="both")&&!text){showAdminMessage("❌ Typed notes खाली हैं।","#c62828");return}if((type==="image"||type==="both")&&!file){showAdminMessage("❌ Handwritten photo select करो।","#c62828");return}showAdminMessage("⏳ Firebase पर save हो रहा है...","#174ea6");try{let image="";if(type==="image"||type==="both")image=await compressImage(file);await addDoc(notesCollection,{subject,chapter,type,text:type==="image"?"":text,image:type==="text"?"":image,createdAt:serverTimestamp(),createdBy:auth.currentUser.email||"admin"});showAdminMessage("✅ Notes Firebase पर save हो गए!","#087f5b");clearForm();await renderSavedNotes();if(currentChapter===chapter)await renderPublicNotes(chapter)}catch(e){showAdminMessage("❌ Save नहीं हुआ: "+(e.message||"Firebase Rules / internet जाँचें।"),"#c62828");console.error(e)}}
+async function renderSavedNotes(){let box=document.getElementById("savedNotes");box.innerText="Notes लोड हो रहे हैं...";try{let data=await getNotes();if(!data.length){box.innerHTML='<p class="small">अभी कोई note saved नहीं है।</p>';return}box.innerHTML="";data.forEach(n=>{let div=document.createElement("div");div.className="note";let title=document.createElement("b");title.innerText=(subjectNames[n.subject]||n.subject)+" → "+n.chapter;div.appendChild(title);if(n.text){let p=document.createElement("p");p.style.whiteSpace="pre-wrap";p.innerText=n.text.length>180?n.text.slice(0,180)+"...":n.text;div.appendChild(p)}if(n.image){let img=document.createElement("img");img.src=n.image;img.style.maxHeight="180px";div.appendChild(img)}let del=document.createElement("button");del.className="danger";del.innerText="🗑 Delete";del.onclick=()=>deleteNote(n.id);div.appendChild(del);box.appendChild(div)})}catch(e){box.innerText="Notes लोड नहीं हुए। Firestore Rules जाँचें।";console.error(e)}}
+async function deleteNote(id){if(!confirm("यह note delete करना है?"))return;try{await deleteDoc(doc(db,"notes",id));await renderSavedNotes();if(currentChapter)await renderPublicNotes(currentChapter)}catch(e){alert("Delete नहीं हुआ। Firebase login और Rules जाँचें।");console.error(e)}}
+async function logoutAdmin(){await signOut(auth);goHome()}
+onAuthStateChanged(auth,()=>{});
+Object.assign(window,{openClass,goHome,openSubject,backToClass,backToSubject,openChapter,openAdminLogin,checkAdmin,loadAdminChapters,saveNote,clearForm,logoutAdmin});
 goHome();
 </script>
 </body>
-</html>
+   </html>
