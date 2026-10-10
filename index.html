@@ -66,12 +66,39 @@ textarea{min-height:180px;resize:vertical}
 <span style="display:inline-block;background:#e8f0ff;color:#244f9b;border-radius:999px;padding:6px 11px;font-size:13px;font-weight:700">🎯 NEET Prep</span>
 <span style="display:inline-block;background:#fff3d9;color:#8a5a00;border-radius:999px;padding:6px 11px;font-size:13px;font-weight:700">🐄 Veterinary</span>
 </div></div>
+   <button class="class-btn" onclick="openBiologyIntro()">🧬 Biology की पूरी जानकारी</button>
 <button class="class-btn" onclick="openClass('class11')">📘 Class 11</button>
 <button class="class-btn" onclick="openClass('class12')">📗 Class 12</button>
 <div class="card" style="text-align:center"><button class="admin-btn" onclick="openAdminLogin()">🔐 Admin Panel</button><p class="small">केवल owner के लिए notes management.</p></div>
 </div>
 
-<div id="class11" class="container hide"><button class="back-btn" onclick="goHome()">⬅ Back</button><div class="card"><h2>📘 Class 11</h2>
+<div id="class11" class="container hide"> <div id="biologyIntro" class="container hide">
+  <button class="back-btn" onclick="goHome()">⬅ Home</button>
+  <div class="card">
+    <h2>🧬 Biology — जीव विज्ञान</h2>
+    <p><b>Biology</b> विज्ञान की वह शाखा है जिसमें जीवों, उनकी संरचना, कार्य, वृद्धि, प्रजनन और विकास का अध्ययन किया जाता है।</p>
+    <h3>Biology की प्रमुख शाखाएँ</h3>
+    <ul>
+      <li>Botany — पौधों का अध्ययन</li>
+      <li>Zoology — जंतुओं का अध्ययन</li>
+      <li>Microbiology — सूक्ष्मजीवों का अध्ययन</li>
+      <li>Genetics — आनुवंशिकता का अध्ययन</li>
+      <li>Ecology — जीवों और पर्यावरण का अध्ययन</li>
+      <li>Cell Biology — कोशिकाओं का अध्ययन</li>
+      <li>Veterinary Science — पशुओं के स्वास्थ्य और उपचार का अध्ययन</li>
+    </ul>
+    <h3>जीवों के प्रमुख लक्षण</h3>
+    <ul>
+      <li>Cellular Organisation — कोशिकीय संगठन</li>
+      <li>Metabolism — उपापचय</li>
+      <li>Growth — वृद्धि</li>
+      <li>Reproduction — प्रजनन</li>
+      <li>Response to Stimuli — उद्दीपनों के प्रति प्रतिक्रिया</li>
+    </ul>
+    <h3>NEET और Veterinary में महत्व</h3>
+    <p>Biology से कोशिका, आनुवंशिकी, मानव शरीर, पौधों, जंतुओं और पर्यावरण को समझने में मदद मिलती है। Veterinary में यही ज्ञान पशुओं के स्वास्थ्य, पोषण और रोगों को समझने के लिए उपयोगी है।</p>
+  </div>
+</div><button class="back-btn" onclick="goHome()">⬅ Back</button><div class="card"><h2>📘 Class 11</h2>
 <button class="subject-btn" onclick="openSubject('bio11')">🧬 Biology</button><button class="subject-btn" onclick="openSubject('phy11')">⚡ Physics</button><button class="subject-btn" onclick="openSubject('chem11')">🧪 Chemistry</button><button class="subject-btn" onclick="openSubject('vet11')">🐄 Veterinary</button></div></div>
 <div id="class12" class="container hide"><button class="back-btn" onclick="goHome()">⬅ Back</button><div class="card"><h2>📗 Class 12</h2>
 <button class="subject-btn" onclick="openSubject('bio12')">🧬 Biology</button><button class="subject-btn" onclick="openSubject('phy12')">⚡ Physics</button><button class="subject-btn" onclick="openSubject('chem12')">🧪 Chemistry</button><button class="subject-btn" onclick="openSubject('vet12')">🐄 Veterinary</button></div></div>
@@ -120,6 +147,11 @@ vet12:["Veterinary Biology","Animal Anatomy Basics","Animal Physiology Basics","
 const subjectNames={bio11:"🧬 Class 11 Biology",phy11:"⚡ Class 11 Physics",chem11:"🧪 Class 11 Chemistry",vet11:"🐄 Class 11 Veterinary",bio12:"🧬 Class 12 Biology",phy12:"⚡ Class 12 Physics",chem12:"🧪 Class 12 Chemistry",vet12:"🐄 Class 12 Veterinary"};
 let currentSubject="",currentClass="",currentChapter="",readerFontSize=18;
 function hideAll(){document.querySelectorAll(".container").forEach(p=>p.classList.add("hide"))}
+function openBiologyIntro(){
+  hideAll();
+  document.getElementById("biologyIntro").classList.remove("hide");
+  window.scrollTo(0,0);
+}
 function goHome(){hideAll();document.getElementById("home").classList.remove("hide");window.scrollTo(0,0)}
 function openClass(id){hideAll();document.getElementById(id).classList.remove("hide");currentClass=id;window.scrollTo(0,0)}
 function openSubject(id){currentSubject=id;currentClass=id.endsWith("11")?"class11":"class12";hideAll();document.getElementById("subjectPage").classList.remove("hide");document.getElementById("subjectTitle").innerText=subjectNames[id];let list=chapters[id]||[];document.getElementById("chapterCount").innerText=list.length+" Chapters";let search=document.getElementById("chapterSearch");if(search)search.value="";let box=document.getElementById("chapterList");box.innerHTML="";list.forEach((ch,i)=>{let b=document.createElement("button");b.className="chapter-btn";b.dataset.chapter=ch.toLowerCase();b.innerText=(i+1)+". "+ch;b.onclick=()=>openChapter(ch);box.appendChild(b)});filterChapters();window.scrollTo(0,0)}
@@ -143,8 +175,4 @@ async function renderSavedNotes(){let box=document.getElementById("savedNotes");
 async function deleteNote(id){if(!confirm("यह note delete करना है?"))return;try{await deleteDoc(doc(db,"notes",id));await renderSavedNotes();if(currentChapter)await renderPublicNotes(currentChapter)}catch(e){alert("Delete नहीं हुआ। Firebase login और Rules जाँचें।");console.error(e)}}
 async function logoutAdmin(){await signOut(auth);goHome()}
 onAuthStateChanged(auth,()=>{});
-Object.assign(window,{openClass,goHome,openSubject,backToClass,backToSubject,openChapter,openAdminLogin,checkAdmin,loadAdminChapters,saveNote,clearForm,logoutAdmin,filterChapters,changeFontSize,resetFontSize});
-goHome();
-</script>
-</body>
-   </html>
+Object.assign(window,{openClass,goHome,openSubject,backToClass,backToSubject,openChapter,openAdminLogin,checkAdmin,loadAdminChapters,saveNote,clearForm,logoutAdmin,filterChapters,changeFontSize,resetFontSize,openBiologyIntro});
