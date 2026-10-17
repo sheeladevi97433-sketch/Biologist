@@ -5,7 +5,293 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#087f5b">
 <title>🧬 Biologist - NEET + Veterinary</title>
+/* ===== BIOLOGIST PREMIUM UI ===== */
 
+body{
+  background:
+    radial-gradient(circle at top right,rgba(17,150,106,.10),transparent 320px),
+    var(--bg);
+}
+
+/* Premium Header */
+header{
+  padding:32px 16px 30px;
+  background:
+    radial-gradient(circle at 85% 10%,rgba(255,255,255,.15),transparent 100px),
+    linear-gradient(135deg,#043d30,#087f5b 55%,#16a673);
+  box-shadow:0 10px 30px rgba(6,78,59,.22);
+}
+
+header h1{
+  font-size:38px;
+  letter-spacing:-1px;
+  text-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+header p{
+  font-size:14px;
+  opacity:.9;
+}
+
+/* Better cards */
+.card,.chapter-page{
+  border-radius:22px;
+  box-shadow:0 8px 28px rgba(18,72,54,.08);
+  border:1px solid var(--border);
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:25px 20px;
+}
+
+.hero:after{
+  content:"🧬";
+  position:absolute;
+  right:-15px;
+  top:-25px;
+  font-size:120px;
+  opacity:.055;
+  transform:rotate(-15deg);
+}
+
+.hero h2{
+  margin-top:0;
+  font-size:25px;
+}
+
+/* Feature boxes */
+.features{
+  gap:10px;
+}
+
+.feature{
+  padding:15px 8px;
+  border-radius:15px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.feature:active{
+  transform:scale(.96);
+}
+
+/* Class buttons */
+.class-btn{
+  min-height:59px;
+  border-radius:16px;
+  font-size:16px;
+  box-shadow:0 7px 18px rgba(8,127,91,.16);
+}
+
+.class-btn:active{
+  transform:scale(.985);
+}
+
+/* Subject buttons */
+.subject-btn{
+  padding:17px;
+  border-radius:15px;
+  font-size:16px;
+  transition:.2s;
+}
+
+.subject-btn:active{
+  transform:scale(.985);
+}
+
+/* Chapter list */
+.chapter-btn{
+  padding:15px;
+  min-height:57px;
+  border-radius:15px;
+  align-items:center;
+  transition:.2s;
+}
+
+.chapter-btn:hover{
+  border-color:var(--green);
+}
+
+.chapter-btn span:last-child{
+  font-size:20px;
+  color:#e6a500;
+}
+
+/* Search */
+#chapterSearch{
+  padding:15px 16px;
+  border-radius:16px;
+  outline:none;
+}
+
+#chapterSearch:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(8,127,91,.10);
+}
+
+/* Progress */
+.progress{
+  height:12px;
+}
+
+#progressFill{
+  background:linear-gradient(90deg,#087f5b,#25c58d);
+  border-radius:20px;
+}
+
+/* Continue Reading */
+#continueBox{
+  border-left:5px solid var(--green);
+  background:
+    linear-gradient(90deg,rgba(8,127,91,.07),transparent),
+    var(--card);
+}
+
+#continueBox h3{
+  margin-top:0;
+}
+
+/* Reading page */
+.chapter-page{
+  padding:20px;
+}
+
+.chapter-head{
+  border-bottom:1px solid var(--border);
+  padding-bottom:10px;
+  margin-bottom:12px;
+}
+
+.chapter-head h2{
+  margin:0;
+  font-size:25px;
+}
+
+.bookmark{
+  min-width:48px;
+  height:48px;
+  padding:0;
+  border-radius:50%;
+  color:#e2a500;
+}
+
+/* Reading toolbar */
+.reading-tools{
+  top:7px;
+  padding:10px;
+  border:1px solid var(--border);
+  box-shadow:0 4px 15px rgba(0,0,0,.05);
+  backdrop-filter:blur(10px);
+}
+
+.reader-btn{
+  min-width:42px;
+}
+
+/* Notes */
+.note{
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 5px 18px rgba(0,0,0,.045);
+}
+
+.note img{
+  width:100%;
+  display:block;
+  border-radius:14px;
+}
+
+.pdf-button{
+  padding:12px 15px;
+  border-radius:12px;
+}
+
+/* Admin */
+#adminPage label{
+  display:block;
+  margin-top:12px;
+  font-weight:700;
+}
+
+input,textarea,select{
+  outline:none;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(8,127,91,.09);
+}
+
+/* Better bottom navigation */
+.bottom-nav{
+  height:68px;
+  max-width:600px;
+  left:50%;
+  transform:translateX(-50%);
+  border:1px solid var(--border);
+  border-bottom:0;
+  border-radius:22px 22px 0 0;
+  box-shadow:0 -6px 25px rgba(0,0,0,.08);
+  backdrop-filter:blur(14px);
+}
+
+.nav-btn{
+  min-width:65px;
+  border-radius:14px;
+}
+
+.nav-btn span{
+  line-height:1.1;
+}
+
+/* Back button */
+.back-btn{
+  border-radius:13px;
+  padding:10px 14px;
+}
+
+/* Scroll to top */
+#topBtn{
+  box-shadow:0 6px 18px rgba(8,127,91,.3);
+}
+
+/* Desktop */
+@media(min-width:700px){
+  .container{
+    padding:22px;
+  }
+
+  .features{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  header h1{
+    font-size:43px;
+  }
+
+  .card,.chapter-page{
+    padding:24px;
+  }
+}
+
+/* Small phones */
+@media(max-width:380px){
+  header h1{
+    font-size:31px;
+  }
+
+  .container{
+    padding:10px;
+  }
+
+  .card,.chapter-page{
+    padding:15px;
+  }
+}
 <style>
 *{box-sizing:border-box}
 :root{
