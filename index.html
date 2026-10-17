@@ -1,695 +1,376 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🧬 Biologist - NEET + Veterinary</title>
+<meta name="theme-color" content="#087f5b">
+
+<title>🧬 Biologist - NEET + Veterinary Study Hub</title>
 
 <style>
-*{box-sizing:border-box}
-:root{--green:#087f5b;--deep:#064e3b;--ink:#17332b}
-body{margin:0;font-family:Arial,sans-serif;background:#eefaf4;color:var(--ink);line-height:1.7}
-header{background:linear-gradient(135deg,#064e3b,#11966a);color:white;text-align:center;padding:25px 12px;border-radius:0 0 24px 24px}
-header h1{margin:0;font-size:36px}
-header p{margin:4px}
-.container{max-width:850px;margin:auto;padding:16px}
-.card,.chapter-page{background:white;padding:20px;margin:12px 0;border-radius:16px;box-shadow:0 4px 16px #0000000d}
-h2{color:var(--deep);line-height:1.35}
-button{cursor:pointer;border:0;border-radius:10px;font-size:16px;padding:13px;font-weight:bold}
-.class-btn{width:100%;margin:7px 0;background:#087f5b;color:white;padding:17px}
-.subject-btn,.chapter-btn{width:100%;margin:6px 0;padding:14px;text-align:left;background:#f0faf5;color:#075c43;border:1px solid #d8eee2}
-.back-btn{background:#24463a;color:white;margin-bottom:10px}
-.admin-btn{background:#e8f0ff;color:#174ea6}
-.save-btn{background:#087f5b;color:white}
-.danger{background:#b42318;color:white}
-.hide{display:none!important}
-input,textarea,select{width:100%;padding:12px;margin:7px 0;border:1px solid #cbded3;border-radius:10px;font-size:16px}
-textarea{min-height:170px}
-.small{font-size:13px;color:#60756d}
-.info{background:#e8f8f0;padding:14px;border-radius:10px}
-.row{display:flex;gap:8px;flex-wrap:wrap}
-.row button{flex:1}
-.note{background:#fbfefc;padding:15px;margin:12px 0;border:1px solid #dcece3;border-radius:12px;overflow-wrap:anywhere}
-.note img{max-width:100%;height:auto;border-radius:8px;margin-top:10px}
-.reading-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#eff8f2;padding:10px;border-radius:10px;margin:12px 0}
-.reading-tools span{margin-right:auto;font-weight:bold}
-.reader-btn{background:white;border:1px solid #cfe4d6;color:#075c43;padding:8px 12px;font-size:14px}
-.reading-content{font-size:18px;line-height:1.9}
-.pdf-button{display:inline-block;background:#e8f1ff;color:#174ea6;padding:11px 14px;border-radius:10px;margin:10px 0;text-decoration:none;font-weight:bold}
-@media(min-width:620px){#home>.class-btn{width:48%}}
-</style>
-</head>
-
-<body>
-<header>
-<h1>🧬 Biologist</h1>
-<p>NEET + Veterinary Study Hub</p>
-</header>
-
-<!-- HOME PAGE -->
-<div id="home" class="container">
-<div class="card">
-<h2>📚 पढ़ाई अब एक ही जगह</h2>
-<p>Class 11 और Class 12 के Biology, Physics, Chemistry और Veterinary chapters यहाँ पढ़ें। अपने notes और PDFs के साथ NEET की तैयारी करें।</p>
-</div>
-
-<button class="class-btn" onclick="openBiologyIntro()">🧬 Biology की पूरी जानकारी</button>
-<button class="class-btn" onclick="openClass('class11')">📘 Class 11</button>
-<button class="class-btn" onclick="openClass('class12')">📗 Class 12</button>
-
-<div class="card" style="text-align:center">
-<button class="admin-btn" onclick="openAdminLogin()">🔐 Admin Panel</button>
-<p class="small">Notes management के लिए Admin Login करें।</p>
-</div>
-</div>
-
-<!-- BIOLOGY INTRO: यह Class 11 के बाहर है -->
-<div id="biologyIntro" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Home</button>
-<div class="card">
-<h2>🧬 Biology — जीव विज्ञान</h2>
-<p><b>Biology</b> विज्ञान की वह शाखा है जिसमें जीवों की संरचना, कार्य, वृद्धि, प्रजनन और विकास का अध्ययन किया जाता है।</p>
-
-<h3>Biology की प्रमुख शाखाएँ</h3>
-<ul>
-<li>Botany — पौधों का अध्ययन</li>
-<li>Zoology — जंतुओं का अध्ययन</li>
-<li>Microbiology — सूक्ष्मजीवों का अध्ययन</li>
-<li>Genetics — आनुवंशिकता का अध्ययन</li>
-<li>Ecology — जीवों और पर्यावरण का अध्ययन</li>
-<li>Cell Biology — कोशिकाओं का अध्ययन</li>
-<li>Veterinary Science — पशुओं के स्वास्थ्य और उपचार का अध्ययन</li>
-</ul>
-
-<h3>जीवों के प्रमुख लक्षण</h3>
-<ul>
-<li>Cellular Organisation — कोशिकीय संगठन</li>
-<li>Metabolism — उपापचय</li>
-<li>Growth — वृद्धि</li>
-<li>Reproduction — प्रजनन</li>
-<li>Response to Stimuli — उद्दीपनों के प्रति प्रतिक्रिया</li>
-</ul>
-
-<h3>NEET और Veterinary में महत्व</h3>
-<p>Biology से कोशिका, आनुवंशिकी, मानव शरीर, पौधों, जंतुओं और पर्यावरण को समझने में मदद मिलती है। Veterinary में यह ज्ञान पशुओं के स्वास्थ्य, पोषण और रोगों को समझने में उपयोगी है।</p>
-</div>
-</div>
-
-<!-- CLASS 11 -->
-<div id="class11" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Home</button>
-<div class="card">
-<h2>📘 Class 11</h2>
-<button class="subject-btn" onclick="openSubject('bio11')">🧬 Biology</button>
-<button class="subject-btn" onclick="openSubject('phy11')">⚡ Physics</button>
-<button class="subject-btn" onclick="openSubject('chem11')">🧪 Chemistry</button>
-<button class="subject-btn" onclick="openSubject('vet11')">🐄 Veterinary</button>
-</div>
-</div>
-
-<!-- CLASS 12 -->
-<div id="class12" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Home</button>
-<div class="card">
-<h2>📗 Class 12</h2>
-<button class="subject-btn" onclick="openSubject('bio12')">🧬 Biology</button>
-<button class="subject-btn" onclick="openSubject('phy12')">⚡ Physics</button>
-<button class="subject-btn" onclick="openSubject('chem12')">🧪 Chemistry</button>
-<button class="subject-btn" onclick="openSubject('vet12')">🐄 Veterinary</button>
-</div>
-</div>
-
-<!-- CHAPTER LIST -->
-<div id="subjectPage" class="container hide">
-<button class="back-btn" onclick="backToClass()">⬅ Back</button>
-<div class="card">
-<h2 id="subjectTitle"></h2>
-<p id="chapterCount"></p>
-<label for="chapterSearch">🔎 अध्याय खोजें</label>
-<input id="chapterSearch" type="search" placeholder="जैसे The Living World..." oninput="filterChapters()">
-<p id="searchStatus" class="small"></p>
-<div id="chapterList"></div>
-</div>
-</div>
-
-<!-- CHAPTER NOTES -->
-<div id="chapterPage" class="container hide">
-<button class="back-btn" onclick="backToSubject()">⬅ Back to Chapters</button>
-<div class="chapter-page">
-<h2 id="chapterTitle"></h2>
-<div class="reading-tools">
-<span>📖 Reading mode</span>
-<button class="reader-btn" onclick="changeFontSize(-1)">A−</button>
-<button class="reader-btn" onclick="changeFontSize(1)">A+</button>
-<button class="reader-btn" onclick="resetFontSize()">Reset</button>
-</div>
-<div id="publicNotes" class="reading-content"></div>
-</div>
-</div>
-
-<!-- ADMIN LOGIN -->
-<div id="adminLogin" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Home</button>
-<div class="card">
-<h2>🔐 Admin Login</h2>
-<p>Firebase Authentication में registered email और password डालें।</p>
-<input id="adminEmail" type="email" autocomplete="username" placeholder="Admin email">
-<input id="adminPassword" type="password" autocomplete="current-password" placeholder="Password">
-<button class="save-btn" onclick="checkAdmin()">Login</button>
-<p id="loginMessage"></p>
-</div>
-</div>
-
-<!-- ADMIN NOTES -->
-<div id="adminPage" class="container hide">
-<button class="back-btn" onclick="goHome()">⬅ Home</button>
-
-<div class="card">
-<h2>📝 Add Notes</h2>
-<p class="small">Notes Firebase पर save होंगे।</p>
-
-<label>Class + Subject</label>
-<select id="adminSubject" onchange="loadAdminChapters()"></select>
-
-<label>Chapter</label>
-<select id="adminChapter"></select>
-
-<label>Note type</label>
-<select id="noteType">
-<option value="text">✍️ Typed Notes</option>
-<option value="image">📝 Handwritten Notes Photo</option>
-<option value="both">✍️ Typed + Handwritten</option>
-</select>
-
-<label>Typed Notes</label>
-<textarea id="typedNotes" placeholder="अपने notes यहाँ लिखो..."></textarea>
-
-<label>PDF link (Google Drive या public PDF URL)</label>
-<input id="notePdfUrl" type="url" placeholder="https://...">
-<p class="small">PDF की sharing permission ऐसी होनी चाहिए कि पाठक उसे खोल सकें।</p>
-
-<label>Handwritten Notes की photo</label>
-<input id="noteImage" type="file" accept="image/*">
-
-<p class="small">फोटो को compress करके save किया जाएगा।</p>
-
-<div class="row">
-<button class="save-btn" onclick="saveNote()">💾 Save Note</button>
-<button class="danger" onclick="clearForm()">Clear</button>
-</div>
-
-<p id="adminMessage"></p>
-<button class="back-btn" onclick="logoutAdmin()">Logout</button>
-</div>
-
-<div class="card">
-<h2>📚 Saved Notes</h2>
-<div id="savedNotes">Admin Login करने के बाद notes दिखेंगे।</div>
-</div>
-</div>
-
-<script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-import {
- getAuth,signInWithEmailAndPassword,signOut,onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
-import {
- getFirestore,collection,addDoc,getDocs,query,where,
- deleteDoc,doc,orderBy,serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
-
-/* Firebase configuration */
-const firebaseConfig={
- apiKey:"AIzaSyDGpDsqrgnnat9RO1ObZBeMfN_Dp6qnlZ0",
- authDomain:"biologist-105f8.firebaseapp.com",
- projectId:"biologist-105f8",
- storageBucket:"biologist-105f8.firebasestorage.app",
- messagingSenderId:"200713580196",
- appId:"1:200713580196:web:1546109e7e5df9f2774031",
- measurementId:"G-7M2B7JQXXG"
-};
-
-const app=initializeApp(firebaseConfig);
-const auth=getAuth(app);
-const db=getFirestore(app);
-const notesCollection=collection(db,"notes");
-
-/* Chapter lists */
-const chapters={
-bio11:[
-"The Living World","Biological Classification","Plant Kingdom","Animal Kingdom",
-"Morphology of Flowering Plants","Anatomy of Flowering Plants",
-"Structural Organisation in Animals","Cell: The Unit of Life","Biomolecules",
-"Cell Cycle and Cell Division","Transport in Plants","Mineral Nutrition",
-"Photosynthesis in Plants","Respiration in Plants","Plant Growth and Development",
-"Digestion and Absorption","Breathing and Exchange of Gases",
-"Body Fluids and Circulation","Excretory Products and Their Elimination",
-"Locomotion and Movement","Neural Control and Coordination",
-"Chemical Coordination and Integration"
-],
-phy11:[
-"Units and Measurements","Motion in a Straight Line","Motion in a Plane",
-"Laws of Motion","Work, Energy and Power","System of Particles and Rotational Motion",
-"Gravitation","Mechanical Properties of Solids","Mechanical Properties of Fluids",
-"Thermal Properties of Matter","Thermodynamics","Kinetic Theory","Oscillations","Waves"
-],
-chem11:[
-"Some Basic Concepts of Chemistry","Structure of Atom",
-"Classification of Elements and Periodicity in Properties",
-"Chemical Bonding and Molecular Structure","Thermodynamics","Equilibrium",
-"Redox Reactions","Organic Chemistry – Basic Principles and Techniques","Hydrocarbons"
-],
-vet11:[
-"Animal Science","Veterinary Biology","Animal Scientific Names",
-"Veterinary Important Topics","Veterinary Model Papers"
-],
-bio12:[
-"Sexual Reproduction in Flowering Plants","Human Reproduction","Reproductive Health",
-"Principles of Inheritance and Variation","Molecular Basis of Inheritance","Evolution",
-"Human Health and Disease","Strategies for Enhancement in Food Production",
-"Microbes in Human Welfare","Biotechnology: Principles and Processes",
-"Biotechnology and Its Applications","Organisms and Populations","Ecosystem",
-"Biodiversity and Conservation"
-],
-phy12:[
-"Electric Charges and Fields","Electrostatic Potential and Capacitance",
-"Current Electricity","Moving Charges and Magnetism","Magnetism and Matter",
-"Electromagnetic Induction","Alternating Current","Electromagnetic Waves",
-"Ray Optics and Optical Instruments","Wave Optics",
-"Dual Nature of Radiation and Matter","Atoms","Nuclei","Semiconductor Electronics"
-],
-chem12:[
-"Solutions","Electrochemistry","Chemical Kinetics","Surface Chemistry",
-"General Principles and Processes of Isolation of Elements","p-Block Elements",
-"d- and f-Block Elements","Coordination Compounds","Haloalkanes and Haloarenes",
-"Alcohols, Phenols and Ethers","Aldehydes, Ketones and Carboxylic Acids",
-"Amines","Biomolecules","Polymers","Chemistry in Everyday Life"
-],
-vet12:[
-"Veterinary Biology","Animal Anatomy Basics","Animal Physiology Basics",
-"Animal Nutrition","Animal Scientific Names","Veterinary Important Topics",
-"Veterinary Model Papers"
-]
-};
-
-const subjectNames={
-bio11:"🧬 Class 11 Biology",phy11:"⚡ Class 11 Physics",
-chem11:"🧪 Class 11 Chemistry",vet11:"🐄 Class 11 Veterinary",
-bio12:"🧬 Class 12 Biology",phy12:"⚡ Class 12 Physics",
-chem12:"🧪 Class 12 Chemistry",vet12:"🐄 Class 12 Veterinary"
-};
-
-let currentSubject="";
-let currentClass="";
-let currentChapter="";
-let readerFontSize=18;
-
-/* Navigation */
-function hideAll(){
- document.querySelectorAll(".container").forEach(p=>p.classList.add("hide"));
+*{
+  box-sizing:border-box;
 }
 
-function goHome(){
- hideAll();
- document.getElementById("home").classList.remove("hide");
- window.scrollTo(0,0);
+:root{
+  --green:#087f5b;
+  --green2:#11966a;
+  --deep:#064e3b;
+  --ink:#17332b;
+  --bg:#eefaf4;
+  --card:#ffffff;
+  --soft:#f0faf5;
+  --border:#d8eee2;
+  --muted:#60756d;
+  --shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
-function openBiologyIntro(){
- hideAll();
- document.getElementById("biologyIntro").classList.remove("hide");
- window.scrollTo(0,0);
+body.dark{
+  --green:#18a879;
+  --green2:#23c38b;
+  --deep:#7ce3bc;
+  --ink:#e8fff5;
+  --bg:#0c1814;
+  --card:#14251f;
+  --soft:#193028;
+  --border:#28483d;
+  --muted:#a9c5ba;
+  --shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
-function openClass(id){
- hideAll();
- document.getElementById(id).classList.remove("hide");
- currentClass=id;
- window.scrollTo(0,0);
+html{
+  scroll-behavior:smooth;
 }
 
-function openSubject(id){
- if(!chapters[id])return;
- currentSubject=id;
- currentClass=id.endsWith("11")?"class11":"class12";
- hideAll();
- document.getElementById("subjectPage").classList.remove("hide");
- document.getElementById("subjectTitle").innerText=subjectNames[id];
- document.getElementById("chapterCount").innerText=chapters[id].length+" Chapters";
- document.getElementById("chapterSearch").value="";
- const box=document.getElementById("chapterList");
- box.innerHTML="";
- chapters[id].forEach((ch,i)=>{
-  const b=document.createElement("button");
-  b.className="chapter-btn";
-  b.dataset.chapter=ch.toLowerCase();
-  b.innerText=(i+1)+". "+ch;
-  b.onclick=()=>openChapter(ch);
-  box.appendChild(b);
- });
- filterChapters();
- window.scrollTo(0,0);
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  transition:.25s;
+  padding-bottom:78px;
 }
 
-function filterChapters(){
- const term=document.getElementById("chapterSearch").value.trim().toLowerCase();
- const buttons=[...document.querySelectorAll("#chapterList .chapter-btn")];
- let visible=0;
- buttons.forEach(b=>{
-  const show=b.dataset.chapter.includes(term);
-  b.classList.toggle("hide",!show);
-  if(show)visible++;
- });
- document.getElementById("searchStatus").innerText=
- term?visible+" अध्याय मिले":"अध्याय का नाम लिखकर खोजें।";
+/* HEADER */
+
+header{
+  background:linear-gradient(135deg,#064e3b,#11966a);
+  color:white;
+  text-align:center;
+  padding:27px 12px 25px;
+  border-radius:0 0 28px 28px;
+  box-shadow:0 5px 18px rgba(0,0,0,.12);
 }
 
-function backToSubject(){openSubject(currentSubject);}
-function backToClass(){openClass(currentClass);}
-
-function changeFontSize(delta){
- readerFontSize=Math.max(14,Math.min(28,readerFontSize+delta*2));
- document.getElementById("publicNotes").style.fontSize=readerFontSize+"px";
-}
-function resetFontSize(){
- readerFontSize=18;
- document.getElementById("publicNotes").style.fontSize="18px";
+header h1{
+  margin:0;
+  font-size:36px;
 }
 
-/* Firebase notes */
-async function getNotes(chapter=null){
- const q=chapter
-  ?query(notesCollection,where("chapter","==",chapter))
-  :query(notesCollection,orderBy("createdAt","desc"));
- const snap=await getDocs(q);
- return snap.docs.map(d=>({id:d.id,...d.data()}));
+header p{
+  margin:3px 0;
+  opacity:.94;
 }
 
-async function openChapter(name){
- currentChapter=name;
- hideAll();
- document.getElementById("chapterPage").classList.remove("hide");
- document.getElementById("chapterTitle").innerText=name;
- document.getElementById("publicNotes").innerHTML=
- '<div class="info">⏳ Notes लोड हो रहे हैं...</div>';
- window.scrollTo(0,0);
- await renderPublicNotes(name);
+.header-tools{
+  margin-top:12px;
 }
 
-async function renderPublicNotes(chapter){
- const box=document.getElementById("publicNotes");
- try{
-  const notes=await getNotes(chapter);
-  if(!notes.length){
-   box.innerHTML='<div class="info">📚 इस chapter के notes अभी add नहीं किए गए हैं।</div>';
-   return;
-  }
-  box.innerHTML="";
-  notes.forEach(n=>{
-   const div=document.createElement("div");
-   div.className="note";
-
-   if(n.text){
-    const p=document.createElement("div");
-    p.style.whiteSpace="pre-wrap";
-    p.innerText=n.text;
-    div.appendChild(p);
-   }
-
-   if(n.image){
-    const img=document.createElement("img");
-    img.src=n.image;
-    img.alt="Handwritten notes";
-    img.loading="lazy";
-    div.appendChild(img);
-   }
-
-   if(n.pdfUrl){
-    const link=document.createElement("a");
-    link.className="pdf-button";
-    link.href=n.pdfUrl;
-    link.target="_blank";
-    link.rel="noopener noreferrer";
-    link.innerText="📄 PDF Notes खोलें";
-    div.appendChild(link);
-   }
-   box.appendChild(div);
-  });
-  resetFontSize();
- }catch(e){
-  box.innerHTML='<div class="info">❌ Notes लोड नहीं हुए। Internet और Firebase Rules जाँचें।</div>';
-  console.error(e);
- }
+.theme-btn{
+  background:rgba(255,255,255,.18);
+  color:white;
+  border:1px solid rgba(255,255,255,.3);
+  padding:8px 14px;
 }
 
-/* Admin login */
-function openAdminLogin(){
- hideAll();
- document.getElementById("adminLogin").classList.remove("hide");
- document.getElementById("adminPassword").value="";
- document.getElementById("adminEmail").value="";
- document.getElementById("loginMessage").innerText="";
- window.scrollTo(0,0);
+/* GENERAL */
+
+.container{
+  max-width:850px;
+  margin:auto;
+  padding:16px;
 }
 
-async function checkAdmin(){
- const email=document.getElementById("adminEmail").value.trim();
- const password=document.getElementById("adminPassword").value;
- const msg=document.getElementById("loginMessage");
-
- if(!email||!password){
-  msg.innerText="ईमेल और password दोनों भरें।";
-  return;
- }
- msg.innerText="Login हो रहा है...";
- try{
-  await signInWithEmailAndPassword(auth,email,password);
-  document.getElementById("adminPassword").value="";
-  openAdmin();
- }catch(e){
-  msg.innerText="Login नहीं हुआ। Email/password और Firebase Authentication जाँचें।";
-  console.error(e);
- }
+.card,
+.chapter-page{
+  background:var(--card);
+  padding:20px;
+  margin:12px 0;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  transition:.25s;
 }
 
-function openAdmin(){
- hideAll();
- document.getElementById("adminPage").classList.remove("hide");
- fillAdminSubjects();
- renderSavedNotes();
- window.scrollTo(0,0);
+.card:hover{
+  transform:translateY(-2px);
 }
 
-function fillAdminSubjects(){
- const s=document.getElementById("adminSubject");
- s.innerHTML="";
- Object.keys(chapters).forEach(id=>{
-  const o=document.createElement("option");
-  o.value=id;
-  o.innerText=subjectNames[id];
-  s.appendChild(o);
- });
- loadAdminChapters();
+h2{
+  color:var(--deep);
+  line-height:1.35;
 }
 
-function loadAdminChapters(){
- const id=document.getElementById("adminSubject").value;
- const c=document.getElementById("adminChapter");
- c.innerHTML="";
- (chapters[id]||[]).forEach(ch=>{
-  const o=document.createElement("option");
-  o.value=ch;
-  o.innerText=ch;
-  c.appendChild(o);
- });
+h3{
+  color:var(--deep);
 }
 
-function clearForm(){
- document.getElementById("typedNotes").value="";
- document.getElementById("notePdfUrl").value="";
- document.getElementById("noteImage").value="";
- document.getElementById("adminMessage").innerText="";
+button{
+  cursor:pointer;
+  border:0;
+  border-radius:12px;
+  font-size:16px;
+  padding:13px;
+  font-weight:bold;
+  transition:.2s;
 }
 
-function showAdminMessage(msg,color){
- const el=document.getElementById("adminMessage");
- el.innerText=msg;
- el.style.color=color;
+button:active{
+  transform:scale(.98);
 }
 
-function compressImage(file){
- return new Promise((resolve,reject)=>{
-  if(!file.type.startsWith("image/")){
-   reject(Error("कृपया image file चुनें."));
-   return;
-  }
-  const r=new FileReader();
-  r.onerror=()=>reject(Error("Photo पढ़ी नहीं जा सकी।"));
-  r.onload=()=>{
-   const img=new Image();
-   img.onerror=()=>reject(Error("Photo खुल नहीं सकी।"));
-   img.onload=()=>{
-    const scale=Math.min(1,1000/img.width,1400/img.height);
-    const canvas=document.createElement("canvas");
-    canvas.width=Math.max(1,Math.round(img.width*scale));
-    canvas.height=Math.max(1,Math.round(img.height*scale));
-    const ctx=canvas.getContext("2d");
-    ctx.fillStyle="#fff";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.drawImage(img,0,0,canvas.width,canvas.height);
-
-    let quality=.62;
-    let data=canvas.toDataURL("image/jpeg",quality);
-    while(data.length>420000&&quality>.3){
-     quality-=.07;
-     data=canvas.toDataURL("image/jpeg",quality);
-    }
-    if(data.length>480000){
-     reject(Error("Photo बहुत बड़ी है। छोटी photo चुनें।"));
-     return;
-    }
-    resolve(data);
-   };
-   img.src=r.result;
-  };
-  r.readAsDataURL(file);
- });
+.class-btn{
+  width:100%;
+  margin:7px 0;
+  background:linear-gradient(135deg,#087f5b,#11966a);
+  color:white;
+  padding:17px;
+  box-shadow:0 4px 12px rgba(8,127,91,.18);
 }
 
-async function saveNote(){
- if(!auth.currentUser){
-  showAdminMessage("पहले Admin Login करें।","#c62828");
-  return;
- }
-
- const subject=document.getElementById("adminSubject").value;
- const chapter=document.getElementById("adminChapter").value;
- const type=document.getElementById("noteType").value;
- const text=document.getElementById("typedNotes").value.trim();
- const pdfUrl=document.getElementById("notePdfUrl").value.trim();
- const file=document.getElementById("noteImage").files[0];
-
- if(pdfUrl&&!/^https:\/\//i.test(pdfUrl)){
-  showAdminMessage("PDF link https:// से शुरू होना चाहिए।","#c62828");
-  return;
- }
- if((type==="text"||type==="both")&&!text){
-  showAdminMessage("Typed notes खाली हैं।","#c62828");
-  return;
- }
- if((type==="image"||type==="both")&&!file){
-  showAdminMessage("Handwritten photo select करो।","#c62828");
-  return;
- }
- if(!text&&!file&&!pdfUrl){
-  showAdminMessage("पहले notes, photo या PDF link जोड़ें।","#c62828");
-  return;
- }
-
- showAdminMessage("⏳ Firebase पर save हो रहा है...","#174ea6");
- try{
-  let image="";
-  if(type==="image"||type==="both")image=await compressImage(file);
-
-  await addDoc(notesCollection,{
-   subject,
-   chapter,
-   type,
-   text:type==="image"?"":text,
-   image:type==="text"?"":image,
-   pdfUrl,
-   createdAt:serverTimestamp(),
-   createdBy:auth.currentUser.email||"admin"
-  });
-
-  showAdminMessage("✅ Notes Firebase पर save हो गए!","#087f5b");
-  clearForm();
-  await renderSavedNotes();
-  if(currentChapter===chapter)await renderPublicNotes(chapter);
- }catch(e){
-  showAdminMessage("Save नहीं हुआ: "+(e.message||"Firebase Rules जाँचें।"),"#c62828");
-  console.error(e);
- }
+.subject-btn,
+.chapter-btn{
+  width:100%;
+  margin:6px 0;
+  padding:14px;
+  text-align:left;
+  background:var(--soft);
+  color:var(--deep);
+  border:1px solid var(--border);
 }
 
-async function renderSavedNotes(){
- const box=document.getElementById("savedNotes");
- box.innerText="Notes लोड हो रहे हैं...";
- try{
-  const data=await getNotes();
-  if(!data.length){
-   box.innerHTML='<p class="small">अभी कोई note saved नहीं है।</p>';
-   return;
-  }
-  box.innerHTML="";
-  data.forEach(n=>{
-   const div=document.createElement("div");
-   div.className="note";
-
-   const title=document.createElement("b");
-   title.innerText=(subjectNames[n.subject]||n.subject)+" → "+n.chapter;
-   div.appendChild(title);
-
-   if(n.text){
-    const p=document.createElement("p");
-    p.style.whiteSpace="pre-wrap";
-    p.innerText=n.text.length>180?n.text.slice(0,180)+"...":n.text;
-    div.appendChild(p);
-   }
-   if(n.image){
-    const img=document.createElement("img");
-    img.src=n.image;
-    img.style.maxHeight="180px";
-    div.appendChild(img);
-   }
-   if(n.pdfUrl){
-    const p=document.createElement("p");
-    p.innerText="📄 PDF link attached";
-    div.appendChild(p);
-   }
-
-   const del=document.createElement("button");
-   del.className="danger";
-   del.innerText="🗑 Delete";
-   del.onclick=()=>deleteNote(n.id);
-   div.appendChild(del);
-   box.appendChild(div);
-  });
- }catch(e){
-  box.innerText="Notes लोड नहीं हुए। Firebase Rules और internet जाँचें।";
-  console.error(e);
- }
+.chapter-btn{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
 }
 
-async function deleteNote(id){
- if(!confirm("यह note delete करना है?"))return;
- try{
-  await deleteDoc(doc(db,"notes",id));
-  await renderSavedNotes();
-  if(currentChapter)await renderPublicNotes(currentChapter);
- }catch(e){
-  alert("Delete नहीं हुआ। Firebase login और Rules जाँचें।");
-  console.error(e);
- }
+.chapter-name{
+  flex:1;
 }
 
-async function logoutAdmin(){
- await signOut(auth);
- goHome();
+.bookmark-icon{
+  font-size:20px;
 }
 
-onAuthStateChanged(auth,()=>{});
+.back-btn{
+  background:#24463a;
+  color:white;
+  margin-bottom:10px;
+}
 
-/* HTML buttons को JavaScript functions से जोड़ना */
-Object.assign(window,{
- openClass,goHome,openSubject,backToClass,backToSubject,
- openChapter,openAdminLogin,checkAdmin,loadAdminChapters,
- saveNote,clearForm,logoutAdmin,filterChapters,
- changeFontSize,resetFontSize,openBiologyIntro
-});
+.admin-btn{
+  background:#e8f0ff;
+  color:#174ea6;
+}
 
-goHome();
-</script>
-</body>
-</html>
+.save-btn{
+  background:#087f5b;
+  color:white;
+}
+
+.danger{
+  background:#b42318;
+  color:white;
+}
+
+.hide{
+  display:none!important;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:12px;
+  margin:7px 0;
+  border:1px solid var(--border);
+  border-radius:11px;
+  font-size:16px;
+  background:var(--card);
+  color:var(--ink);
+}
+
+textarea{
+  min-height:170px;
+}
+
+.small{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.info{
+  background:var(--soft);
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+
+.row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.row button{
+  flex:1;
+}
+
+/* HOME */
+
+.hero-card{
+  background:
+    linear-gradient(135deg,rgba(8,127,91,.12),rgba(17,150,106,.04)),
+    var(--card);
+}
+
+.hero-badge{
+  display:inline-block;
+  background:#dff6eb;
+  color:#076647;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+body.dark .hero-badge{
+  background:#204438;
+  color:#b7f3db;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:14px;
+}
+
+.feature{
+  background:var(--soft);
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:12px;
+  text-align:center;
+  font-size:14px;
+}
+
+/* CONTINUE */
+
+.continue-card{
+  border-left:5px solid var(--green);
+}
+
+.continue-btn{
+  background:var(--green);
+  color:white;
+  width:100%;
+}
+
+/* PROGRESS */
+
+.progress-wrap{
+  margin:12px 0;
+}
+
+.progress-bar{
+  height:10px;
+  background:var(--border);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#087f5b,#23c38b);
+  transition:.4s;
+}
+
+/* NOTES */
+
+.note{
+  background:var(--card);
+  padding:16px;
+  margin:13px 0;
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow-wrap:anywhere;
+  box-shadow:0 3px 12px rgba(0,0,0,.04);
+}
+
+.note img{
+  max-width:100%;
+  height:auto;
+  border-radius:10px;
+  margin-top:12px;
+  border:1px solid var(--border);
+}
+
+.reading-tools{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  background:var(--soft);
+  padding:10px;
+  border-radius:12px;
+  margin:12px 0;
+  position:sticky;
+  top:5px;
+  z-index:5;
+}
+
+.reading-tools span{
+  margin-right:auto;
+  font-weight:bold;
+}
+
+.reader-btn{
+  background:var(--card);
+  border:1px solid var(--border);
+  color:var(--deep);
+  padding:8px 12px;
+  font-size:14px;
+}
+
+.reading-content{
+  font-size:18px;
+  line-height:1.9;
+}
+
+.pdf-button{
+  display:inline-block;
+  background:#e8f1ff;
+  color:#174ea6;
+  padding:11px 14px;
+  border-radius:10px;
+  margin:10px 0;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.neet-box{
+  background:#fff7dc;
+  border-left:5px solid #f0b429;
+  padding:13px;
+  border-radius:10px;
+  margin:12px 0;
+  color:#503b00;
+}
+
+body.dark .neet-box{
+  background:#3
