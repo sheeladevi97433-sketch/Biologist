@@ -109,5 +109,22 @@ $("saveNoteBtn").onclick=async()=>{if(!auth.currentUser)return $("adminMessage")
 async function renderSavedNotes(){try{let a=await getNotes(),o=$("savedNotes");o.innerHTML="";a.forEach(n=>{let d=document.createElement("div");d.className="note";d.textContent=(names[n.subject]||n.subject)+" → "+n.chapter+" ";let b=document.createElement("button");b.className="danger";b.textContent="🗑 Delete";b.onclick=async()=>{if(confirm("यह note delete करना है?")){await deleteDoc(doc(db,"notes",n.id));renderSavedNotes()}};d.appendChild(b);o.appendChild(d)})}catch(e){$("savedNotes").textContent="Notes load नहीं हुए।"}}
 $("logoutBtn").onclick=async()=>{await signOut(auth);goHome()};
 </script>
+  <footer style="
+  margin-top:40px;
+  padding:20px 15px;
+  background:#087f5b;
+  color:white;
+  text-align:center;
+  font-size:13px;
+  line-height:1.6;
+">
+  <strong>© 2026 Biologist</strong> — Educational Purpose Only<br>
+
+  यह वेबसाइट विद्यार्थियों की पढ़ाई में सहायता के उद्देश्य से बनाई गई है।
+  यहाँ उपलब्ध study notes और explanations शैक्षिक उपयोग के लिए हैं।<br>
+
+  Biologist किसी सरकारी संस्था, NCERT, NEET/NTA या Veterinary संस्था की
+  आधिकारिक वेबसाइट नहीं है।
+  </footer>
 </body>
                                                                                                 </html>
