@@ -109,6 +109,40 @@ $("saveNoteBtn").onclick=async()=>{if(!auth.currentUser)return $("adminMessage")
 async function renderSavedNotes(){try{let a=await getNotes(),o=$("savedNotes");o.innerHTML="";a.forEach(n=>{let d=document.createElement("div");d.className="note";d.textContent=(names[n.subject]||n.subject)+" → "+n.chapter+" ";let b=document.createElement("button");b.className="danger";b.textContent="🗑 Delete";b.onclick=async()=>{if(confirm("यह note delete करना है?")){await deleteDoc(doc(db,"notes",n.id));renderSavedNotes()}};d.appendChild(b);o.appendChild(d)})}catch(e){$("savedNotes").textContent="Notes load नहीं हुए।"}}
 $("logoutBtn").onclick=async()=>{await signOut(auth);goHome()};
 </script>
+  <section id="about-us" style="
+  margin:30px 15px;
+  padding:20px;
+  background:#f1fff9;
+  border:2px solid #087f5b;
+  border-radius:15px;
+  line-height:1.7;
+">
+  <h2 style="color:#087f5b;">🧬 About Biologist</h2>
+
+  <p>
+    <strong>Biologist</strong> एक educational study platform है,
+    जिसका उद्देश्य Class 11 और Class 12 के विद्यार्थियों को
+    आसान भाषा में study material उपलब्ध कराना है।
+  </p>
+
+  <p>
+    यहाँ Biology, Physics, Chemistry और Veterinary से संबंधित
+    study notes, important points, diagrams और exam-oriented
+    content उपलब्ध कराया जाता है।
+  </p>
+
+  <p>
+    हमारा उद्देश्य कठिन topics को आसान Hindi + English terms
+    के साथ समझाना है, जिससे विद्यार्थियों को Board Exams,
+    NEET और Veterinary की तैयारी में सहायता मिल सके।
+  </p>
+
+  <p style="font-size:13px;">
+    Biologist एक स्वतंत्र educational platform है और किसी
+    सरकारी संस्था, NCERT, NTA या अन्य आधिकारिक संस्था की
+    official website नहीं है।
+  </p>
+  </section>
   <footer style="
   margin-top:40px;
   padding:20px 15px;
