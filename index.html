@@ -32,6 +32,9 @@ input,textarea,select{width:100%;padding:13px;margin:7px 0;border:1px solid var(
 footer{margin-top:30px;padding:20px;background:#087f5b;color:white;text-align:center;font-size:13px}
 #topBtn{position:fixed;right:15px;bottom:82px;display:none;background:var(--green);color:white;border-radius:50%;width:44px;height:44px}
 @media(min-width:700px){.features{grid-template-columns:repeat(4,1fr)}}
+
+.assistant-shell{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 10px 28px rgba(4,78,59,.07)}.assistant-hero{display:flex;align-items:center;gap:14px;padding:18px;margin:-18px -18px 18px;background:linear-gradient(135deg,#064e3b,#0b9067);color:white;border-radius:21px 21px 0 0}.assistant-hero h2{color:white;margin:5px 0 0}.assistant-hero p{margin:2px 0;color:#e4fff3;font-size:14px}.assistant-orb{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:#ffffff25;font-size:30px}.assistant-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}.assistant-controls label,.assistant-label{font-weight:bold;font-size:13px;color:var(--deep)}.assistant-controls select{margin:3px 0 10px}.assistant-label{display:block;margin-top:8px}.assistant-shell textarea{min-height:86px;resize:vertical}.assistant-actions{display:flex;gap:8px}.assistant-actions .ask-btn{flex:1}.assistant-tip{margin:8px 0 14px}.quick-title{font-weight:bold;color:var(--deep);font-size:14px;margin-bottom:7px}.quick{padding:8px}.quick button{background:var(--card);border:1px solid var(--border);color:var(--deep);font-size:13px;padding:9px}.assistant-foot{text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--border);padding-top:12px;margin-top:16px}.answer-heading{font-weight:bold;color:var(--deep);margin:14px 0 6px}.answer-source{font-size:12px;color:var(--muted);margin-top:8px}.ai-result{line-height:1.8;border-left:4px solid var(--green)}
+@media(max-width:520px){.assistant-controls{grid-template-columns:1fr}.assistant-controls select{margin-bottom:5px}}
 </style>
 </head>
 <body>
@@ -48,7 +51,7 @@ footer{margin-top:30px;padding:20px;background:#087f5b;color:white;text-align:ce
 <div id="class12" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>📗 Class 12</h2><button class="subject-btn" data-subject="bio12">🧬 Biology</button><button class="subject-btn" data-subject="phy12">⚡ Physics</button><button class="subject-btn" data-subject="chem12">🧪 Chemistry</button><button class="subject-btn" data-subject="vet12">🐄 Veterinary</button></div></div>
 <div id="subjectPage" class="container hide"><button class="back-btn" id="backClassBtn">⬅ Back</button><div class="card"><h2 id="subjectTitle"></h2><p id="chapterCount"></p><p class="small">📊 Reading Progress: <span id="progressText"></span></p><div class="progress"><div id="progressFill" class="progress-fill"></div></div><input id="chapterSearch" type="search" placeholder="🔎 Chapter खोजें..."><p id="searchStatus" class="small"></p><div id="chapterList"></div></div></div>
 <div id="chapterPage" class="container hide"><button class="back-btn" id="backSubjectBtn">⬅ Chapters</button><div class="chapter-page"><div class="chapter-head"><h2 id="chapterTitle"></h2><button id="bookmarkBtn" class="bookmark">☆</button></div><div class="reading-tools"><span>📖 Reading Mode</span><button class="reader-btn" data-font="-2">A−</button><button class="reader-btn" data-font="2">A+</button><button class="reader-btn" id="fontReset">Reset</button></div><div id="publicNotes"></div><div class="assistant-box"><h3>🤖 इस Chapter से पूछें</h3><input id="chapterAssistantQuestion" placeholder="जैसे — प्लाज्मिड क्या है?"><button class="ask-btn" id="chapterAskBtn">पूछें</button><div id="chapterAssistantAnswer"></div></div></div></div>
-<div id="assistantPage" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>🤖 Biologist Study Assistant</h2><p class="small">Saved typed notes में answer खोजता है।</p><select id="assistantSubject"></select><select id="assistantChapter"></select><input id="assistantQuestion" placeholder="अपना सवाल लिखें..."><button class="ask-btn" id="assistantAskBtn">🔍 पूछें</button><div class="quick"><button data-quick="परिभाषा definition">📖 परिभाषा</button><button data-quick="important महत्वपूर्ण">⭐ Important</button><button data-quick="neet important">🎯 NEET</button><button data-quick="example उदाहरण">🧪 Example</button></div><div id="assistantAnswer"></div></div></div>
+<div id="assistantPage" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><section class="assistant-shell"><div class="assistant-hero"><span class="assistant-orb">🧬</span><div><span class="badge">SMART STUDY SUPPORT</span><h2>Biologist Assistant</h2><p>आपके Study Notes से सटीक और आसान जवाब</p></div></div><div class="assistant-controls"><label for="assistantSubject">Subject चुनें</label><select id="assistantSubject"></select><label for="assistantChapter">Chapter चुनें</label><select id="assistantChapter"></select></div><label class="assistant-label" for="assistantQuestion">आपका सवाल</label><textarea id="assistantQuestion" rows="3" placeholder="उदाहरण: प्लाज्मिड क्या है? इसका कार्य बताइए..."></textarea><div class="assistant-actions"><button class="ask-btn" id="assistantAskBtn">✦ जवाब प्राप्त करें</button><button class="reader-btn" id="assistantClearBtn" type="button">Clear</button></div><p class="small assistant-tip">बेहतर उत्तर के लिए एक समय में एक स्पष्ट सवाल पूछें।</p><div class="quick-title">Quick Topics</div><div class="quick"><button data-quick="परिभाषा बताइए">📖 परिभाषा</button><button data-quick="महत्वपूर्ण बिंदु बताइए">⭐ Important</button><button data-quick="NEET के महत्वपूर्ण तथ्य बताइए">🎯 NEET Points</button><button data-quick="एक उदाहरण बताइए">🧪 Example</button></div><div id="assistantAnswer" aria-live="polite"></div><div class="assistant-foot">Biologist • Class 11 &amp; 12 • UP Board + NEET</div></section></div>
 <div id="savedPage" class="container hide"><div class="card"><h2>⭐ Saved Chapters</h2><div id="savedList"></div></div></div>
 <div id="adminLogin" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>🔐 Admin Login</h2><input id="adminEmail" type="email" placeholder="Admin email"><input id="adminPassword" type="password" placeholder="Password"><button class="save-btn" id="loginBtn">Login</button><p id="loginMessage"></p></div></div>
 <div id="adminPage" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>📝 Add Notes</h2><label>Class + Subject</label><select id="adminSubject"></select><label>Chapter</label><select id="adminChapter"></select><label>Note Type</label><select id="noteType"><option value="text">✍️ Typed Notes</option><option value="image">📝 Handwritten / Diagram Photo</option><option value="both">✍️ Typed + Photo</option></select><label>Note Category</label><select id="noteCategory"><option value="normal">📚 Normal Notes</option><option value="definition">📖 Definition</option><option value="important">⭐ Important Point</option><option value="neet">🎯 NEET Point</option><option value="example">🧪 Example</option><option value="diagram">🖼️ Diagram</option></select><textarea id="typedNotes" placeholder="Notes यहाँ लिखें..."></textarea><input id="notePdfUrl" type="url" placeholder="PDF Link https://..."><input id="noteImage" type="file" accept="image/*"><button class="save-btn" id="saveNoteBtn">💾 Save</button> <button class="danger" id="clearBtn">Clear</button><p id="adminMessage"></p><button class="back-btn" id="logoutBtn">Logout</button></div><div class="card"><h2>📚 Saved Notes</h2><div id="savedNotes"></div></div></div>
@@ -110,33 +113,45 @@ async function getNotes(ch=null,sub=null){let q=ch?query(notesCollection,where("
 window.renderFirebaseNotes=async(ch,sub)=>{try{let arr=await getNotes(ch,sub),out=$("publicNotes");out.innerHTML="";if(!arr.length){out.innerHTML='<div class="info">📚 इस chapter के notes अभी add नहीं किए गए हैं।</div>';return}arr.forEach(n=>{let box=document.createElement("div");box.className="note";if(n.text){let p=document.createElement("div");p.style.whiteSpace="pre-wrap";p.textContent=n.text;box.appendChild(p)}if(n.image){let im=document.createElement("img");im.src=n.image;box.appendChild(im)}if(n.pdfUrl){let a=document.createElement("a");a.className="pdf-button";a.href=n.pdfUrl;a.target="_blank";a.rel="noopener";a.textContent="📄 PDF Notes खोलें";box.appendChild(a)}out.appendChild(box)})}catch(e){$("publicNotes").innerHTML='<div class="info">❌ Notes load नहीं हुए। Firebase settings जाँचें।</div>'}};
 async function answer(q,sub,ch,target){
  let out=$(target),question=q.trim();
- if(!question){out.innerHTML='<div class="info">पहले सवाल लिखें।</div>';return}
- out.innerHTML='<div class="info">⏳ जवाब खोजा जा रहा है...</div>';
+ if(!question){out.innerHTML='<div class="info">पहले अपना सवाल लिखें।</div>';return}
+ out.innerHTML='<div class="info">⏳ आपके सवाल से जुड़े Notes खोजे जा रहे हैं...</div>';
  try{
   let arr=await getNotes(ch||null,sub==="all"?null:sub);
-  const fullChapter=/पूरा\s*(chapter|अध्याय)|complete\s*chapter|full\s*chapter|सारे\s*notes|पूरे\s*नोट्स/i.test(question);
-  const stop=new Set(['क्या','क्यों','कैसे','कब','कहाँ','कौन','है','हैं','होता','होती','होते','का','की','के','से','में','और','एक','को','पर','बताओ','समझाओ','लिखो','कृपया','please','what','is','are','the','a','an','of','in','to','explain','define']);
-  const words=question.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu,' ').split(/\s+/).filter(w=>w.length>1&&!stop.has(w));
+  const fullChapter=/(पूरा|पूरे|सभी|सारे)\s*(chapter|अध्याय|notes|नोट्स)|complete\s*chapter|full\s*chapter|all\s*notes/i.test(question);
+  const stop=new Set(['क्या','क्यों','कैसे','कब','कहाँ','कौन','है','हैं','होता','होती','होते','का','की','के','से','में','और','एक','को','पर','बताओ','समझाओ','लिखो','कृपया','please','what','is','are','the','a','an','of','in','to','explain','define','बता','बताइए','समझाइए','करता','करती']);
+  const words=[...new Set(question.toLocaleLowerCase('hi').replace(/[^\p{L}\p{N}\s]/gu,' ').split(/\s+/).filter(w=>w.length>1&&!stop.has(w)))];
+  if(!words.length&&!fullChapter){out.innerHTML='<div class="info">कृपया सवाल थोड़ा स्पष्ट लिखें, जैसे “कोशिका क्या है?”</div>';return}
   let matches=[];
   for(const n of arr){
    if(!n.text)continue;
-   if(fullChapter){matches.push({text:n.text,score:1});continue;}
+   if(fullChapter){matches.push({text:n.text,score:1,chapter:n.chapter,category:n.category});continue}
    const chunks=n.text.split(/\n+|(?<=[।.!?])\s+/).map(x=>x.trim()).filter(Boolean);
-   const scored=chunks.map(t=>({text:t,score:words.reduce((sum,w)=>sum+(t.toLowerCase().includes(w)?1:0),0)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
-   if(scored.length)matches.push(...scored.slice(0,5));
+   for(const t of chunks){
+    const low=t.toLocaleLowerCase('hi');
+    let score=0;for(const w of words){if(low.includes(w))score+=w.length>4?2:1}
+    if(score>0)matches.push({text:t,score,chapter:n.chapter,category:n.category});
+   }
   }
   matches.sort((a,b)=>b.score-a.score);
+  // Remove duplicate sentences and return only a small, relevant answer.
+  const seen=new Set();matches=matches.filter(x=>{const k=x.text.toLocaleLowerCase('hi');if(seen.has(k))return false;seen.add(k);return true});
   out.innerHTML='';
-  if(!matches.length){out.innerHTML='<div class="info">इस सवाल का सटीक जवाब उपलब्ध Notes में नहीं मिला। सवाल को थोड़ा अलग तरीके से लिखें या Admin Panel में उस Topic के Notes जोड़ें।</div>';return;}
-  let result=fullChapter?matches.map(x=>x.text).join('\n\n'):matches.slice(0,5).map(x=>x.text).join(' ');
-  if(!fullChapter&&result.length>900)result=result.slice(0,900).replace(/\s+\S*$/,'')+'…';
+  if(!matches.length||(!fullChapter&&matches[0].score<1)){
+   out.innerHTML='<div class="info">इस सवाल का जवाब अभी चुने गए Study Notes में नहीं मिला। सवाल को दूसरे शब्दों में पूछें या सही Subject/Chapter चुनें।</div>';return;
+  }
+  const heading=document.createElement('div');heading.className='answer-heading';heading.textContent=fullChapter?'📚 आपके Chapter Notes':'✦ आपके सवाल का जवाब';out.appendChild(heading);
+  let result=fullChapter?matches.map(x=>x.text).join('\n\n'):matches.slice(0,3).map(x=>x.text).join(' ');
+  if(!fullChapter&&result.length>650)result=result.slice(0,650).replace(/\s+\S*$/,'')+'…';
   const d=document.createElement('div');d.className='ai-result';d.style.whiteSpace='pre-wrap';d.textContent=result;out.appendChild(d);
-  if(!fullChapter){const hint=document.createElement('p');hint.className='small';hint.textContent='यह जवाब आपके सवाल से संबंधित Saved Notes से चुना गया है। पूरा Chapter चाहिए तो “पूरा Chapter” लिखें।';out.appendChild(hint);}
- }catch(e){out.innerHTML='<div class="info">Assistant notes नहीं पढ़ पाया। Firebase settings जाँचें।</div>'}
+  const hint=document.createElement('p');hint.className='answer-source';hint.textContent=fullChapter?'स्रोत: Biologist में सेव किए गए Notes।':'स्रोत: आपके चुने हुए Subject/Chapter के Saved Notes। यह उत्तर उपलब्ध Notes से चुना गया है, स्वतंत्र AI उत्तर नहीं।';out.appendChild(hint);
+  if(!fullChapter){const tip=document.createElement('p');tip.className='small';tip.textContent='और जानकारी चाहिए? उसी Topic के बारे में एक और स्पष्ट सवाल पूछें।';out.appendChild(tip)}
+ }catch(e){out.innerHTML='<div class="info">Assistant Notes नहीं पढ़ पाया। Internet connection और Firebase settings जाँचें।</div>'}
 }
-$("assistantAskBtn").onclick=()=>answer($("assistantQuestion").value,$("assistantSubject").value,$("assistantChapter").value,"assistantAnswer");
-$("chapterAskBtn").onclick=()=>answer($("chapterAssistantQuestion").value,subject,chapter,"chapterAssistantAnswer");
-document.querySelectorAll("[data-quick]").forEach(b=>b.onclick=()=>{$("assistantQuestion").value=b.dataset.quick;$("assistantAskBtn").click()});
+$('assistantAskBtn').onclick=()=>answer($('assistantQuestion').value,$('assistantSubject').value,$('assistantChapter').value,'assistantAnswer');
+$('chapterAskBtn').onclick=()=>answer($('chapterAssistantQuestion').value,subject,chapter,'chapterAssistantAnswer');
+$('assistantQuestion').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();$('assistantAskBtn').click()}});
+$('assistantClearBtn').onclick=()=>{$('assistantQuestion').value='';$('assistantAnswer').innerHTML='';$('assistantQuestion').focus()};
+document.querySelectorAll('[data-quick]').forEach(b=>b.onclick=()=>{$('assistantQuestion').value=b.dataset.quick;$('assistantAskBtn').click()});
 function fillAdmin(){let s=$("adminSubject");s.innerHTML="";Object.keys(chapters).forEach(id=>s.add(new Option(names[id],id)));loadAdmin()}
 function loadAdmin(){let s=$("adminChapter");s.innerHTML="";chapters[$("adminSubject").value].forEach(ch=>s.add(new Option(ch,ch)))}
 $("adminSubject").onchange=loadAdmin;
