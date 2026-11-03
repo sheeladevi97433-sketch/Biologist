@@ -108,7 +108,32 @@ const app=initializeApp({apiKey:"AIzaSyDGpDsqrgnnat9RO1ObZBeMfN_Dp6qnlZ0",authDo
 const auth=getAuth(app),db=getFirestore(app),notesCollection=collection(db,"notes");
 async function getNotes(ch=null,sub=null){let q=ch?query(notesCollection,where("chapter","==",ch)):query(notesCollection,orderBy("createdAt","desc"));let snap=await getDocs(q),arr=snap.docs.map(d=>({id:d.id,...d.data()}));return sub?arr.filter(n=>n.subject===sub):arr}
 window.renderFirebaseNotes=async(ch,sub)=>{try{let arr=await getNotes(ch,sub),out=$("publicNotes");out.innerHTML="";if(!arr.length){out.innerHTML='<div class="info">📚 इस chapter के notes अभी add नहीं किए गए हैं।</div>';return}arr.forEach(n=>{let box=document.createElement("div");box.className="note";if(n.text){let p=document.createElement("div");p.style.whiteSpace="pre-wrap";p.textContent=n.text;box.appendChild(p)}if(n.image){let im=document.createElement("img");im.src=n.image;box.appendChild(im)}if(n.pdfUrl){let a=document.createElement("a");a.className="pdf-button";a.href=n.pdfUrl;a.target="_blank";a.rel="noopener";a.textContent="📄 PDF Notes खोलें";box.appendChild(a)}out.appendChild(box)})}catch(e){$("publicNotes").innerHTML='<div class="info">❌ Notes load नहीं हुए। Firebase settings जाँचें।</div>'}};
-async function answer(q,sub,ch,target){let out=$(target);if(!q.trim()){out.innerHTML='<div class="info">पहले सवाल लिखें।</div>';return}try{let arr=await getNotes(ch||null,sub==="all"?null:sub),words=q.toLowerCase().split(/\s+/).filter(x=>x.length>1);arr=arr.filter(n=>n.text&&words.some(w=>n.text.toLowerCase().includes(w)));out.innerHTML=arr.length?"":'<div class="info">Answer saved notes में नहीं मिला।</div>';arr.slice(0,3).forEach(n=>{let d=document.createElement("div");d.className="ai-result";d.textContent=n.text;out.appendChild(d)})}catch(e){out.innerHTML='<div class="info">Assistant notes नहीं पढ़ पाया।</div>'}}
+async function answer(q,sub,ch,target){
+ let out=$(target),question=q.trim();
+ if(!question){out.innerHTML='<div class="info">पहले सवाल लिखें।</div>';return}
+ out.innerHTML='<div class="info">⏳ जवाब खोजा जा रहा है...</div>';
+ try{
+  let arr=await getNotes(ch||null,sub==="all"?null:sub);
+  const fullChapter=/पूरा\s*(chapter|अध्याय)|complete\s*chapter|full\s*chapter|सारे\s*notes|पूरे\s*नोट्स/i.test(question);
+  const stop=new Set(['क्या','क्यों','कैसे','कब','कहाँ','कौन','है','हैं','होता','होती','होते','का','की','के','से','में','और','एक','को','पर','बताओ','समझाओ','लिखो','कृपया','please','what','is','are','the','a','an','of','in','to','explain','define']);
+  const words=question.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu,' ').split(/\s+/).filter(w=>w.length>1&&!stop.has(w));
+  let matches=[];
+  for(const n of arr){
+   if(!n.text)continue;
+   if(fullChapter){matches.push({text:n.text,score:1});continue;}
+   const chunks=n.text.split(/\n+|(?<=[।.!?])\s+/).map(x=>x.trim()).filter(Boolean);
+   const scored=chunks.map(t=>({text:t,score:words.reduce((sum,w)=>sum+(t.toLowerCase().includes(w)?1:0),0)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
+   if(scored.length)matches.push(...scored.slice(0,5));
+  }
+  matches.sort((a,b)=>b.score-a.score);
+  out.innerHTML='';
+  if(!matches.length){out.innerHTML='<div class="info">इस सवाल का सटीक जवाब उपलब्ध Notes में नहीं मिला। सवाल को थोड़ा अलग तरीके से लिखें या Admin Panel में उस Topic के Notes जोड़ें।</div>';return;}
+  let result=fullChapter?matches.map(x=>x.text).join('\n\n'):matches.slice(0,5).map(x=>x.text).join(' ');
+  if(!fullChapter&&result.length>900)result=result.slice(0,900).replace(/\s+\S*$/,'')+'…';
+  const d=document.createElement('div');d.className='ai-result';d.style.whiteSpace='pre-wrap';d.textContent=result;out.appendChild(d);
+  if(!fullChapter){const hint=document.createElement('p');hint.className='small';hint.textContent='यह जवाब आपके सवाल से संबंधित Saved Notes से चुना गया है। पूरा Chapter चाहिए तो “पूरा Chapter” लिखें।';out.appendChild(hint);}
+ }catch(e){out.innerHTML='<div class="info">Assistant notes नहीं पढ़ पाया। Firebase settings जाँचें।</div>'}
+}
 $("assistantAskBtn").onclick=()=>answer($("assistantQuestion").value,$("assistantSubject").value,$("assistantChapter").value,"assistantAnswer");
 $("chapterAskBtn").onclick=()=>answer($("chapterAssistantQuestion").value,subject,chapter,"chapterAssistantAnswer");
 document.querySelectorAll("[data-quick]").forEach(b=>b.onclick=()=>{$("assistantQuestion").value=b.dataset.quick;$("assistantAskBtn").click()});
