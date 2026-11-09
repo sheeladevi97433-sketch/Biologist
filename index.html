@@ -3,335 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#087f5b">
-<meta name="description" content="Biologist एक Educational Study Platform है, जहाँ Class 11 और 12 के UP Board, NEET और Veterinary विद्यार्थियों के लिए Biology, Physics, Chemistry के Notes, Chapter-wise Study Material और Biologist Study Assistant उपलब्ध हैं।">
+<meta name="theme-color" content="#080d0c">
+<meta name="description" content="Biologist एक Educational Study Platform है, जहाँ Class 11 और 12 के UP Board, NEET और Veterinary विद्यार्थियों के लिए Biology, Physics, Chemistry के Notes और Chapter-wise Study Material उपलब्ध हैं।">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sheeladevi97433-sketch.github.io/Biologist/">
-<meta name="keywords" content="Biologist, Class 11 Biology Notes, Class 12 Biology Notes, NEET Biology Notes in Hindi, UP Board Notes, Veterinary Study Material, Class 11 Chemistry Notes, Class 12 Physics Notes, Biology Study Assistant">
-<title>Biologist – Class 11 &amp; 12 Biology Notes, NEET &amp; Veterinary Study Hub</title>
-
-/* =================================
-   BIOLOGIST ROYAL LUXURY EDITION
-   Black + Emerald + Gold
-================================= */
-
-:root {
-  --green: #00a878;
-  --deep: #e5c36b;
-  --bg: #080d0c;
-  --card: #111b18;
-  --text: #f3f1e8;
-  --soft: #172720;
-  --border: #355b48;
-  --muted: #a8b7ac;
-}
-
-body.dark {
-  --green: #00c995;
-  --deep: #e5c36b;
-  --bg: #080d0c;
-  --card: #111b18;
-  --text: #f3f1e8;
-  --soft: #172720;
-  --border: #355b48;
-  --muted: #a8b7ac;
-}
-
-body {
-  background:
-    radial-gradient(ellipse at top, #10291f 0%, #080d0c 65%);
-  color: var(--text);
-  font-family: "Segoe UI", Arial, sans-serif;
-  letter-spacing: .15px;
-}
-
-header {
-  background: linear-gradient(
-    135deg,
-    #030806,
-    #064b35,
-    #087f5b,
-    #b28a35
-  );
-  border: 1px solid #b99548;
-  border-top: 0;
-  border-radius: 0 0 32px 32px;
-  padding: 38px 15px;
-  box-shadow: 0 12px 40px #0009;
-}
-
-header h1 {
-  font-size: 39px;
-  letter-spacing: 2px;
-  color: #f6d77e;
-  text-shadow: 0 2px 15px #e5bd5540;
-}
-
-header p {
-  color: #e8e4d3;
-  letter-spacing: 1px;
-}
-
-#themeBtn {
-  background: #101b16;
-  color: #f2d17b;
-  border: 1px solid #b99548;
-  margin-top: 12px;
-}
-
-.card,
-.chapter-page,
-.assistant-shell,
-.legal {
-  background: linear-gradient(145deg, #15231c, #0d1511);
-  border: 1px solid #446b51;
-  border-radius: 21px;
-  box-shadow: 0 8px 28px #0007;
-}
-
-h2, h3 {
-  color: #e9c66d;
-}
-
-p {
-  color: var(--text);
-}
-
-.badge {
-  background: #254b36;
-  color: #f2d17b;
-  border: 1px solid #a88943;
-}
-
-.class-btn {
-  background: linear-gradient(120deg, #075b40, #087f5b, #b18a39);
-  color: #fff;
-  border: 1px solid #c4a34e;
-  box-shadow: 0 5px 16px #0006;
-  transition: .25s;
-}
-
-.class-btn:hover,
-.subject-btn:hover,
-.chapter-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 22px #00a87835;
-  border-color: #e5c36b;
-}
-
-.subject-btn,
-.chapter-btn {
-  background: linear-gradient(110deg, #172820, #102019);
-  color: #f0d27e;
-  border: 1px solid #41694e;
-  border-radius: 14px;
-}
-
-.feature {
-  background: linear-gradient(145deg, #1a3024, #101a14);
-  color: #f1d17a;
-  border: 1px solid #876e39;
-  border-radius: 16px;
-}
-
-.back-btn {
-  background: linear-gradient(120deg, #174b34, #0d2118);
-  color: #f1d17a;
-  border: 1px solid #9b8044;
-}
-
-.save-btn,
-.ask-btn {
-  background: linear-gradient(120deg, #087f5b, #00a878);
-  color: white;
-  border: 1px solid #c0a052;
-  box-shadow: 0 4px 14px #00865a35;
-}
-
-.admin-btn {
-  background: linear-gradient(120deg, #182b20, #263d29);
-  color: #f1d17a;
-  border: 1px solid #c5a34f;
-}
-
-.danger {
-  background: #762b27;
-  color: white;
-}
-
-input,
-textarea,
-select {
-  background: #0b1510;
-  color: #f5f1e6;
-  border: 1px solid #456b4e;
-  border-radius: 13px;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid #00a878;
-  border-color: #e5c36b;
-}
-
-.info,
-.assistant-box,
-.saved-item,
-.reading-tools,
-.quick {
-  background: #17271d;
-  color: #f1eee4;
-  border: 1px solid #385b40;
-  border-radius: 15px;
-}
-
-.note,
-.ai-result {
-  background: #111c16;
-  border: 1px solid #54724c;
-  border-radius: 16px;
-  color: #f3f1e8;
-}
-
-.assistant-hero {
-  background: linear-gradient(120deg, #041a11, #087f5b, #a17c32);
-  border: 1px solid #c3a14c;
-}
-
-.assistant-hero h2 {
-  color: #f7d982;
-}
-
-.assistant-orb {
-  border: 1px solid #e5c36b;
-}
-
-.assistant-label,
-.quick-title,
-.answer-heading {
-  color: #e8c56e;
-}
-
-.reader-btn {
-  background: #1b3023;
-  color: #f1d17a;
-  border: 1px solid #9a8046;
-}
-
-.bookmark {
-  background: #263c28;
-  color: #f3d16e;
-  border: 1px solid #a98b46;
-}
-
-.progress {
-  background: #263a2b;
-}
-
-.progress-fill {
-  background: linear-gradient(90deg, #087f5b, #00c995, #e5c36b);
-}
-
-.pdf-button {
-  background: #183a2b;
-  color: #f1d17a;
-  border: 1px solid #a58a49;
-}
-
-.bottom-nav {
-  background: #080f0b;
-  border: 1px solid #806b3e;
-  border-bottom: 0;
-  box-shadow: 0 -8px 28px #0009;
-}
-
-.nav-btn {
-  color: #c4b98d;
-}
-
-.nav-btn:hover {
-  color: #00c995;
-}
-
-footer {
-  background: linear-gradient(120deg, #030906, #064b35, #101710);
-  border-top: 1px solid #b99548;
-  color: #f1d17a;
-}
-
-#topBtn {
-  background: linear-gradient(135deg, #087f5b, #b99548);
-  color: white;
-  border: 1px solid #f1d17a;
-}
-
-.hide {
-  display: none !important;
-}
-
-/* Smooth luxury transitions */
-button,
-.card,
-.subject-btn,
-.chapter-btn,
-.feature {
-  transition: all .25s ease;
-}
-
-/* Mobile responsive */
-@media(max-width:520px) {
-  header h1 {
-    font-size: 32px;
-  }
-
-  .container {
-    padding: 12px;
-  }
-
-  .card,
-  .chapter-page {
-    padding: 16px;
-  }
-
-  .bottom-nav {
-    height: 68px;
-  }
-}
+<title>Biologist – Royal Study Hub | Class 11 &amp; 12, NEET &amp; Veterinary</title>
 <style>
 *{box-sizing:border-box}
-:root{--green:#087f5b;--deep:#064e3b;--bg:#eefaf4;--card:#fff;--text:#17332b;--soft:#f0faf5;--border:#d8eee2;--muted:#60756d}
-body.dark{--green:#18a879;--deep:#8aebc5;--bg:#0c1814;--card:#14251f;--text:#e8fff5;--soft:#193028;--border:#28483d;--muted:#aac9bd}
-html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.65;padding-bottom:78px}
-header{background:linear-gradient(135deg,#043d30,#087f5b 55%,#16a673);color:#fff;text-align:center;padding:28px 15px;border-radius:0 0 28px 28px}
-header h1{margin:0;font-size:36px}header p{margin:3px}.container{max-width:880px;margin:auto;padding:16px}.hide{display:none!important}
-.card,.chapter-page{background:var(--card);padding:20px;margin:13px 0;border-radius:20px;border:1px solid var(--border)}
-h2,h3{color:var(--deep)}button{cursor:pointer;border:0;border-radius:12px;padding:12px;font-size:15px;font-weight:bold}
-.class-btn{width:100%;margin:7px 0;padding:17px;color:#fff;background:linear-gradient(135deg,#087f5b,#11966a)}
-.subject-btn,.chapter-btn{width:100%;margin:6px 0;padding:15px;text-align:left;background:var(--soft);color:var(--deep);border:1px solid var(--border)}
-.chapter-btn{display:flex;justify-content:space-between}.back-btn{background:#24463a;color:#fff}.save-btn,.ask-btn{background:var(--green);color:#fff}.admin-btn{background:#e8f0ff;color:#174ea6}.danger{background:#b42318;color:#fff}
-input,textarea,select{width:100%;padding:13px;margin:7px 0;border:1px solid var(--border);border-radius:11px;background:var(--card);color:var(--text);font-size:16px}textarea{min-height:170px}
-.info,.assistant-box,.saved-item{background:var(--soft);padding:14px;border-radius:12px;margin:8px 0}.badge{display:inline-block;padding:5px 10px;border-radius:20px;background:#dff6eb;color:#076647;font-size:12px;font-weight:bold}
-.features{display:grid;grid-template-columns:1fr 1fr;gap:10px}.feature{background:var(--soft);padding:14px;border-radius:14px;text-align:center;font-weight:bold}
-.progress{height:11px;background:var(--border);border-radius:20px;overflow:hidden}.progress-fill{height:100%;background:var(--green);width:0}
-.chapter-head{display:flex;align-items:center;gap:8px}.chapter-head h2{flex:1}.bookmark{font-size:22px;color:#e2a500;background:var(--soft)}
-.reading-tools,.quick{display:flex;gap:7px;flex-wrap:wrap;background:var(--soft);padding:10px;border-radius:12px}.reader-btn{background:var(--card);color:var(--deep);border:1px solid var(--border)}
-.note,.ai-result{background:var(--card);padding:16px;margin:12px 0;border:1px solid var(--border);border-radius:14px}.note img{max-width:100%;border-radius:12px}.pdf-button{display:inline-block;background:#e8f1ff;color:#174ea6;padding:10px 13px;border-radius:10px;margin-top:9px;text-decoration:none}
-.small{font-size:13px;color:var(--muted)}.legal{max-width:850px;margin:25px auto;padding:20px;background:var(--card);border:2px solid var(--green);border-radius:15px}
-.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:600px;height:68px;background:var(--card);display:flex;z-index:10;border-radius:20px 20px 0 0}.nav-btn{flex:1;background:transparent;color:var(--muted);font-size:11px}.nav-btn span{display:block;font-size:18px}
-footer{margin-top:30px;padding:20px;background:#087f5b;color:white;text-align:center;font-size:13px}
-#topBtn{position:fixed;right:15px;bottom:82px;display:none;background:var(--green);color:white;border-radius:50%;width:44px;height:44px}
+:root{--green:#00a878;--deep:#e5c36b;--bg:#080d0c;--card:#111b18;--text:#f3f1e8;--soft:#172720;--border:#355b48;--muted:#a8b7ac;--gold:#d8b65f}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at top,#10291f 0%,#080d0c 65%);color:var(--text);font-family:"Segoe UI",Arial,sans-serif;line-height:1.65;padding-bottom:82px}
+body.light{--bg:#f4f7f2;--card:#fff;--text:#17251d;--soft:#eaf2eb;--border:#cbdccf;--muted:#617267;background:#f4f7f2}
+.hide{display:none!important}
+header{background:linear-gradient(135deg,#030806,#064b35 55%,#98742e);color:#fff;text-align:center;padding:32px 15px;border:1px solid #b99548;border-top:0;border-radius:0 0 30px 30px;box-shadow:0 12px 35px #0008}
+header h1{margin:0;font-size:38px;letter-spacing:2px;color:#f6d77e;text-shadow:0 2px 15px #e5bd5540}
+header p{margin:3px;color:#eee7d2;letter-spacing:1px}
+.container{max-width:900px;margin:auto;padding:16px}
+.card,.chapter-page,.assistant-shell,.legal{background:linear-gradient(145deg,var(--card),var(--bg));padding:20px;margin:13px 0;border-radius:20px;border:1px solid var(--border);box-shadow:0 8px 25px #0005}
+body.light .card,body.light .chapter-page,body.light .assistant-shell,body.light .legal{background:var(--card);box-shadow:0 5px 18px #19352212}
+h2,h3{color:var(--deep);line-height:1.35}
+p,li{color:var(--text)}
+button{cursor:pointer;border:1px solid transparent;border-radius:12px;padding:12px;font-size:15px;font-weight:700;transition:.22s}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.class-btn{width:100%;margin:7px 0;padding:16px;color:#fff;background:linear-gradient(120deg,#075b40,#087f5b,#9a7733);border:1px solid #c4a34e;box-shadow:0 5px 16px #0006}
+.subject-btn,.chapter-btn{width:100%;margin:6px 0;padding:14px;text-align:left;background:var(--soft);color:var(--deep);border:1px solid var(--border)}
+.chapter-btn{display:flex;justify-content:space-between;gap:12px}
+.back-btn{background:#173d2c;color:#f1d17a;border-color:#987b3e}
+.save-btn,.ask-btn{background:linear-gradient(120deg,#087f5b,#00a878);color:#fff;border-color:#b99548}
+.admin-btn{background:#1b3023;color:#f1d17a;border-color:#c5a34f}
+.danger{background:#762b27;color:#fff}
+input,textarea,select{width:100%;padding:13px;margin:7px 0;border:1px solid var(--border);border-radius:11px;background:var(--bg);color:var(--text);font-size:16px}
+textarea{min-height:170px}
+.info,.assistant-box,.saved-item{background:var(--soft);padding:14px;border-radius:12px;margin:8px 0;border:1px solid var(--border)}
+.badge{display:inline-block;padding:5px 10px;border-radius:20px;background:#254b36;color:#f2d17b;border:1px solid #a88943;font-size:12px;font-weight:bold}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.feature{background:linear-gradient(145deg,#1a3024,#101a14);padding:14px;border-radius:14px;text-align:center;font-weight:bold;color:#f1d17a;border:1px solid #876e39}
+.progress{height:11px;background:var(--border);border-radius:20px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#087f5b,#00c995,#e5c36b);width:0}
+.chapter-head{display:flex;align-items:center;gap:8px}
+.chapter-head h2{flex:1}
+.bookmark{font-size:22px;color:#e2a500;background:var(--soft);border-color:#a98b46}
+.reading-tools,.quick{display:flex;gap:7px;flex-wrap:wrap;background:var(--soft);padding:10px;border-radius:12px}
+.reader-btn{background:var(--card);color:var(--deep);border:1px solid var(--border)}
+.note,.ai-result{background:var(--card);padding:16px;margin:12px 0;border:1px solid var(--border);border-radius:14px}
+.note img{max-width:100%;border-radius:12px;display:block}
+.pdf-button{display:inline-block;background:#183a2b;color:#f1d17a;padding:10px 13px;border-radius:10px;margin-top:9px;text-decoration:none;border:1px solid #a58a49}
+.small{font-size:13px;color:var(--muted)}
+.legal{max-width:850px;margin:25px auto;padding:20px}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:650px;height:70px;background:#080f0b;border:1px solid #806b3e;border-bottom:0;display:flex;z-index:10;border-radius:20px 20px 0 0;box-shadow:0 -8px 28px #0009}
+.nav-btn{flex:1;background:transparent;color:#c4b98d;font-size:11px;padding:5px}
+.nav-btn span{display:block;font-size:18px}
+footer{margin-top:30px;padding:20px;background:linear-gradient(120deg,#030906,#064b35,#101710);border-top:1px solid #b99548;color:#f1d17a;text-align:center;font-size:13px}
+#topBtn{position:fixed;right:15px;bottom:82px;display:none;background:linear-gradient(135deg,#087f5b,#b99548);color:white;border-radius:50%;width:44px;height:44px;border:1px solid #f1d17a;z-index:9}
+.assistant-shell{padding:18px}
+.assistant-hero{display:flex;align-items:center;gap:14px;padding:18px;margin:-18px -18px 18px;background:linear-gradient(120deg,#041a11,#087f5b,#a17c32);color:white;border-radius:21px 21px 0 0;border:1px solid #c3a14c}
+.assistant-hero h2{color:#f7d982;margin:5px 0 0}
+.assistant-hero p{margin:2px 0;color:#e4fff3;font-size:14px}
+.assistant-orb{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:#ffffff25;border:1px solid #e5c36b;font-size:30px}
+.assistant-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.assistant-controls label,.assistant-label{font-weight:bold;font-size:13px;color:var(--deep)}
+.assistant-shell textarea{min-height:86px;resize:vertical}
+.assistant-actions{display:flex;gap:8px}
+.assistant-actions .ask-btn{flex:1}
+.assistant-tip{margin:8px 0 14px}
+.quick-title{font-weight:bold;color:var(--deep);font-size:14px;margin-bottom:7px}
+.quick button{background:var(--card);border:1px solid var(--border);color:var(--deep);font-size:13px;padding:9px}
+.assistant-foot{text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--border);padding-top:12px;margin-top:16px}
+.answer-heading{font-weight:bold;color:var(--deep);margin:14px 0 6px}
+.answer-source{font-size:12px;color:var(--muted);margin-top:8px}
+.ai-result{line-height:1.8;border-left:4px solid var(--green);white-space:pre-wrap}
 @media(min-width:700px){.features{grid-template-columns:repeat(4,1fr)}}
-
-.assistant-shell{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 10px 28px rgba(4,78,59,.07)}.assistant-hero{display:flex;align-items:center;gap:14px;padding:18px;margin:-18px -18px 18px;background:linear-gradient(135deg,#064e3b,#0b9067);color:white;border-radius:21px 21px 0 0}.assistant-hero h2{color:white;margin:5px 0 0}.assistant-hero p{margin:2px 0;color:#e4fff3;font-size:14px}.assistant-orb{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:#ffffff25;font-size:30px}.assistant-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}.assistant-controls label,.assistant-label{font-weight:bold;font-size:13px;color:var(--deep)}.assistant-controls select{margin:3px 0 10px}.assistant-label{display:block;margin-top:8px}.assistant-shell textarea{min-height:86px;resize:vertical}.assistant-actions{display:flex;gap:8px}.assistant-actions .ask-btn{flex:1}.assistant-tip{margin:8px 0 14px}.quick-title{font-weight:bold;color:var(--deep);font-size:14px;margin-bottom:7px}.quick{padding:8px}.quick button{background:var(--card);border:1px solid var(--border);color:var(--deep);font-size:13px;padding:9px}.assistant-foot{text-align:center;color:var(--muted);font-size:11px;border-top:1px solid var(--border);padding-top:12px;margin-top:16px}.answer-heading{font-weight:bold;color:var(--deep);margin:14px 0 6px}.answer-source{font-size:12px;color:var(--muted);margin-top:8px}.ai-result{line-height:1.8;border-left:4px solid var(--green)}
-@media(max-width:520px){.assistant-controls{grid-template-columns:1fr}.assistant-controls select{margin-bottom:5px}}
+@media(max-width:520px){header h1{font-size:32px}.container{padding:12px}.card,.chapter-page{padding:16px}.assistant-controls{grid-template-columns:1fr}.bottom-nav{height:68px}}
 </style>
 </head>
 <body>
-<header><h1>🧬 Biologist</h1><p>NEET + Veterinary Study Hub</p><button id="themeBtn">🌙 Dark Mode</button></header>
+<header><h1>🧬 BIOLOGIST</h1><p>ROYAL STUDY HUB • NEET + VETERINARY</p><button id="themeBtn">☀️ Light Mode</button></header>
 
 <div id="home" class="container">
- <div class="card"><span class="badge">NEET • Class 11 • Class 12 • Veterinary</span><h2>📚 पढ़ाई अब एक ही जगह</h2><p>Biology, Physics, Chemistry और Veterinary के chapters, notes, diagrams और PDFs आसान भाषा में पढ़ें।</p><div class="features"><div class="feature">📖 Notes</div><div class="feature">🖼️ Diagrams</div><div class="feature">📄 PDFs</div><div class="feature">🎯 NEET</div></div></div>
+ <div class="card"><span class="badge">NEET • CLASS 11 • CLASS 12 • VETERINARY</span><h2>📚 पढ़ाई अब एक ही जगह</h2><p>Biology, Physics, Chemistry और Veterinary के chapters तथा notes आसान भाषा में पढ़ें।</p><div class="features"><div class="feature">📖 Notes</div><div class="feature">🖼️ Study Material</div><div class="feature">📄 PDFs</div><div class="feature">🎯 NEET</div></div></div>
  <div id="continueBox" class="card hide"><h3>🔥 Continue Reading</h3><p id="continueText"></p><button class="save-btn" id="continueBtn">📖 पढ़ना जारी रखें</button></div>
  <button class="class-btn" data-action="assistant">🤖 Biologist Study Assistant</button><button class="class-btn" data-action="biologyIntro">🧬 Biology की पूरी जानकारी</button><button class="class-btn" data-class="class11">📘 Class 11</button><button class="class-btn" data-class="class12">📗 Class 12</button>
  <div class="card" style="text-align:center"><button class="admin-btn" id="adminOpenBtn">🔐 Admin Panel</button><p class="small">केवल owner के लिए notes management.</p></div>
@@ -341,15 +90,15 @@ footer{margin-top:30px;padding:20px;background:#087f5b;color:white;text-align:ce
 <div id="class12" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>📗 Class 12</h2><button class="subject-btn" data-subject="bio12">🧬 Biology</button><button class="subject-btn" data-subject="phy12">⚡ Physics</button><button class="subject-btn" data-subject="chem12">🧪 Chemistry</button><button class="subject-btn" data-subject="vet12">🐄 Veterinary</button></div></div>
 <div id="subjectPage" class="container hide"><button class="back-btn" id="backClassBtn">⬅ Back</button><div class="card"><h2 id="subjectTitle"></h2><p id="chapterCount"></p><p class="small">📊 Reading Progress: <span id="progressText"></span></p><div class="progress"><div id="progressFill" class="progress-fill"></div></div><input id="chapterSearch" type="search" placeholder="🔎 Chapter खोजें..."><p id="searchStatus" class="small"></p><div id="chapterList"></div></div></div>
 <div id="chapterPage" class="container hide"><button class="back-btn" id="backSubjectBtn">⬅ Chapters</button><div class="chapter-page"><div class="chapter-head"><h2 id="chapterTitle"></h2><button id="bookmarkBtn" class="bookmark">☆</button></div><div class="reading-tools"><span>📖 Reading Mode</span><button class="reader-btn" data-font="-2">A−</button><button class="reader-btn" data-font="2">A+</button><button class="reader-btn" id="fontReset">Reset</button></div><div id="publicNotes"></div><div class="assistant-box"><h3>🤖 इस Chapter से पूछें</h3><input id="chapterAssistantQuestion" placeholder="जैसे — प्लाज्मिड क्या है?"><button class="ask-btn" id="chapterAskBtn">पूछें</button><div id="chapterAssistantAnswer"></div></div></div></div>
-<div id="assistantPage" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><section class="assistant-shell"><div class="assistant-hero"><span class="assistant-orb">🧬</span><div><span class="badge">SMART STUDY SUPPORT</span><h2>Biologist Assistant</h2><p>आपके Study Notes से सटीक और आसान जवाब</p></div></div><div class="assistant-controls"><label for="assistantSubject">Subject चुनें</label><select id="assistantSubject"></select><label for="assistantChapter">Chapter चुनें</label><select id="assistantChapter"></select></div><label class="assistant-label" for="assistantQuestion">आपका सवाल</label><textarea id="assistantQuestion" rows="3" placeholder="उदाहरण: प्लाज्मिड क्या है? इसका कार्य बताइए..."></textarea><div class="assistant-actions"><button class="ask-btn" id="assistantAskBtn">✦ जवाब प्राप्त करें</button><button class="reader-btn" id="assistantClearBtn" type="button">Clear</button></div><p class="small assistant-tip">बेहतर उत्तर के लिए एक समय में एक स्पष्ट सवाल पूछें।</p><div class="quick-title">Quick Topics</div><div class="quick"><button data-quick="परिभाषा बताइए">📖 परिभाषा</button><button data-quick="महत्वपूर्ण बिंदु बताइए">⭐ Important</button><button data-quick="NEET के महत्वपूर्ण तथ्य बताइए">🎯 NEET Points</button><button data-quick="एक उदाहरण बताइए">🧪 Example</button></div><div id="assistantAnswer" aria-live="polite"></div><div class="assistant-foot">Biologist • Class 11 &amp; 12 • UP Board + NEET</div></section></div>
+<div id="assistantPage" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><section class="assistant-shell"><div class="assistant-hero"><span class="assistant-orb">🧬</span><div><span class="badge">SMART STUDY SUPPORT</span><h2>Biologist Assistant</h2><p>आपके Study Notes से जवाब</p></div></div><div class="assistant-controls"><label for="assistantSubject">Subject चुनें</label><select id="assistantSubject"></select><label for="assistantChapter">Chapter चुनें</label><select id="assistantChapter"></select></div><label class="assistant-label" for="assistantQuestion">आपका सवाल</label><textarea id="assistantQuestion" rows="3" placeholder="उदाहरण: प्लाज्मिड क्या है? इसका कार्य बताइए..."></textarea><div class="assistant-actions"><button class="ask-btn" id="assistantAskBtn">✦ जवाब प्राप्त करें</button><button class="reader-btn" id="assistantClearBtn" type="button">Clear</button></div><p class="small assistant-tip">बेहतर उत्तर के लिए एक समय में एक स्पष्ट सवाल पूछें।</p><div class="quick-title">Quick Topics</div><div class="quick"><button data-quick="परिभाषा बताइए">📖 परिभाषा</button><button data-quick="महत्वपूर्ण बिंदु बताइए">⭐ Important</button><button data-quick="NEET के महत्वपूर्ण तथ्य बताइए">🎯 NEET Points</button><button data-quick="एक उदाहरण बताइए">🧪 Example</button></div><div id="assistantAnswer" aria-live="polite"></div><div class="assistant-foot">Biologist • Class 11 &amp; 12 • UP Board + NEET</div></section></div>
 <div id="savedPage" class="container hide"><div class="card"><h2>⭐ Saved Chapters</h2><div id="savedList"></div></div></div>
 <div id="adminLogin" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>🔐 Admin Login</h2><input id="adminEmail" type="email" placeholder="Admin email"><input id="adminPassword" type="password" placeholder="Password"><button class="save-btn" id="loginBtn">Login</button><p id="loginMessage"></p></div></div>
-<div id="adminPage" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>📝 Add Notes</h2><label>Class + Subject</label><select id="adminSubject"></select><label>Chapter</label><select id="adminChapter"></select><label>Note Type</label><select id="noteType"><option value="text">✍️ Typed Notes</option><option value="image">📝 Handwritten / Diagram Photo</option><option value="both">✍️ Typed + Photo</option></select><label>Note Category</label><select id="noteCategory"><option value="normal">📚 Normal Notes</option><option value="definition">📖 Definition</option><option value="important">⭐ Important Point</option><option value="neet">🎯 NEET Point</option><option value="example">🧪 Example</option><option value="diagram">🖼️ Diagram</option></select><textarea id="typedNotes" placeholder="Notes यहाँ लिखें..."></textarea><input id="notePdfUrl" type="url" placeholder="PDF Link https://..."><input id="noteImage" type="file" accept="image/*"><button class="save-btn" id="saveNoteBtn">💾 Save</button> <button class="danger" id="clearBtn">Clear</button><p id="adminMessage"></p><button class="back-btn" id="logoutBtn">Logout</button></div><div class="card"><h2>📚 Saved Notes</h2><div id="savedNotes"></div></div></div>
+<div id="adminPage" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>📝 Add Notes</h2><label>Class + Subject</label><select id="adminSubject"></select><label>Chapter</label><select id="adminChapter"></select><label>Note Type</label><select id="noteType"><option value="text">✍️ Typed Notes</option><option value="image">📝 Handwritten / Photo</option><option value="both">✍️ Typed + Photo</option></select><label>Note Category</label><select id="noteCategory"><option value="normal">📚 Normal Notes</option><option value="definition">📖 Definition</option><option value="important">⭐ Important Point</option><option value="neet">🎯 NEET Point</option><option value="example">🧪 Example</option><option value="diagram">🖼️ Diagram</option></select><textarea id="typedNotes" placeholder="Notes यहाँ लिखें..."></textarea><input id="notePdfUrl" type="url" placeholder="PDF Link https://..."><input id="noteImage" type="file" accept="image/*"><button class="save-btn" id="saveNoteBtn">💾 Save</button> <button class="danger" id="clearBtn">Clear</button><p id="adminMessage"></p><button class="back-btn" id="logoutBtn">Logout</button></div><div class="card"><h2>📚 Saved Notes</h2><div id="savedNotes"></div></div></div>
 
 <section class="legal"><h2>🧬 About Biologist</h2><p>Biologist एक स्वतंत्र educational platform है, जिसका उद्देश्य Class 11 और 12 के विद्यार्थियों को आसान भाषा में study material उपलब्ध कराना है।</p><div class="card" style="text-align:center;margin:16px 0"><h3>Founded &amp; Developed By</h3><p><strong>Shivam Singhania</strong><br><strong>&amp; Lucky Verma</strong></p></div><p>यह सरकारी संस्था, NCERT, NTA या अन्य आधिकारिक संस्था की official website नहीं है।</p></section>
 <section class="legal"><h2>🔒 Privacy Policy</h2><p>सामान्य study content देखने के लिए visitors को login की आवश्यकता नहीं है। Admin login के लिए Firebase Authentication का उपयोग होता है। Third-party services की अपनी privacy policies हो सकती हैं।</p><p class="small">Last Updated: 1 November 2026</p></section>
 <button id="topBtn">↑</button>
-<nav class="bottom-nav"><button class="nav-btn homeBtn"><span>🏠</span>Home</button><button class="nav-btn" data-class="class11"><span>📚</span>Study</button><button class="nav-btn" data-action="assistant"><span>🤖</span>Assistant</button><button class="nav-btn" id="savedBtn"><span>⭐</span>Saved</button><button class="nav-btn" id="navThemeBtn"><span>🌙</span>Theme</button></nav>
+<nav class="bottom-nav"><button class="nav-btn homeBtn"><span>🏠</span>Home</button><button class="nav-btn" data-class="class11"><span>📚</span>Study</button><button class="nav-btn" data-action="assistant"><span>🤖</span>Assistant</button><button class="nav-btn" id="savedBtn"><span>⭐</span>Saved</button><button class="nav-btn" id="navThemeBtn"><span>☀️</span>Theme</button></nav>
 <footer><strong>© 2026 Biologist</strong> — Educational Purpose Only<br>Founded &amp; Developed By: <strong>Shivam Singhania &amp; Lucky Verma</strong><br>यह वेबसाइट विद्यार्थियों की पढ़ाई में सहायता के उद्देश्य से बनाई गई है।</footer>
 
 <script>
@@ -363,7 +112,8 @@ phy12:["Electric Charges and Fields","Electrostatic Potential and Capacitance","
 chem12:["Solutions","Electrochemistry","Chemical Kinetics","Surface Chemistry","General Principles and Processes of Isolation of Elements","p-Block Elements","d- and f-Block Elements","Coordination Compounds","Haloalkanes and Haloarenes","Alcohols, Phenols and Ethers","Aldehydes, Ketones and Carboxylic Acids","Amines","Biomolecules","Polymers","Chemistry in Everyday Life"],
 vet12:["Veterinary Biology","Animal Anatomy Basics","Animal Physiology Basics","Animal Nutrition","Animal Scientific Names","Veterinary Important Topics","Veterinary Model Papers"]};
 const names={bio11:"🧬 Class 11 Biology",phy11:"⚡ Class 11 Physics",chem11:"🧪 Class 11 Chemistry",vet11:"🐄 Class 11 Veterinary",bio12:"🧬 Class 12 Biology",phy12:"⚡ Class 12 Physics",chem12:"🧪 Class 12 Chemistry",vet12:"🐄 Class 12 Veterinary"};
-let subject="",classId="",chapter="",fontSize=18;const $=id=>document.getElementById(id);
+let subject="",classId="",chapter="",fontSize=18;
+const $=id=>document.getElementById(id);
 function hideAll(){document.querySelectorAll(".container").forEach(x=>x.classList.add("hide"))}
 function goHome(){hideAll();$("home").classList.remove("hide");updateContinue();scrollTo(0,0)}
 function openClass(id){hideAll();$(id).classList.remove("hide");classId=id;scrollTo(0,0)}
@@ -379,8 +129,8 @@ function updateProgress(){let d=JSON.parse(localStorage.getItem("bioDone")||"{}"
 function updateContinue(){let x;try{x=JSON.parse(localStorage.getItem("bioLast")||"null")}catch(e){}if(!x||!names[x.subject])return $("continueBox").classList.add("hide");$("continueBox").classList.remove("hide");$("continueText").textContent=x.chapter+" — "+names[x.subject]}
 function openAssistant(){hideAll();$("assistantPage").classList.remove("hide");let s=$("assistantSubject");s.innerHTML='<option value="all">📚 सभी Subjects</option>';Object.keys(chapters).forEach(id=>s.add(new Option(names[id],id)));loadAssistantChapters()}
 function loadAssistantChapters(){let id=$("assistantSubject").value,s=$("assistantChapter");s.innerHTML='<option value="">सभी Chapters</option>';if(id!=="all")chapters[id].forEach(ch=>s.add(new Option(ch,ch)))}
-function toggleTheme(){document.body.classList.toggle("dark");let dark=document.body.classList.contains("dark");localStorage.setItem("bioTheme",dark?"dark":"light");$("themeBtn").textContent=dark?"☀️ Light Mode":"🌙 Dark Mode"}
-if(localStorage.getItem("bioTheme")==="dark"){document.body.classList.add("dark");$("themeBtn").textContent="☀️ Light Mode"}
+function toggleTheme(){document.body.classList.toggle("light");let light=document.body.classList.contains("light");localStorage.setItem("bioTheme",light?"light":"dark");$("themeBtn").textContent=light?"🌙 Royal Dark Mode":"☀️ Light Mode"}
+if(localStorage.getItem("bioTheme")==="light"){document.body.classList.add("light");$("themeBtn").textContent="🌙 Royal Dark Mode"}
 document.querySelectorAll(".homeBtn").forEach(b=>b.onclick=goHome);
 document.querySelectorAll("[data-class]").forEach(b=>b.onclick=()=>openClass(b.dataset.class));
 document.querySelectorAll("[data-subject]").forEach(b=>b.onclick=()=>openSubject(b.dataset.subject));
@@ -400,42 +150,29 @@ import{getFirestore,collection,addDoc,getDocs,query,where,deleteDoc,doc,orderBy,
 const app=initializeApp({apiKey:"AIzaSyDGpDsqrgnnat9RO1ObZBeMfN_Dp6qnlZ0",authDomain:"biologist-105f8.firebaseapp.com",projectId:"biologist-105f8",storageBucket:"biologist-105f8.firebasestorage.app",messagingSenderId:"200713580196",appId:"1:200713580196:web:1546109e7e5df9f2774031",measurementId:"G-7M2B7JQXXG"});
 const auth=getAuth(app),db=getFirestore(app),notesCollection=collection(db,"notes");
 async function getNotes(ch=null,sub=null){let q=ch?query(notesCollection,where("chapter","==",ch)):query(notesCollection,orderBy("createdAt","desc"));let snap=await getDocs(q),arr=snap.docs.map(d=>({id:d.id,...d.data()}));return sub?arr.filter(n=>n.subject===sub):arr}
-window.renderFirebaseNotes=async(ch,sub)=>{try{let arr=await getNotes(ch,sub),out=$("publicNotes");out.innerHTML="";if(!arr.length){out.innerHTML='<div class="info">📚 इस chapter के notes अभी add नहीं किए गए हैं।</div>';return}arr.forEach(n=>{let box=document.createElement("div");box.className="note";if(n.text){let p=document.createElement("div");p.style.whiteSpace="pre-wrap";p.textContent=n.text;box.appendChild(p)}if(n.image){let im=document.createElement("img");im.src=n.image;box.appendChild(im)}if(n.pdfUrl){let a=document.createElement("a");a.className="pdf-button";a.href=n.pdfUrl;a.target="_blank";a.rel="noopener";a.textContent="📄 PDF Notes खोलें";box.appendChild(a)}out.appendChild(box)})}catch(e){$("publicNotes").innerHTML='<div class="info">❌ Notes load नहीं हुए। Firebase settings जाँचें।</div>'}};
+window.renderFirebaseNotes=async(ch,sub)=>{try{let arr=await getNotes(ch,sub),out=$("publicNotes");out.innerHTML="";if(!arr.length){out.innerHTML='<div class="info">📚 इस chapter के notes अभी add नहीं किए गए हैं।</div>';return}arr.forEach(n=>{let box=document.createElement("div");box.className="note";if(n.text){let p=document.createElement("div");p.style.whiteSpace="pre-wrap";p.textContent=n.text;box.appendChild(p)}if(n.image){let im=document.createElement("img");im.src=n.image;im.alt="Study note";box.appendChild(im)}if(n.pdfUrl){let a=document.createElement("a");a.className="pdf-button";a.href=n.pdfUrl;a.target="_blank";a.rel="noopener";a.textContent="📄 PDF Notes खोलें";box.appendChild(a)}out.appendChild(box)})}catch(e){$("publicNotes").innerHTML='<div class="info">❌ Notes load नहीं हुए। Firebase settings जाँचें।</div>'}};
 async function answer(q,sub,ch,target){
- let out=$(target),question=q.trim();
- if(!question){out.innerHTML='<div class="info">पहले अपना सवाल लिखें।</div>';return}
+ let out=$(target),question=q.trim();if(!question){out.innerHTML='<div class="info">पहले अपना सवाल लिखें।</div>';return}
  out.innerHTML='<div class="info">⏳ आपके सवाल से जुड़े Notes खोजे जा रहे हैं...</div>';
  try{
   let arr=await getNotes(ch||null,sub==="all"?null:sub);
   const fullChapter=/(पूरा|पूरे|सभी|सारे)\s*(chapter|अध्याय|notes|नोट्स)|complete\s*chapter|full\s*chapter|all\s*notes/i.test(question);
   const stop=new Set(['क्या','क्यों','कैसे','कब','कहाँ','कौन','है','हैं','होता','होती','होते','का','की','के','से','में','और','एक','को','पर','बताओ','समझाओ','लिखो','कृपया','please','what','is','are','the','a','an','of','in','to','explain','define','बता','बताइए','समझाइए','करता','करती']);
   const words=[...new Set(question.toLocaleLowerCase('hi').replace(/[^\p{L}\p{N}\s]/gu,' ').split(/\s+/).filter(w=>w.length>1&&!stop.has(w)))];
-  if(!words.length&&!fullChapter){out.innerHTML='<div class="info">कृपया सवाल थोड़ा स्पष्ट लिखें, जैसे “कोशिका क्या है?”</div>';return}
+  if(!words.length&&!fullChapter){out.innerHTML='<div class="info">कृपया सवाल थोड़ा स्पष्ट लिखें।</div>';return}
   let matches=[];
-  for(const n of arr){
-   if(!n.text)continue;
-   if(fullChapter){matches.push({text:n.text,score:1,chapter:n.chapter,category:n.category});continue}
+  for(const n of arr){if(!n.text)continue;if(fullChapter){matches.push({text:n.text,score:1});continue}
    const chunks=n.text.split(/\n+|(?<=[।.!?])\s+/).map(x=>x.trim()).filter(Boolean);
-   for(const t of chunks){
-    const low=t.toLocaleLowerCase('hi');
-    let score=0;for(const w of words){if(low.includes(w))score+=w.length>4?2:1}
-    if(score>0)matches.push({text:t,score,chapter:n.chapter,category:n.category});
-   }
+   for(const t of chunks){const low=t.toLocaleLowerCase('hi');let score=0;for(const w of words)if(low.includes(w))score+=w.length>4?2:1;if(score>0)matches.push({text:t,score})}
   }
-  matches.sort((a,b)=>b.score-a.score);
-  // Remove duplicate sentences and return only a small, relevant answer.
-  const seen=new Set();matches=matches.filter(x=>{const k=x.text.toLocaleLowerCase('hi');if(seen.has(k))return false;seen.add(k);return true});
-  out.innerHTML='';
-  if(!matches.length||(!fullChapter&&matches[0].score<1)){
-   out.innerHTML='<div class="info">इस सवाल का जवाब अभी चुने गए Study Notes में नहीं मिला। सवाल को दूसरे शब्दों में पूछें या सही Subject/Chapter चुनें।</div>';return;
-  }
+  matches.sort((a,b)=>b.score-a.score);const seen=new Set();matches=matches.filter(x=>{const k=x.text.toLocaleLowerCase('hi');if(seen.has(k))return false;seen.add(k);return true});
+  out.innerHTML='';if(!matches.length){out.innerHTML='<div class="info">इस सवाल का जवाब अभी चुने गए Study Notes में नहीं मिला।</div>';return}
   const heading=document.createElement('div');heading.className='answer-heading';heading.textContent=fullChapter?'📚 आपके Chapter Notes':'✦ आपके सवाल का जवाब';out.appendChild(heading);
   let result=fullChapter?matches.map(x=>x.text).join('\n\n'):matches.slice(0,3).map(x=>x.text).join(' ');
   if(!fullChapter&&result.length>650)result=result.slice(0,650).replace(/\s+\S*$/,'')+'…';
-  const d=document.createElement('div');d.className='ai-result';d.style.whiteSpace='pre-wrap';d.textContent=result;out.appendChild(d);
-  const hint=document.createElement('p');hint.className='answer-source';hint.textContent=fullChapter?'स्रोत: Biologist में सेव किए गए Notes।':'स्रोत: आपके चुने हुए Subject/Chapter के Saved Notes। यह उत्तर उपलब्ध Notes से चुना गया है, स्वतंत्र AI उत्तर नहीं।';out.appendChild(hint);
-  if(!fullChapter){const tip=document.createElement('p');tip.className='small';tip.textContent='और जानकारी चाहिए? उसी Topic के बारे में एक और स्पष्ट सवाल पूछें।';out.appendChild(tip)}
- }catch(e){out.innerHTML='<div class="info">Assistant Notes नहीं पढ़ पाया। Internet connection और Firebase settings जाँचें।</div>'}
+  const d=document.createElement('div');d.className='ai-result';d.textContent=result;out.appendChild(d);
+  const hint=document.createElement('p');hint.className='answer-source';hint.textContent='स्रोत: Biologist में सेव किए गए Study Notes। यह उपलब्ध Notes से चुना गया उत्तर है, स्वतंत्र AI उत्तर नहीं।';out.appendChild(hint);
+ }catch(e){out.innerHTML='<div class="info">Assistant Notes नहीं पढ़ पाया। Internet और Firebase settings जाँचें।</div>'}
 }
 $('assistantAskBtn').onclick=()=>answer($('assistantQuestion').value,$('assistantSubject').value,$('assistantChapter').value,'assistantAnswer');
 $('chapterAskBtn').onclick=()=>answer($('chapterAssistantQuestion').value,subject,chapter,'chapterAssistantAnswer');
