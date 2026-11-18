@@ -25,6 +25,7 @@ h2,h3{color:var(--deep);line-height:1.35}
 p,li{color:var(--text)}
 button{cursor:pointer;border:1px solid transparent;border-radius:12px;padding:12px;font-size:15px;font-weight:700;transition:.22s}
 button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+a{color:#f1d17a}
 .class-btn{width:100%;margin:7px 0;padding:16px;color:#fff;background:linear-gradient(120deg,#075b40,#087f5b,#9a7733);border:1px solid #c4a34e;box-shadow:0 5px 16px #0006}
 .subject-btn,.chapter-btn{width:100%;margin:6px 0;padding:14px;text-align:left;background:var(--soft);color:var(--deep);border:1px solid var(--border)}
 .chapter-btn{display:flex;justify-content:space-between;gap:12px}
@@ -54,6 +55,7 @@ textarea{min-height:170px}
 .nav-btn{flex:1;background:transparent;color:#c4b98d;font-size:11px;padding:5px}
 .nav-btn span{display:block;font-size:18px}
 footer{margin-top:30px;padding:20px;background:linear-gradient(120deg,#030906,#064b35,#101710);border-top:1px solid #b99548;color:#f1d17a;text-align:center;font-size:13px}
+footer a{color:#f1d17a;margin:0 5px}
 #topBtn{position:fixed;right:15px;bottom:82px;display:none;background:linear-gradient(135deg,#087f5b,#b99548);color:white;border-radius:50%;width:44px;height:44px;border:1px solid #f1d17a;z-index:9}
 .assistant-shell{padding:18px}
 .assistant-hero{display:flex;align-items:center;gap:14px;padding:18px;margin:-18px -18px 18px;background:linear-gradient(120deg,#041a11,#087f5b,#a17c32);color:white;border-radius:21px 21px 0 0;border:1px solid #c3a14c}
@@ -72,6 +74,8 @@ footer{margin-top:30px;padding:20px;background:linear-gradient(120deg,#030906,#0
 .answer-heading{font-weight:bold;color:var(--deep);margin:14px 0 6px}
 .answer-source{font-size:12px;color:var(--muted);margin-top:8px}
 .ai-result{line-height:1.8;border-left:4px solid var(--green);white-space:pre-wrap}
+.contact-card{text-align:center;background:var(--soft);border:1px solid var(--border);padding:18px;border-radius:16px;margin-top:14px}
+.instagram-link{display:inline-block;background:linear-gradient(120deg,#087f5b,#9a7733);border:1px solid #d8b65f;color:#fff;text-decoration:none;padding:12px 20px;border-radius:12px;font-weight:700}
 @media(min-width:700px){.features{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:520px){header h1{font-size:32px}.container{padding:12px}.card,.chapter-page{padding:16px}.assistant-controls{grid-template-columns:1fr}.bottom-nav{height:68px}}
 </style>
@@ -95,11 +99,36 @@ footer{margin-top:30px;padding:20px;background:linear-gradient(120deg,#030906,#0
 <div id="adminLogin" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>🔐 Admin Login</h2><input id="adminEmail" type="email" placeholder="Admin email"><input id="adminPassword" type="password" placeholder="Password"><button class="save-btn" id="loginBtn">Login</button><p id="loginMessage"></p></div></div>
 <div id="adminPage" class="container hide"><button class="back-btn homeBtn">⬅ Home</button><div class="card"><h2>📝 Add Notes</h2><label>Class + Subject</label><select id="adminSubject"></select><label>Chapter</label><select id="adminChapter"></select><label>Note Type</label><select id="noteType"><option value="text">✍️ Typed Notes</option><option value="image">📝 Handwritten / Photo</option><option value="both">✍️ Typed + Photo</option></select><label>Note Category</label><select id="noteCategory"><option value="normal">📚 Normal Notes</option><option value="definition">📖 Definition</option><option value="important">⭐ Important Point</option><option value="neet">🎯 NEET Point</option><option value="example">🧪 Example</option><option value="diagram">🖼️ Diagram</option></select><textarea id="typedNotes" placeholder="Notes यहाँ लिखें..."></textarea><input id="notePdfUrl" type="url" placeholder="PDF Link https://..."><input id="noteImage" type="file" accept="image/*"><button class="save-btn" id="saveNoteBtn">💾 Save</button> <button class="danger" id="clearBtn">Clear</button><p id="adminMessage"></p><button class="back-btn" id="logoutBtn">Logout</button></div><div class="card"><h2>📚 Saved Notes</h2><div id="savedNotes"></div></div></div>
 
-<section class="legal"><h2>🧬 About Biologist</h2><p>Biologist एक स्वतंत्र educational platform है, जिसका उद्देश्य Class 11 और 12 के विद्यार्थियों को आसान भाषा में study material उपलब्ध कराना है।</p><div class="card" style="text-align:center;margin:16px 0"><h3>Founded &amp; Developed By</h3><p><strong>Shivam Singhania</strong><br><strong>&amp; Lucky Verma</strong></p></div><p>यह सरकारी संस्था, NCERT, NTA या अन्य आधिकारिक संस्था की official website नहीं है।</p></section>
-<section class="legal"><h2>🔒 Privacy Policy</h2><p>सामान्य study content देखने के लिए visitors को login की आवश्यकता नहीं है। Admin login के लिए Firebase Authentication का उपयोग होता है। Third-party services की अपनी privacy policies हो सकती हैं।</p><p class="small">Last Updated: 1 November 2026</p></section>
+<section class="legal" id="about"><h2>🧬 About Biologist</h2><p>Biologist एक स्वतंत्र educational platform है, जिसका उद्देश्य Class 11 और 12 के विद्यार्थियों को आसान भाषा में study material उपलब्ध कराना है।</p><div class="card" style="text-align:center;margin:16px 0"><h3>Founded &amp; Developed By</h3><p><strong>Shivam Singhania</strong><br><strong>&amp; Lucky Verma</strong></p></div><p>यह सरकारी संस्था, NCERT, NTA या अन्य आधिकारिक संस्था की official website नहीं है।</p></section>
+
+<section class="legal" id="privacy">
+<h2>🔒 Privacy Policy</h2>
+<p>Biologist एक शैक्षणिक वेबसाइट है। यह नीति बताती है कि वेबसाइट का उपयोग करते समय कौन-सी जानकारी और तकनीकें उपयोग हो सकती हैं।</p>
+<h3>1. सामान्य उपयोग</h3><p>सामान्य Study Content देखने के लिए visitors को login की आवश्यकता नहीं है।</p>
+<h3>2. Firebase Authentication</h3><p>Admin Panel में प्रवेश के लिए Firebase Authentication का उपयोग किया जाता है। Admin login जानकारी केवल अधिकृत owner द्वारा उपयोग की जानी चाहिए।</p>
+<h3>3. Local Storage</h3><p>Theme Preference, Bookmarks और Reading Progress जैसी सुविधाओं के लिए Browser Local Storage का उपयोग किया जा सकता है।</p>
+<h3>4. Firebase और Third-Party Services</h3><p>Notes सेव करने और दिखाने के लिए Firebase/Firestore का उपयोग होता है। Firebase और अन्य third-party सेवाओं की अपनी privacy policies और शर्तें लागू हो सकती हैं।</p>
+<h3>5. Cookies और विज्ञापन</h3><p>वर्तमान में वेबसाइट पर Google AdSense विज्ञापन सक्रिय होने का दावा नहीं किया जा रहा है। भविष्य में विज्ञापन सेवा जोड़ी जाती है, तो संबंधित विज्ञापन प्रदाता cookies या समान तकनीकों का उपयोग कर सकता है। उस समय इस नीति को वास्तविक configuration के अनुसार अपडेट किया जाएगा।</p>
+<h3>6. बच्चों और विद्यार्थियों की गोपनीयता</h3><p>यह वेबसाइट विद्यार्थियों के शैक्षणिक उपयोग के लिए है। कृपया Contact या अन्य माध्यम से अनावश्यक व्यक्तिगत या संवेदनशील जानकारी साझा न करें।</p>
+<h3>7. नीति में बदलाव</h3><p>वेबसाइट की सुविधाओं या लागू नियमों में बदलाव होने पर यह नीति अपडेट की जा सकती है।</p>
+<h3>8. संपर्क</h3><p>सुझाव या समस्या के लिए Contact Us सेक्शन में दिए गए Instagram लिंक से संपर्क करें।</p>
+<p class="small">Last Updated: 18 November 2026</p>
+</section>
+
+<section class="legal" id="contact">
+<h2>📩 Contact Us</h2>
+<p>Biologist से संबंधित सुझाव, शैक्षणिक सामग्री में सुधार, वेबसाइट की समस्या या सहयोग के लिए Instagram पर संपर्क करें।</p>
+<div class="contact-card">
+<h3>📸 Instagram</h3>
+<p><strong>@aspiring_biologist_</strong></p>
+<a class="instagram-link" href="https://www.instagram.com/aspiring_biologist_/" target="_blank" rel="noopener noreferrer">Visit Instagram ↗</a>
+</div>
+<p class="small">कृपया संदेश में अपनी समस्या या सुझाव स्पष्ट रूप से लिखें।</p>
+</section>
+
 <button id="topBtn">↑</button>
 <nav class="bottom-nav"><button class="nav-btn homeBtn"><span>🏠</span>Home</button><button class="nav-btn" data-class="class11"><span>📚</span>Study</button><button class="nav-btn" data-action="assistant"><span>🤖</span>Assistant</button><button class="nav-btn" id="savedBtn"><span>⭐</span>Saved</button><button class="nav-btn" id="navThemeBtn"><span>☀️</span>Theme</button></nav>
-<footer><strong>© 2026 Biologist</strong> — Educational Purpose Only<br>Founded &amp; Developed By: <strong>Shivam Singhania &amp; Lucky Verma</strong><br>यह वेबसाइट विद्यार्थियों की पढ़ाई में सहायता के उद्देश्य से बनाई गई है।</footer>
+<footer><strong>© 2026 Biologist</strong> — Educational Purpose Only<br>Founded &amp; Developed By: <strong>Shivam Singhania &amp; Lucky Verma</strong><br>यह वेबसाइट विद्यार्थियों की पढ़ाई में सहायता के उद्देश्य से बनाई गई है।<br><a href="#about">About Us</a> | <a href="#privacy">Privacy Policy</a> | <a href="#contact">Contact Us</a><br><a href="https://www.instagram.com/aspiring_biologist_/" target="_blank" rel="noopener noreferrer">📸 Instagram: @aspiring_biologist_</a></footer>
 
 <script>
 const chapters={
